@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Menu latéral -->
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="position-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" routerLinkActive="active">
+              Accueil
+            </a>
+          </li>
+          <li class="nav-item" *ngFor="let link of navLinks">
+            <a class="nav-link" [routerLink]="link.path" routerLinkActive="active">
+              {{ link.path | titlecase }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contenu dynamique -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
