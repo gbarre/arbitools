@@ -27,6 +27,9 @@ jobs:
     - name: Verify build directory
       run: ls -la ./dist
 
+    - name: Verify GitHub token
+      run: echo ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
