@@ -13,29 +13,33 @@ export class TableCheckerComponent {
   answers: string[][] = [];
   correctAnswers: string[][] = [];
   results: string[][] = [];
-  showingAnswers: boolean = false; // Pour afficher ou masquer les réponses
+  showingAllAnswers: boolean = false;
+  showingAnswers: boolean[][] = [];
   mergedCells: any[] = [];
   nbRows: number = 0;
   nbCols: number = 0;
 
   constructor() {}
 
-  // Sélectionner un tableau
+  // Select a table
   selectTable(tableKey: string): void {
     this.selectedTable = this.tables[tableKey];
     this.answers = this.selectedTable.data.map(
-      (row) => row.map((cell) => '') // Initialiser avec des valeurs vides
+      (row) => row.map((cell) => '') // Initialize with empty values
+    );
+    this.showingAnswers = this.selectedTable.data.map((row) =>
+      row.map((cell) => false)
     );
     this.correctAnswers = this.selectedTable.data;
     this.mergedCells = this.selectedTable.mergedCells || [];
     this.nbRows = this.selectedTable.data.length;
     this.nbCols = this.selectedTable.data[0].length;
 
-    // Réinitialiser les réponses et le formulaire
+    // Reset answers and results
     this.reset();
   }
 
-  // Vérifier si la cellule est fusionnée
+  // Check if the cell is merged
   isCellMerged(rowIndex: number, colIndex: number): boolean {
     return this.mergedCells.some(
       (mergedCell) =>
@@ -43,21 +47,21 @@ export class TableCheckerComponent {
     );
   }
 
-  // Méthode pour obtenir la cellule fusionnée (si elle existe)
+  // Method to get the merged cell (if it exists)
   getMergedCell(
     rowIndex: number,
     colIndex: number
   ): { rowspan: number; colspan: number } | null {
-    // Cherche une cellule fusionnée qui commence à (rowIndex, colIndex)
+    // Search for a merged cell starting at (rowIndex, colIndex)
     for (const mergedCell of this.mergedCells) {
-      // Si la cellule fusionnée commence à (rowIndex, colIndex), retourne sa configuration
+      // If the merged cell starts at (rowIndex, colIndex), return its configuration
       if (
         rowIndex >= mergedCell.rowIndex &&
         rowIndex < mergedCell.rowIndex + mergedCell.rowspan &&
         colIndex >= mergedCell.colIndex &&
         colIndex < mergedCell.colIndex + mergedCell.colspan
       ) {
-        // Retourne la configuration de rowspan et colspan
+        // Return the rowspan and colspan configuration
         return {
           rowspan: mergedCell.rowspan,
           colspan: mergedCell.colspan,
@@ -67,13 +71,13 @@ export class TableCheckerComponent {
     return null;
   }
 
-  // Fonction pour vérifier si une cellule est la première dans une fusion
+  // Function to check if a cell is the first in a merge
   isFirstMergedCell(rowIndex: number, colIndex: number): boolean {
     const mergedCell = this.selectedTable?.mergedCells?.find(
       (cell) => cell.rowIndex === rowIndex && cell.colIndex === colIndex
     );
 
-    // Si mergedCell existe, et si la cellule est la première de la fusion
+    // If mergedCell exists, and if the cell is the first in the merge
     return mergedCell
       ? mergedCell.rowIndex === rowIndex && mergedCell.colIndex === colIndex
       : false;
@@ -93,7 +97,7 @@ export class TableCheckerComponent {
     return false;
   }
 
-  // Vérifier les réponses et stocker les résultats
+  // Check answers and store results
   checkAnswers() {
     this.results = this.answers.map((row, i) =>
       row.map((cell, j) => {
@@ -109,15 +113,26 @@ export class TableCheckerComponent {
     );
   }
 
-  // Réinitialiser les données
+  showAnswer(rowIndex: number, colIndex: number) {
+    this.showingAnswers[rowIndex][colIndex] =
+      !this.showingAnswers[rowIndex][colIndex];
+  }
+
+  // Reset data
   reset() {
     this.results = this.correctAnswers.map((row) => row.map(() => ''));
     this.answers = this.correctAnswers.map((row) => row.map(() => ''));
-    this.showingAnswers = false;
+    this.showingAnswers = this.correctAnswers.map((row) =>
+      row.map(() => false)
+    );
+    this.showingAllAnswers = false;
   }
 
-  // Afficher ou masquer les réponses
+  // Show or hide answers
   showAnswers() {
-    this.showingAnswers = !this.showingAnswers; // Inverser la visibilité des réponses
+    this.showingAllAnswers = !this.showingAllAnswers; // Toggle answer visibility
+    this.showingAnswers = this.correctAnswers.map((row) =>
+      row.map(() => false)
+    );
   }
 }

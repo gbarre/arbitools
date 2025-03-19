@@ -28,6 +28,7 @@
     *ngIf="selectedTable.hint !== undefined"
     [innerHTML]="selectedTable.hint"></p>
 
+
   <table class="table table-bordered table-responsive">
     <thead>
       <tr>
@@ -48,35 +49,48 @@
             class="table-cell"
             [attr.rowspan]="getMergedCell(i, j)?.rowspan"
             [attr.colspan]="getMergedCell(i, j)?.colspan">
-            <input
-              class="form-control text-center"
-              type="text"
-              [(ngModel)]="answers[i][j]"
-              [disabled]="correctAnswers[i][j] === 'disabled'"
-              [ngClass]="{
-                'bg-success': results[i][j] === 'correct' && correctAnswers[i][j] !== 'disabled',
-                'bg-danger': results[i][j] === 'incorrect',
-                'text-white': results[i][j] === 'incorrect',
-                'bg-secondary': correctAnswers[i][j] === 'disabled'
-              }"
-            />
-            <strong
-              *ngIf="correctAnswers[i][j] !== 'disabled' && showingAnswers">
-              {{ correctAnswers[i][j] }}
-            </strong>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control text-center"
+                [(ngModel)]="answers[i][j]"
+                [disabled]="correctAnswers[i][j] === 'disabled'"
+                [ngClass]="{
+                  'bg-success': results[i][j] === 'correct' && correctAnswers[i][j] !== 'disabled',
+                  'bg-danger': results[i][j] === 'incorrect',
+                  'text-white': results[i][j] === 'incorrect',
+                  'bg-secondary': correctAnswers[i][j] === 'disabled'
+                }"
+                [attr.aria-describedby]="'answer_' + i + '-' + j"
+              />
+              <ng-container *ngIf="correctAnswers[i][j] !== 'disabled'">
+                <button
+                  class="btn btn-outline-info"
+                  type="button"
+                  [id]="'answer-' + i + '-' + j"
+                  (click)="showAnswer(i, j)">
+                  <ng-container
+                    *ngIf="showingAllAnswers || showingAnswers[i][j]">
+                    {{ correctAnswers[i][j] }}
+                  </ng-container>
+                  <i
+                    *ngIf="!showingAllAnswers && !showingAnswers[i][j]"
+                    class="fas fa-eye"></i>
+                </button>
+              </ng-container>
+            </div>
           </td>
         </ng-container>
       </tr>
     </tbody>
   </table>
-
   <div class="d-flex justify-content-center mt-3">
     <button type="button" class="btn btn-success me-3" (click)="checkAnswers()">
       Vérifier
     </button>
     <button class="btn btn-secondary me-3" (click)="reset()">Réinitialiser</button>
     <button class="btn btn-info" (click)="showAnswers()">
-      {{ showingAnswers ? 'Masquer' : 'Afficher' }} les réponses
+      {{ showingAllAnswers ? 'Masquer' : 'Afficher' }} les réponses
     </button>
   </div>
 </div>
