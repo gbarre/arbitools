@@ -1,9 +1,11 @@
+import { Discipline } from 'src/app/models/discipline.model';
 import { TablesConfig } from 'src/app/models/table.models';
 
 export const campagneTables: TablesConfig = {
-  campagne_distances_inconnues: {
-    name: 'Campagne distances inconnues',
-    description: 'Tableau des distances inconnues en tir campagne',
+  distances_inconnues: {
+    name: 'Distances inconnues',
+    description:
+      'Tableau des distances <strong>inconnues</strong> en tir campagne.',
     hint: 'Les distances sont données en mètres, sous la forme "<strong>min - max</strong>". Par exemple : 12 - 18.',
     headers: {
       firstCell: 'Blasons / Piquets',
@@ -17,9 +19,10 @@ export const campagneTables: TablesConfig = {
       ['20 - 30', '20 - 35', '30 - 45', '35 - 55'],
     ],
   },
-  campagne_distances_connues: {
-    name: 'Campagne distances connues',
-    description: 'Tableau des distances connues en tir campagne',
+  distances_connues: {
+    name: 'Distances connues',
+    description:
+      'Tableau des distances <strong>connues</strong> en tir campagne.',
     hint: 'Les distances sont données en mètres, sous la forme "<strong>d1 - d2 - d3</strong>". Par exemple : 12 - 18 - 24.',
     headers: {
       firstCell: 'Blasons / Piquets',
@@ -33,9 +36,9 @@ export const campagneTables: TablesConfig = {
       ['30 - 30 - 30', '30 - 35 - 40', '40 - 45 - 50', '50 - 55 - 60'],
     ],
   },
-  campagne_piquets: {
-    name: 'Campagne piquets',
-    description: "Tableau d'attribution des piquets en tir campagne",
+  piquets: {
+    name: 'Attribution des piquets',
+    description: "Tableau d'attribution des piquets en tir campagne.",
     hint: 'Une ou plusieurs couleurs. Par exemple : "rose" ou "vert - gris".',
     headers: {
       firstCell: 'Catégories / Piquets',
@@ -69,3 +72,6 @@ export const campagneTables: TablesConfig = {
     ],
   },
 };
+
+export const campagne: Discipline = new Discipline('Tir en campagne');
+campagne.setTables(campagneTables);

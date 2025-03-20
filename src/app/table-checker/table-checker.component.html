@@ -1,41 +1,12 @@
-<h1>Table Checker</h1>
-<p>
-  Cette outil permet de tester vos connaissances sur divers tableaux présents
-  dans le règlement.
-</p>
-<h2>Sélectionnez un tableau à compléter...</h2>
-<div class="table-list">
-  <div
-    *ngFor="let tableKey of tables | keyvalue"
-    (click)="selectTable(tableKey.key)"
-    class="table-card"
-    [class.bg-primary]="selectedTable?.name === tableKey.value.name"
-    [class.text-white]="selectedTable?.name === tableKey.value.name">
-    <h3>{{ tableKey.value.name }}</h3>
-    <p
-      [ngClass]="{
-        'text-white': selectedTable?.name === tableKey.value.name
-      }">
-      {{ tableKey.value.description || 'Cliquez pour sélectionner cette table.' }}
-    </p>
-  </div>
-</div>
-
-<div *ngIf="selectedTable" class="mt-3">
+<div class="mt-3">
   <h3>{{ selectedTable.name }}</h3>
-
-  <p
-    *ngIf="selectedTable.hint !== undefined"
-    [innerHTML]="selectedTable.hint"></p>
-
-
+  <p class="mt-3" [innerHTML]="selectedTable.description"></p>
+  <p *ngIf="selectedTable.hint !== undefined" [innerHTML]="selectedTable.hint"></p>
   <table class="table table-bordered table-responsive">
     <thead>
       <tr>
         <th scope="col">{{ selectedTable.headers.firstCell }}</th>
-        <th
-          *ngFor="let column of selectedTable.headers.columns"
-          scope="col">
+        <th *ngFor="let column of selectedTable.headers.columns" scope="col">
           {{ column }}
         </th>
       </tr>
@@ -69,13 +40,10 @@
                   type="button"
                   [id]="'answer-' + i + '-' + j"
                   (click)="showAnswer(i, j)">
-                  <ng-container
-                    *ngIf="showingAllAnswers || showingAnswers[i][j]">
+                  <ng-container *ngIf="showingAllAnswers || showingAnswers[i][j]">
                     {{ correctAnswers[i][j] }}
                   </ng-container>
-                  <i
-                    *ngIf="!showingAllAnswers && !showingAnswers[i][j]"
-                    class="fas fa-eye"></i>
+                  <i *ngIf="!showingAllAnswers && !showingAnswers[i][j]" class="fas fa-eye"></i>
                 </button>
               </ng-container>
             </div>

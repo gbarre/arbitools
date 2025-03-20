@@ -1,9 +1,11 @@
+import { Discipline } from 'src/app/models/discipline.model';
 import { TablesConfig } from 'src/app/models/table.models';
 
 export const natureTables: TablesConfig = {
-  nature_distances_inconnues: {
-    name: 'Nature distances inconnues',
-    description: 'Tableau des distances inconnues en tir nature',
+  distances_inconnues: {
+    name: 'Distances',
+    description:
+      'Tableau des distances en tir nature, toutes <strong>inconnues</strong>.',
     hint: 'Les distances sont données en mètres, sous la forme "<strong>min - max</strong>". Par exemple : 12 - 18.',
     headers: {
       firstCell: 'Gibiers / Piquets',
@@ -18,3 +20,6 @@ export const natureTables: TablesConfig = {
     ],
   },
 };
+
+export const nature: Discipline = new Discipline('Tir nature');
+nature.setTables(natureTables);

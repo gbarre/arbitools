@@ -1,0 +1,41 @@
+<h1>Tableau par discipline</h1>
+<p>
+  Cette outil permet de tester vos connaissances sur divers tableaux présents
+  dans le règlement.
+</p>
+<h2>Sélectionnez une discipline puis un tableau à remplir</h2>
+<div class="row">
+  <div class="col-md-6 form-group">
+    <select
+      class="form-control"
+      [(ngModel)]="selectedDiscipline"
+      (change)="selectDiscipline($event.target)">
+      <option value="" disabled>
+        Sélectionner une discipline...
+      </option>
+      <option *ngFor="let key of disciplineKeys" [value]="key">
+        {{ disciplines[key].getName() }}
+      </option>
+    </select>
+  </div>
+  <div class="col-md-6 form-group" *ngIf="selectedDiscipline !== ''">
+    <select
+      class="form-control"
+      [(ngModel)]="selectedTableKey"
+      (change)="selectTable($event.target)">
+      <option value="" disabled>
+        Sélectionner un tableau...
+      </option>
+      <option
+        *ngFor="let tableKey of tables | keyvalue"
+        [value]="tableKey.key">
+        {{ tableKey.value.name }}
+      </option>
+    </select>
+  </div>
+</div>
+
+<app-table-checker
+  *ngIf="selectedTableKey !== ''"
+  [selectedTable]="tables[selectedTableKey]">
+</app-table-checker>

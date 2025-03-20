@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { environment } from 'src/environments/environments';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Table, TablesConfig } from '../models/table.models';
 
 @Component({
@@ -7,9 +6,8 @@ import { Table, TablesConfig } from '../models/table.models';
   templateUrl: './table-checker.component.html',
   styleUrls: ['./table-checker.component.scss'],
 })
-export class TableCheckerComponent {
-  tables: TablesConfig = environment.tables;
-  selectedTable: Table | undefined;
+export class TableCheckerComponent implements OnChanges {
+  @Input() selectedTable: Table = {} as Table;
   answers: string[][] = [];
   correctAnswers: string[][] = [];
   results: string[][] = [];
@@ -19,16 +17,13 @@ export class TableCheckerComponent {
   nbRows: number = 0;
   nbCols: number = 0;
 
-  constructor() {}
-
   // Select a table
-  selectTable(tableKey: string): void {
-    this.selectedTable = this.tables[tableKey];
+  ngOnChanges(): void {
     this.answers = this.selectedTable.data.map(
-      (row) => row.map((cell) => '') // Initialize with empty values
+      (row) => row.map(() => '') // Initialize with empty values
     );
     this.showingAnswers = this.selectedTable.data.map((row) =>
-      row.map((cell) => false)
+      row.map(() => false)
     );
     this.correctAnswers = this.selectedTable.data;
     this.mergedCells = this.selectedTable.mergedCells || [];
@@ -54,7 +49,8 @@ export class TableCheckerComponent {
   ): { rowspan: number; colspan: number } | null {
     // Search for a merged cell starting at (rowIndex, colIndex)
     for (const mergedCell of this.mergedCells) {
-      // If the merged cell starts at (rowIndex, colIndex), return its configuration
+      // If the merged cell starts at (rowIndex, colIndex),
+      // return its configuration
       if (
         rowIndex >= mergedCell.rowIndex &&
         rowIndex < mergedCell.rowIndex + mergedCell.rowspan &&
@@ -130,7 +126,7 @@ export class TableCheckerComponent {
 
   // Show or hide answers
   showAnswers() {
-    this.showingAllAnswers = !this.showingAllAnswers; // Toggle answer visibility
+    this.showingAllAnswers = !this.showingAllAnswers;
     this.showingAnswers = this.correctAnswers.map((row) =>
       row.map(() => false)
     );

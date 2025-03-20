@@ -1,6 +1,6 @@
 export interface Table {
   name: string;
-  description?: any;
+  description: any;
   hint?: string;
   headers: {
     firstCell: string;
