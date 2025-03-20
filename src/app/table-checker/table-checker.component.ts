@@ -1,5 +1,5 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Table, TablesConfig } from '../models/table.models';
+import { Component, Input, OnChanges } from '@angular/core';
+import { Table } from '../models/table.models';
 
 @Component({
   selector: 'app-table-checker',
@@ -8,22 +8,19 @@ import { Table, TablesConfig } from '../models/table.models';
 })
 export class TableCheckerComponent implements OnChanges {
   @Input() selectedTable: Table = {} as Table;
+  @Input() quizzMode: boolean = true;
   answers: string[][] = [];
-  correctAnswers: string[][] = [];
-  results: string[][] = [];
-  showingAllAnswers: boolean = false;
-  showingAnswers: boolean[][] = [];
+  correctAnswers: any[][] = [];
+  results: any[][] = [];
+
   mergedCells: any[] = [];
   nbRows: number = 0;
   nbCols: number = 0;
 
   // Select a table
   ngOnChanges(): void {
-    this.answers = this.selectedTable.data.map(
-      (row) => row.map(() => '') // Initialize with empty values
-    );
-    this.showingAnswers = this.selectedTable.data.map((row) =>
-      row.map(() => false)
+    this.answers = this.selectedTable.data.map((row) =>
+      row.map((cell) => (this.isObject(cell) ? cell.correct : ''))
     );
     this.correctAnswers = this.selectedTable.data;
     this.mergedCells = this.selectedTable.mergedCells || [];
@@ -32,6 +29,11 @@ export class TableCheckerComponent implements OnChanges {
 
     // Reset answers and results
     this.reset();
+  }
+
+  // Check if the cell contains an object
+  isObject(cell: any): boolean {
+    return typeof cell === 'object';
   }
 
   // Check if the cell is merged
@@ -97,38 +99,26 @@ export class TableCheckerComponent implements OnChanges {
   checkAnswers() {
     this.results = this.answers.map((row, i) =>
       row.map((cell, j) => {
-        const trimmedCell = cell.toLowerCase().replace(/\s+/g, '');
-        const trimmedCorrectAnswer = this.correctAnswers[i][j]
-          .toLowerCase()
-          .replace(/\s+/g, '');
-        return trimmedCell === trimmedCorrectAnswer ||
-          this.correctAnswers[i][j] === 'disabled'
-          ? 'correct'
-          : 'incorrect';
+        const correctCell = this.correctAnswers[i][j];
+        if (typeof correctCell === 'string') {
+          const trimmedCell = cell.toLowerCase().replace(/\s+/g, '');
+          const trimmedCorrectAnswer = this.correctAnswers[i][j]
+            .toLowerCase()
+            .replace(/\s+/g, '');
+          return trimmedCell === trimmedCorrectAnswer ||
+            this.correctAnswers[i][j] === 'disabled'
+            ? 'correct'
+            : 'incorrect';
+        } else {
+          return cell === correctCell.correct ? 'correct' : 'incorrect';
+        }
       })
     );
-  }
-
-  showAnswer(rowIndex: number, colIndex: number) {
-    this.showingAnswers[rowIndex][colIndex] =
-      !this.showingAnswers[rowIndex][colIndex];
   }
 
   // Reset data
   reset() {
     this.results = this.correctAnswers.map((row) => row.map(() => ''));
-    this.answers = this.correctAnswers.map((row) => row.map(() => ''));
-    this.showingAnswers = this.correctAnswers.map((row) =>
-      row.map(() => false)
-    );
-    this.showingAllAnswers = false;
-  }
-
-  // Show or hide answers
-  showAnswers() {
-    this.showingAllAnswers = !this.showingAllAnswers;
-    this.showingAnswers = this.correctAnswers.map((row) =>
-      row.map(() => false)
-    );
+    this.answers = this.correctAnswers.map((row) => row.map((cell) => ''));
   }
 }

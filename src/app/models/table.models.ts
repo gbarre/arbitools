@@ -7,7 +7,7 @@ export interface Table {
     rows: string[];
     columns: string[];
   };
-  data: string[][];
+  data: any[][];
   mergedCells?: {
     rowIndex: number;
     colIndex: number;

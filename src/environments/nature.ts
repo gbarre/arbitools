@@ -1,8 +1,8 @@
 import { Discipline } from 'src/app/models/discipline.model';
 import { TablesConfig } from 'src/app/models/table.models';
 
-export const natureTables: TablesConfig = {
-  distances_inconnues: {
+const natureTables: TablesConfig = {
+  distances: {
     name: 'Distances',
     description:
       'Tableau des distances en tir nature, toutes <strong>inconnues</strong>.',

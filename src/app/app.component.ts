@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environments';
+import { DisciplinesConfig } from './models/discipline.model';
 import { routes } from './app-routing.module';
 
 @Component({
@@ -9,4 +11,6 @@ import { routes } from './app-routing.module';
 export class AppComponent {
   title = 'arbitools';
   navLinks = routes.filter((route) => route.path && route.path !== '**');
+  disciplines: DisciplinesConfig = environment.disciplines;
+  disciplineKeys: string[] = Object.keys(this.disciplines);
 }

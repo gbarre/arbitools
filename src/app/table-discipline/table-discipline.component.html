@@ -1,11 +1,12 @@
-<h1>Tableau par discipline</h1>
-<p>
-  Cette outil permet de tester vos connaissances sur divers tableaux présents
-  dans le règlement.
-</p>
-<h2>Sélectionnez une discipline puis un tableau à remplir</h2>
-<div class="row">
-  <div class="col-md-6 form-group">
+<div class="float-end">
+  <label class="pr-3">Quizz &nbsp;</label>
+  <ng-toggle
+    [ngModel]="quizzMode"
+    (ngModelChange)="toggleMode()"></ng-toggle>
+</div>
+<dl class="row">
+  <dt class="col-md-4 d-flex align-items-center">Discipline</dt>
+  <dd class="col-md-6 form-group">
     <select
       class="form-control"
       [(ngModel)]="selectedDiscipline"
@@ -17,8 +18,9 @@
         {{ disciplines[key].getName() }}
       </option>
     </select>
-  </div>
-  <div class="col-md-6 form-group" *ngIf="selectedDiscipline !== ''">
+  </dd>
+  <dt class="col-md-4 d-flex align-items-center">Tableau</dt>
+  <dd class="col-md-6 form-group" *ngIf="selectedDiscipline !== ''">
     <select
       class="form-control"
       [(ngModel)]="selectedTableKey"
@@ -32,10 +34,11 @@
         {{ tableKey.value.name }}
       </option>
     </select>
-  </div>
-</div>
+  </dd>
+</dl>
 
 <app-table-checker
   *ngIf="selectedTableKey !== ''"
-  [selectedTable]="tables[selectedTableKey]">
+  [selectedTable]="tables[selectedTableKey]"
+  [quizzMode]="quizzMode">
 </app-table-checker>

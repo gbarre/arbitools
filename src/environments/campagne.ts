@@ -1,7 +1,7 @@
 import { Discipline } from 'src/app/models/discipline.model';
 import { TablesConfig } from 'src/app/models/table.models';
 
-export const campagneTables: TablesConfig = {
+const campagneTables: TablesConfig = {
   distances_inconnues: {
     name: 'Distances inconnues',
     description:

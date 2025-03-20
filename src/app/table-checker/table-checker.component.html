@@ -1,64 +1,92 @@
 <div class="mt-3">
-  <h3>{{ selectedTable.name }}</h3>
   <p class="mt-3" [innerHTML]="selectedTable.description"></p>
   <p *ngIf="selectedTable.hint !== undefined" [innerHTML]="selectedTable.hint"></p>
-  <table class="table table-bordered table-responsive">
-    <thead>
-      <tr>
-        <th scope="col">{{ selectedTable.headers.firstCell }}</th>
-        <th *ngFor="let column of selectedTable.headers.columns" scope="col">
-          {{ column }}
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let row of selectedTable.data; let i = index">
-        <th scope="row">{{ selectedTable.headers.rows[i] }}</th>
-        <ng-container *ngFor="let cell of row; let j = index">
-          <td
-            *ngIf="isFirstMergedCell(i, j) === hideMergedCell(i, j)"
-            class="table-cell"
-            [attr.rowspan]="getMergedCell(i, j)?.rowspan"
-            [attr.colspan]="getMergedCell(i, j)?.colspan">
-            <div class="input-group">
-              <input
-                type="text"
-                class="form-control text-center"
-                [(ngModel)]="answers[i][j]"
-                [disabled]="correctAnswers[i][j] === 'disabled'"
-                [ngClass]="{
-                  'bg-success': results[i][j] === 'correct' && correctAnswers[i][j] !== 'disabled',
-                  'bg-danger': results[i][j] === 'incorrect',
-                  'text-white': results[i][j] === 'incorrect',
-                  'bg-secondary': correctAnswers[i][j] === 'disabled'
-                }"
-                [attr.aria-describedby]="'answer_' + i + '-' + j"
-              />
-              <ng-container *ngIf="correctAnswers[i][j] !== 'disabled'">
-                <button
-                  class="btn btn-outline-info"
-                  type="button"
-                  [id]="'answer-' + i + '-' + j"
-                  (click)="showAnswer(i, j)">
-                  <ng-container *ngIf="showingAllAnswers || showingAnswers[i][j]">
-                    {{ correctAnswers[i][j] }}
-                  </ng-container>
-                  <i *ngIf="!showingAllAnswers && !showingAnswers[i][j]" class="fas fa-eye"></i>
-                </button>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th
+            scope="col"
+            [innerHTML]="selectedTable.headers.firstCell"></th>
+          <th
+            *ngFor="let column of selectedTable.headers.columns"
+            scope="col"
+            [innerHTML]="column"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of selectedTable.data; let i = index">
+          <th
+            scope="row"
+            [innerHTML]="selectedTable.headers.rows[i]"></th>
+          <ng-container *ngFor="let cell of row; let j = index">
+            <td
+              *ngIf="isFirstMergedCell(i, j) === hideMergedCell(i, j)"
+              class="table-cell"
+              [ngClass]="{
+                'bg-secondary': correctAnswers[i][j] === 'disabled'
+              }"
+              [attr.rowspan]="getMergedCell(i, j)?.rowspan"
+              [attr.colspan]="getMergedCell(i, j)?.colspan">
+              <ng-container
+                *ngIf="
+                  correctAnswers[i][j] !== 'disabled' && quizzMode
+                ">
+                <input
+                  *ngIf="!isObject(correctAnswers[i][j])"
+                  type="text"
+                  class="form-control text-center"
+                  [(ngModel)]="answers[i][j]"
+                  [disabled]="correctAnswers[i][j] === 'disabled'"
+                  [ngClass]="{
+                    'bg-success': results[i][j] === 'correct' && correctAnswers[i][j] !== 'disabled',
+                    'bg-danger': results[i][j] === 'incorrect',
+                    'text-white': results[i][j] === 'incorrect',
+                    'bg-secondary': correctAnswers[i][j] === 'disabled'
+                  }"
+                  [attr.aria-describedby]="'answer_' + i + '-' + j"
+                />
+                <select
+                  *ngIf="isObject(correctAnswers[i][j])"
+                  class="form-select"
+                  [(ngModel)]="answers[i][j]"
+                  [disabled]="correctAnswers[i][j] === 'disabled'"
+                  [ngClass]="{
+                    'bg-success': results[i][j] === 'correct' && correctAnswers[i][j] !== 'disabled',
+                    'bg-danger': results[i][j] === 'incorrect',
+                    'text-white': results[i][j] === 'incorrect',
+                    'bg-secondary': correctAnswers[i][j] === 'disabled'
+                  }"
+                  [attr.aria-describedby]="'answer_' + i + '-' + j">
+                  <option
+                    *ngFor="let option of correctAnswers[i][j].options"
+                    [value]="option">
+                    {{ option }}
+                  </option>
+                </select>
               </ng-container>
-            </div>
-          </td>
-        </ng-container>
-      </tr>
-    </tbody>
-  </table>
-  <div class="d-flex justify-content-center mt-3">
+              <ng-container
+                *ngIf="
+                  correctAnswers[i][j] !== 'disabled' && !quizzMode
+                ">
+                  {{
+                    isObject(correctAnswers[i][j]) ?
+                    correctAnswers[i][j].correct :
+                    correctAnswers[i][j]
+                  }}
+              </ng-container>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div
+    *ngIf="quizzMode"
+    class="d-flex justify-content-center mt-3">
     <button type="button" class="btn btn-success me-3" (click)="checkAnswers()">
       Vérifier
     </button>
     <button class="btn btn-secondary me-3" (click)="reset()">Réinitialiser</button>
-    <button class="btn btn-info" (click)="showAnswers()">
-      {{ showingAllAnswers ? 'Masquer' : 'Afficher' }} les réponses
-    </button>
   </div>
 </div>
