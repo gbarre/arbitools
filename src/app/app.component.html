@@ -40,7 +40,7 @@
                   let tableKey of disciplines[disciplineKey].tables | keyvalue
                 "
                 [href]="
-                  '/table-discipline?d=' + disciplineKey +
+                  './table-discipline?d=' + disciplineKey +
                   '&t=' + tableKey.key
                 ">
                 {{ disciplines[disciplineKey].getName() }} - {{ tableKey.value.name }}
