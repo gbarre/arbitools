@@ -19,22 +19,24 @@
       </option>
     </select>
   </dd>
-  <dt class="col-md-4 d-flex align-items-center">Tableau</dt>
-  <dd class="col-md-6 form-group" *ngIf="selectedDiscipline !== ''">
-    <select
-      class="form-control"
-      [(ngModel)]="selectedTableKey"
-      (change)="selectTable($event.target)">
-      <option value="" disabled>
-        Sélectionner un tableau...
-      </option>
-      <option
-        *ngFor="let tableKey of tables | keyvalue"
-        [value]="tableKey.key">
-        {{ tableKey.value.name }}
-      </option>
-    </select>
-  </dd>
+  <ng-container *ngIf="selectedDiscipline !== ''">
+    <dt class="col-md-4 d-flex align-items-center">Tableau</dt>
+    <dd class="col-md-6 form-group" *ngIf="selectedDiscipline !== ''">
+      <select
+        class="form-control"
+        [(ngModel)]="selectedTableKey"
+        (change)="selectTable($event.target)">
+        <option value="" disabled>
+          Sélectionner un tableau...
+        </option>
+        <option
+          *ngFor="let tableKey of tables | keyvalue"
+          [value]="tableKey.key">
+          {{ tableKey.value.name }}
+        </option>
+      </select>
+    </dd>
+  </ng-container>
 </dl>
 
 <app-table-checker

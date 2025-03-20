@@ -48,6 +48,7 @@ const generalTables: TablesConfig = {
     },
     data: [
       [
+        // U11 jusqu'à 7 ans
         {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[0],
@@ -78,6 +79,7 @@ const generalTables: TablesConfig = {
         },
       ],
       [
+        // U11 de 8, 9 et 10 ans
         {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[2],
@@ -92,7 +94,7 @@ const generalTables: TablesConfig = {
         },
         {
           options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
+          correct: optionsList.oui_non[1],
         },
         {
           options: optionsList.oui_non,
@@ -108,6 +110,7 @@ const generalTables: TablesConfig = {
         },
       ],
       [
+        // U11 10 ans surclassés U13
         {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[4],
@@ -138,6 +141,7 @@ const generalTables: TablesConfig = {
         },
       ],
       [
+        // U11 10 ans, CL
         {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[4],
@@ -162,6 +166,7 @@ const generalTables: TablesConfig = {
         'disabled',
       ],
       [
+        // U11 10 ans, CO
         {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[4],
@@ -186,6 +191,7 @@ const generalTables: TablesConfig = {
         },
       ],
       [
+        // U11 10 ans, BB
         {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[4],
@@ -204,6 +210,7 @@ const generalTables: TablesConfig = {
         },
       ],
       [
+        // U11 10 ans, APN
         {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[4],
@@ -216,6 +223,7 @@ const generalTables: TablesConfig = {
         'disabled',
       ],
       [
+        // U11 10 ans, AD
         {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[4],
@@ -228,6 +236,7 @@ const generalTables: TablesConfig = {
         'disabled',
       ],
       [
+        // U11 10 ans, Arc libre
         {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[4],
@@ -240,6 +249,7 @@ const generalTables: TablesConfig = {
         'disabled',
       ],
       [
+        // U11 10 ans, Arc Chasse
         {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[4],
