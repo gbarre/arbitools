@@ -19,6 +19,65 @@ const natureTables: TablesConfig = {
       ['16 - 30', '23 - 35', '30 - 40'],
     ],
   },
+  piquets: {
+    name: 'Piquets et temps',
+    description:
+      "Tableau d'attribution des piquets et temps de tir en tir nature.",
+    hint: 'Temps en secondes et une ou plusieurs couleurs. Par exemple : "40 rose" ou " 80 - vert - gris".<br /><strong>TL U13/U15 jusqu\'au niveau régional.</strong>',
+    headers: {
+      firstCell: 'Catégories / Piquets',
+      rows: ['U13', 'U15', 'U18', 'U21', 'S1', 'S2', 'S3'],
+      columns: [
+        'Arc Nu (BB)',
+        'Tir Libre (TL)',
+        'Poulies Nu (CO)',
+        'Arc Droit (AD)',
+        'Arc Chasse (AC)',
+      ],
+    },
+    data: [
+      ['45 - blanc', '45 - blanc', 'disabled', 'disabled', 'disabled'], // U13
+      ['45 - blanc', '45 - blanc', 'disabled', 'disabled', 'disabled'], // U15
+      [
+        '45 - bleu - blanc',
+        '45 - bleu - blanc',
+        'disabled',
+        'disabled',
+        'disabled',
+      ], // U18
+      [
+        '30 - rouge - bleu',
+        '45 - rouge - bleu',
+        '30 - rouge - bleu',
+        '30 - rouge - bleu',
+        '30 - rouge - bleu',
+      ], // U21
+      [
+        '30 - rouge - bleu',
+        '45 - rouge - bleu',
+        '30 - rouge - bleu',
+        '30 - rouge - bleu',
+        '30 - rouge - bleu',
+      ], // S1
+      [
+        '45 - rouge - bleu',
+        '45 - rouge - bleu',
+        '45 - rouge - bleu',
+        '45 - rouge - bleu',
+        '45 - rouge - bleu',
+      ], // S2
+      [
+        '45 - rouge - bleu',
+        '45 - rouge - bleu',
+        '45 - rouge - bleu',
+        '45 - rouge - bleu',
+        '45 - rouge - bleu',
+      ], // S3
+    ],
+    mergedCells: [
+      { rowIndex: 0, colIndex: 1, rowspan: 2, colspan: 1 }, // Fusion U13/15 TL
+    ],
+  },
 };
 
 export const nature: Discipline = new Discipline('Tir nature');
