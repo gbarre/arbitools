@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "arbitools:build:production"
+              "buildTarget": "arbitools:build:production"
             },
             "development": {
-              "browserTarget": "arbitools:build:development"
+              "buildTarget": "arbitools:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "arbitools:build"
+            "buildTarget": "arbitools:build"
           }
         },
         "test": {
