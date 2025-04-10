@@ -8,6 +8,7 @@ import { Table, TablesConfig } from '../models/table.models';
   selector: 'app-table-discipline',
   templateUrl: './table-discipline.component.html',
   styleUrls: ['./table-discipline.component.scss'],
+  standalone: false,
 })
 export class TableDisciplineComponent implements OnInit {
   @Input() quizzMode: boolean = true;

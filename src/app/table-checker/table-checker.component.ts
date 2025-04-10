@@ -5,6 +5,7 @@ import { Table } from '../models/table.models';
   selector: 'app-table-checker',
   templateUrl: './table-checker.component.html',
   styleUrls: ['./table-checker.component.scss'],
+  standalone: false,
 })
 export class TableCheckerComponent implements OnChanges {
   @Input() selectedTable: Table = {} as Table;
