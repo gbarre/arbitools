@@ -122,7 +122,7 @@ export const questions: Question[] = [
   },
   {
     question:
-      ': Pour une compétition sélective, quel est le nombre minimum de cibles par départ pour que la compétition soit prise en compte ?',
+      'Pour une compétition sélective, quel est le nombre minimum de cibles par départ pour que la compétition soit prise en compte ?',
     answers: ['[_] 6 cibles', 'MMM 8 cibles', '[_] 10 cibles'],
   },
   {
@@ -139,7 +139,7 @@ export const questions: Question[] = [
       "Lors d'une compétition régionale à 18 mètres, en ramassant les feuilles de marque à la fin de la compétition, le greffe s'aperçoit d'un écart de total entre la feuille papier et le système électronique qui fait la contremarque :",
     answers: [
       '[_] Le greffe prend en compte le résultat le plus faible',
-      'MMM Sil es valeurs de flèches sont bien les mêmes sur les deux systèmes, le greffe prend en compte le résultat du système électronique',
+      'MMM Si les valeurs de flèches sont bien les mêmes sur les deux systèmes, le greffe prend en compte le résultat du système électronique',
       '[_] Le greffe prend en compte le résultat le plus fort',
     ],
   },
@@ -196,11 +196,11 @@ export const questions: Question[] = [
     answers: [
       '[_] Il peut le faire par lui-même à condition de signer une décharge au médecin',
       '[_] Il peut le faire à condition qu’un autre membre de l’équipe se soumette à ce contrôle',
-      'MMM 11 ne peut pas le faire et que s’il persiste il sera déclaré positif au contrôle',
+      'MMM Il ne peut pas le faire et que s’il persiste il sera déclaré positif au contrôle',
     ],
   },
   {
-    question: "La vente d'alcool! à la buvette d’une compétition :",
+    question: "La vente d'alcool à la buvette d’une compétition :",
     answers: [
       '[_] Est autorisée aux compétiteurs',
       'MMM Est interdite à tous les compétiteurs jusqu’à la fin de la compétition',
