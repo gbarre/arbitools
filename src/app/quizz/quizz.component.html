@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <div class="mb-3 row align-items-center">
+    <label for="numberOfQuestions" class="col-sm-4 col-form-label">
+      Nombre de questions :
+    </label>
+    <div class="col-sm-4">
+      <input
+        type="number"
+        id="numberOfQuestions"
+        class="form-control"
+        min="1"
+        [max]="allQuestions.length"
+        [(ngModel)]="numberOfQuestions"
+      />
+    </div>
+    <div class="col-sm-4">
+      <button class="btn btn-primary" (click)="startQuiz()">
+        Démarrer le Quizz
+      </button>
+    </div>
+  </div>
+
+  <form
+    [formGroup]="quizForm"
+    (ngSubmit)="onSubmit()"
+    *ngIf="selectedQuestions.length"
+  >
+    <div
+      *ngFor="let question of selectedQuestions; let i = index"
+      class="mb-4 p-3 border rounded shadow-sm bg-light"
+    >
+      <p><strong>{{ question.question }}</strong></p>
+      <div
+        *ngFor="let answer of question.answers; let j = index"
+        class="form-check"
+      >
+        <input
+          type="radio"
+          class="form-check-input"
+          [formControlName]="'q' + i"
+          [value]="j"
+          [disabled]="submitted"
+          [id]="'q' + i + '_answer' + j"
+        />
+        <label
+          class="form-check-label"
+          [for]="'q' + i + '_answer' + j"
+          [ngClass]="{
+            'text-success fw-bold': getAnswerClass(i, j) === 'correct',
+            'text-danger fw-bold': getAnswerClass(i, j) === 'incorrect'
+          }"
+        >
+          {{ answer }}
+        </label>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="submitted"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+
+  <div *ngIf="submitted" class="mt-4 text-center">
+    <div class="alert alert-info">
+      <strong>Your score:</strong> {{ score }} /
+      {{ selectedQuestions.length }}
+    </div>
+  </div>
+</div>

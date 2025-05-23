@@ -9,11 +9,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableDisciplineComponent } from './table-discipline/table-discipline.component';
 import { ShowTableComponent } from './show-table/show-table.component';
 import { NgToggleModule } from 'ng-toggle-button';
+import { CommonModule } from '@angular/common';
+import { QuizComponent } from './quizz/quizz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    QuizComponent,
     TableCheckerComponent,
     TableDisciplineComponent,
     ShowTableComponent,
@@ -21,6 +24,7 @@ import { NgToggleModule } from 'ng-toggle-button';
   imports: [
     AppRoutingModule,
     BrowserModule,
+    CommonModule,
     FormsModule,
     NgToggleModule.forRoot(),
     ReactiveFormsModule,
