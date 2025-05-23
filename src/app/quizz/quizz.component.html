@@ -61,14 +61,14 @@
         class="btn btn-success"
         [disabled]="submitted"
       >
-        Submit
+        Vérifier mes réponses
       </button>
     </div>
   </form>
 
   <div *ngIf="submitted" class="mt-4 text-center">
     <div class="alert alert-info">
-      <strong>Your score:</strong> {{ score }} /
+      <strong>Score final :</strong> {{ score }} /
       {{ selectedQuestions.length }}
     </div>
   </div>
