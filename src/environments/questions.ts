@@ -381,4 +381,682 @@ export const questions: Question[] = [
       'En Tir en Campagne, combien de flèches un archer tire-t-il par cible ? :',
     answers: ['[_] 1', '[_] 2', 'MMM 3'],
   },
+  {
+    question:
+      "Un club peut demander l'inscription d’une compétition au calendrier officiel de la FFTA :",
+    answers: [
+      "[_] S'il a au moins un entraîneur dans son club",
+      "[_] S'il a un arbitre actif dans l’option de la compétition demandée",
+      "MMM S'il a un arbitre jeune actif au sein de son club",
+    ],
+  },
+  {
+    question:
+      'En TAE, vous constatez qu’un archer annonce des points plus élevés que les valeurs des flèches en cible :',
+    answers: [
+      "[_] Vous ne pouvez intervenir qu’à la demande d'un autre archer",
+      'MMM Vous intervenez',
+      '[_] Vous ne faites rien',
+    ],
+  },
+  {
+    question: 'Parmi ces réponses, laquelle n’est pas une mission de la CNA :',
+    answers: [
+      'MMM Proposer des règlements sportifs pour le livre des règlements sportifs et arbitrage',
+      '[_] Assurer la formation des PCRA et des formateurs',
+      '[_] Concevoir les examens d’arbitres',
+    ],
+  },
+  {
+    question: "Ne peut pas faire partie d’un jury d'appel :",
+    answers: [
+      "[_] Le papa (lui-même licencié à la FFTA) d'un jeune archer tirant lors de la compétition",
+      'MMM Un archer de la compétition',
+      '[_] Un capitaine d’equipe',
+    ],
+  },
+  {
+    question: "Quel statut d’arbitres n'existe pas ?",
+    answers: ['[_] Actif', 'MMM Repos', '[_] Retrait'],
+  },
+  {
+    question:
+      'À partir de quel âge, un jeune peut-il commencer la formation Jeune Arbitre ?',
+    answers: ['[_] 13 ans', 'MMM 14 ans', '[_] 15 ans'],
+  },
+  {
+    question:
+      'Qui est habilité à signer les qualifications et récolter les demandes de distinctions internationales ?',
+    answers: [
+      '[_] Tout arbitre de la compétition',
+      "MMM L'arbitre responsable de la compétition",
+      '[_] Uniquement le PCRA du lieu de la compétition',
+    ],
+  },
+  {
+    question: 'Dans un championnat de France par équipe de club :',
+    answers: [
+      'MMM Il peut y avoir un archer étranger dans l’équipe',
+      "[_] Il n'y a pas de limite au nombre d’archers étrangers dans l’équipe",
+      '[_] Il ne peut pas y avoir d’archer étranger dans l’équipe',
+    ],
+  },
+  {
+    question:
+      'Pour les U11, qui doit établir le certificat médical de surclassement en dernière année ?',
+    answers: [
+      '[_] Tout docteur en médecine',
+      'MMM Un médecin agréé FFTA',
+      '[_] Ne peut pas être surclassé',
+    ],
+  },
+  {
+    question: "La validité de la licence s'étend sur la période :",
+    answers: [
+      'MMM Du 1er septembre au 31 août de l’année suivante',
+      '[_] Du 15 octobre au 14 octobre de l’année suivante',
+      '[_] Du 15 septembre au 14 septembre de l’année suivante',
+    ],
+  },
+  {
+    question:
+      'Lors d’une compétition dominicale sélective la participation d’archers licenciés d’un autre club est :',
+    answers: ['[_] Facultative', '[_] Conseillée', 'MMM Obligatoire'],
+  },
+  {
+    question:
+      "Lors de l'attribution des cibles lors d’une compétition sélective :",
+    answers: [
+      '[_] Ne pas placer plus d’un tireur du même club sur une même cible',
+      'MMM Ne pas placer plus de 2 tireurs du même club sur une même cible',
+      '[_] Ne pas placer plus de 3 tireurs du même club sur une même cible',
+    ],
+  },
+  {
+    question:
+      "Pour toutes les disciplines individuelles et par équipe, les entraineurs ou capitaines d'équipes doivent :",
+    answers: [
+      '[_] Etre titulaires d’une licence du club dont ils encadrent le ou les archers',
+      'MMM Etre titulaires d’une licence d’un autre club',
+      "[_] N'ont pas besoin d'être licenciés",
+    ],
+  },
+  {
+    question:
+      'Si un arbitre désigné pour arbitrer une compétition dominicale sélective a un empêchement pour y participer :',
+    answers: [
+      'MMM Il doit trouver lui-même un remplaçant',
+      '[_] N’a rien à faire, le concours se déroulera sans lui',
+      '[_] Laisse au PCRA de sa région le soin de trouver un remplaçant',
+    ],
+  },
+  {
+    question:
+      'Un archer qui a 42 ans en 2023 sera classé sur sa licence 2023 en :',
+    answers: ['[_] S1', 'MMM S2', '[_] S3'],
+  },
+  {
+    question:
+      'Pour pouvoir reprendre son activité après une interruption de 2 ans, un arbitre fédéral doit :',
+    answers: [
+      '[_] Repasser le tronc commun,',
+      "[_] Suivre le cycle complet de formation d'Arbitre Fédéral avec un contrôle final validé par la CNA",
+      'MMM Suivre une formation de remise à niveau dans les options obtenues initialement avec validation du PCRA.',
+    ],
+  },
+  {
+    question: 'Lors d’une compétition dominicale un archer :',
+    answers: [
+      '[_] Doit obligatoirement porter la tenue de son club',
+      'MMM Peut porter un jean',
+      '[_]Ne peut jamais porter de jean.',
+    ],
+  },
+  {
+    question:
+      'Un arbitre prévu pour la compétition est absent au démarrage d’un concours. Un archer, également arbitre, se propose de le remplacer tout en tirant la compétition. Cette situation est-elle possible ?',
+    answers: ['MMM Non', '[_] Oui sous certaines conditions', '[_] Oui'],
+  },
+  {
+    question:
+      'Lors d’un surclassement ponctuel, avec changement de distance, blason ou piquet, un archer U18 doit :',
+    answers: [
+      'MMM Avoir un certificat médical de surclassement établi par un médecin de son choix',
+      '[_] Avoir un certificat médical de surclassement établi par un médecin agréé par la FFTA',
+      "[_] N'a pas de certificat médical de surclassement à produire",
+    ],
+  },
+  {
+    question: 'Un archer U11 agé de 9 ans :',
+    answers: [
+      '[_] Ne peut pas participer à une compétition, il doit attendre 10 ans.',
+      '[_] Peut participer à une compétition sans restriction avec un arc dont les branches marquées par le fabricant sont de 20 livres.',
+      'MMM Peut participer à une compétition à condition que les branches de son arc soient marquées par le fabricant à une puissance inférieure à 18 livres.',
+    ],
+  },
+  {
+    question:
+      'Un archer qui veut tirer ponctuellement dans une catégorie supérieure à la sienne pour laquelle la distance et la taille des blasons sont identiques :',
+    answers: [
+      "MMM N'a pas besoin d'un certificat médical de sur-classement",
+      '[_] Doit présenter un certificat médical de sur-classement s’il est mineur',
+      '[_] Doit présenter un certificat médical de sur-classement quel que soit son âge',
+    ],
+  },
+  {
+    question: 'La carte de classification d’un para archer :',
+    answers: [
+      "MMM Peut-être vérifiée par l'arbitre pour connaitre les équipements autorisés",
+      "[_] Est un document confidentiel signifiant les conditions de handicap et ne doit pas être présenté à l'arbitre",
+      "[_] N'est pas un document prévu par nos règlements",
+    ],
+  },
+  {
+    question: 'Les catégories d’arcs autorisées pour un para archers sont :',
+    answers: [
+      '[_] Arc classique seulement',
+      'MMM En Arc classique et arc à poulies',
+      '[_] Arc droit',
+    ],
+  },
+  {
+    question: 'Un para-archer :',
+    answers: [
+      '[_] Ne peut en aucun cas participer à un tir par équipe',
+      '[_] Ne peut participer à un tir par équipe uniquement s’il tire debout',
+      'MMM Peut participer à tir par équipe',
+    ],
+  },
+  {
+    question: 'La distance maximale pour une compétiteur para est de :',
+    answers: ['MMM 70 m', '[_] 60m', '[_] 50m'],
+  },
+  {
+    question: "Le para-tir à l'arc :",
+    answers: [
+      '[_] Est limité au niveau départemental',
+      '[_] Est limité au niveau régional',
+      'MMM Fait l’objet d’un championnat de France dédié',
+    ],
+  },
+  {
+    question:
+      'En Tir en Salle pour des raisons de sécurité, les feuilles de marque doivent être placées après la marque :',
+    answers: [
+      '[_] Au pied des cibles',
+      '[_] Sur le rebord du chevalet',
+      'MMM À au moins 2 mètres devant les cibles',
+    ],
+  },
+  {
+    question:
+      'En Tir 3D, le cheminement le plus sûr pour les archers en quittant la cible pour rejoindre la suivante sans revenir au pas de tir est :',
+    answers: [
+      "[_] De poursuivre l'axe de tir du moment que le chemin est caché par la cible",
+      '[_] De longer l’axe de tir à environ vingt degrés pour revenir sur leurs pas',
+      'MMM De partir à environ 90 degrés de l’axe de tir',
+    ],
+  },
+  {
+    question:
+      "En Parcours Nature, si la pluie rend le terrain glissant au niveau d’une cible et que cela représente un danger de chute. Au niveau de cette cible, l'arbitre responsable doit :",
+    answers: [
+      '[_] Faire respecter le temps de tir pour les catégories jeunes uniquement',
+      'MMM Neutraliser le temps de tir sur cette cible',
+      '[_] Allonger le temps de tir sur cette cible de 15s',
+    ],
+  },
+  {
+    question: 'En Tir en Campagne, un armement par le haut :',
+    answers: [
+      'MMM Doit toujours être considéré comme potentiellement dangereux',
+      "[_] N'est considéré comme étant dangereux que pour les Arcs à Poulies",
+      "[_] N'est jamais considéré comme dangereux car le tir se fait en pleine nature",
+    ],
+  },
+  {
+    question:
+      'Lors des épreuves de TAE, afin de départager les égalités, la feuille de marque doit indiquer en plus du score. Le nombre total de :',
+    answers: [
+      '[_] 9 et de 10',
+      '[_] 10 (uniquement) et de X (uniquement)',
+      'MMM 10 (10 + X) et de X (uniquement)',
+    ],
+  },
+  {
+    question:
+      'Lors des épreuves de Tir Beursault, le classement est établi suivant :',
+    answers: [
+      "MMM Le nombre d'honneurs, puis le nombre de points",
+      '[_] Le nombre de points, puis le nombre d’honneurs',
+      '[_] Le nombre de chapelets uniquement',
+    ],
+  },
+  {
+    question:
+      "En Tir à 18m, un archer ne tire qu’une flèche (qui marque 5 points) lors des volées marquantes avant d'abandonner. L’organisateur devra :",
+    answers: [
+      '[_] Classer l’archer avec 0 point car il a abandonné avant la fin de sa première volée',
+      '[_] Ne pas saisir de score pour l’archer',
+      'MMM Classer l’archer avec 5 points',
+    ],
+  },
+  {
+    question:
+      'Lors d’une compétition sélective, les feuilles de marque doivent être :',
+    answers: [
+      '[_] Contrôlées par un arbitre à la fin de la volée',
+      'MMM Contrôlées par l’archer à la fin de chaque volée',
+      '[_] Signées par les deux marqueurs',
+    ],
+  },
+  {
+    question:
+      'En tir à 18m, le système électronique de chronométrage tombe en panne lors des phases finales. Vous devez gérer le tir en ABC avec un sifflet. Quelle est la bonne méthode ?',
+    answers: [
+      '[_] 1 coup pour aller sur la ligne de tir, 3 coups pour débuter le tir, 2 coups pour finir la volée.',
+      '[_] 1 coup pour aller sur la ligne de tir, 2 coups pour débuter le tir, 1 coup pour signaler les 30 secondes, 3 coups pour finir la volée.',
+      'MMM 2 coups pour aller sur la ligne de tir, 1 coup pour débuter le tir, 3 coups pour finir la volée.',
+    ],
+  },
+  {
+    question:
+      'En Tir à l’Arc Extérieur, un archer qui a des difficultés à marcher :',
+    answers: [
+      "[_] Doit se rendre aux cibles pour marquer ses points sous peine d'annulation de ses scores",
+      '[_] Doit faire marquer ses points par un arbitre de la compétition',
+      'MMM Peut déléguer à un autre archer le droit de marquer ses points',
+    ],
+  },
+  {
+    question:
+      'Lors d’un match individuel en tir simultané en TAE, chaque archer tire par volée :',
+    answers: ['[_] 1 flèche', '[_] 2 flèches', 'MMM 3 flèches'],
+  },
+  {
+    question:
+      'Lors d’un match par équipe en tir simultané en TAE, chaque archer de l’équipe tire par volée :',
+    answers: ['[_] 1 flèche', 'MMM 2 flèches', '[_] 3 flèches'],
+  },
+  {
+    question:
+      'En Tir Beursault, de combien de temps dispose un archer pour tirer une flèche ? :',
+    answers: ['[_] 40 secondes', 'MMM 60 secondes', '[_] 80 secondes'],
+  },
+  {
+    question:
+      'En TAE, quel est le temps alloué à une équipe mixte pour tirer une volée pendant un match en tir simultané ? :',
+    answers: ['[_] 40 secondes', '[_] 60 secondes', 'MMM 80 secondes'],
+  },
+  {
+    question: 'En tir Beursault, la valeur maximale d’une volée est de :',
+    answers: ['MMM 4 points', '[_] 8 points', '[_] 10 points'],
+  },
+  {
+    question:
+      'À partir de quel âge, un jeune arbitre, s’il remplit les conditions peut devenir arbitre fédéral ?',
+    answers: ['[_] 17 ans', 'MMM 18 ans', '[_] 21 ans'],
+  },
+  {
+    question:
+      'Un U18 qui souhaite participer à une manche de DRE avec son équipe doit :',
+    answers: [
+      '[_] Ne rien à faire',
+      "MMM Fournir un certificat médical établi par n'importe quel médecin",
+      '[_] Fournir un certificat médical établi par un médecin agréé par la FFTA',
+    ],
+  },
+  {
+    question: "Quel est l'ordre dans les statuts d'arbitrage ?",
+    answers: [
+      '[_] Actif, Inactif, Sommeil, Retrait',
+      'MMM Actif, Inactif, Retrait, Sommeil',
+      '[_] Actif, Retrait, Sommeil, Inactif',
+    ],
+  },
+  {
+    question:
+      'En cas de plusieurs départs sur un parcours, un arbitre peut tirer :',
+    answers: [
+      "[_] A n'importe quel départ",
+      'MMM Uniquement au premier départ',
+      '[_] Uniquement au dernier départ',
+    ],
+  },
+  {
+    question:
+      "En cas d’impossibilité pour un arbitre d’être présent à un arbitrage pour lequel il s'était engagé :",
+    answers: [
+      '[_] Il doit prévenir le PCRA, qui trouvera un remplaçant',
+      "[_] Il doit prévenir l'organisateur, qui trouvera un remplaçant",
+      'MMM Il doit chercher lui-même un remplaçant',
+    ],
+  },
+  {
+    question:
+      'Lors d’un concours sélectif dominical, le directeur des tirs (DOS) peut être :',
+    answers: [
+      "MMM Un arbitre fédéral ou un jeune arbitre ou un membre du club validé par l'arbitre responsable",
+      '[_] Uniquement un arbitre fédéral ou jeune arbitre',
+      '[_] Uniquement un arbitre fédéral',
+    ],
+  },
+  {
+    question: 'Une compétition sélective du week-end ne peut pas se dérouler :',
+    answers: [
+      '[_] Uniquement le samedi et le dimanche',
+      '[_] Sur 3 jours le samedi et le dimanche et un autre jour accolé au week-end',
+      'MMM Sur 4 jours le vendredi, le samedi, le dimanche et le lundi',
+    ],
+  },
+  {
+    question:
+      'Lors d’un championnat de France en salle, lors de la phase de qualifications, où se situe la zone des entraîneurs ?',
+    answers: [
+      '[_] Entre la ligne du matériel et la zone de repos des archers',
+      'MMM Entre la zone de repos des archers et le public',
+      "[_] Entre la ligne d'attente et la zone de repos des archers",
+    ],
+  },
+  {
+    question:
+      'Lors d’une compétition individuelle à quel moment commence les phases finales :',
+    answers: [
+      '[_] Après les qualifications, quel que soit le niveau des premiers duels (32ème, 16ème...)',
+      'MMM A partir des 1/4 de finales',
+      '[_] A partir des 1/2 de finales',
+    ],
+  },
+  {
+    question:
+      'Quelle période a été prise en compte pour la licence 2024, pour définir la catégorie suivant la date de naissance ?',
+    answers: [
+      '[_] Du 1 septembre 2023 au 31 aout 2024',
+      '[_] Du 1 janvier 2023 au 31 décembre 2023',
+      'MMM Du 1 janvier 2024 au 31 décembre 2024',
+    ],
+  },
+  {
+    question:
+      "Lors d'une compétition dominicale, un archer qui décide d'arrêter la compétition :",
+    answers: [
+      '[_] Ne sera pas classé pour la compétition',
+      '[_] Ne sera pas classé au plan national',
+      "MMM Sera classé avec les points qu'il a acquis au moment de son arrêt, que ce soit pour le classement national que le classement de la compétition",
+    ],
+  },
+  {
+    question: 'Dans les compétitions, il est :',
+    answers: [
+      '[_] Autorisé de fumer ou de vapoter si les compétitions se déroulent en extérieur',
+      '[_] Interdit de fumer mais autoriser de vapoter si les compétitions se déroulent en intérieur',
+      'MMM Interdit de fumer ou de vapoter quel que soit le terrain de compétition',
+    ],
+  },
+  {
+    question:
+      "Pour déposer une réclamation au jury d'appel lors d’une compétition dominicale :",
+    answers: [
+      'MMM Un archer dispose de 15 minutes quelle que soit la compétition',
+      '[_] Un archer dispose de 30 minutes pour les compétitions type parcours',
+      '[_] Un archer dispose de 45 minutes quelle que soit la compétition',
+    ],
+  },
+  {
+    question: 'Un jeune arbitre qui a réussi son examen peut :',
+    answers: [
+      "MMM Etre arbitre responsable d'un concours jeune",
+      '[_] Etre arbitre responsable d’un concours adulte',
+      '[_] Arbitrer lors d’un championnat régional adulte',
+    ],
+  },
+  {
+    question: "Un jury d'appel est obligatoire :",
+    answers: [
+      '[_] Lors de compétitions dominicales',
+      '[_] Lors de championnats régionaux',
+      'MMM Lors des championnats de France',
+    ],
+  },
+  {
+    question: 'Au sein des comités régionaux, les PCRA sont chargés de :',
+    answers: [
+      "[_] Sanctionner les erreurs d'arbitrage commises sur les compétitions de la région",
+      "[_] D'être arbitre responsable des championnats régionaux",
+      "MMM D'organiser annuellement et d'animer une réunion de formation continue (au minimum) des arbitres de leur région",
+    ],
+  },
+  {
+    question: 'Laquelle de ces affirmations est correcte :',
+    answers: [
+      '[_] La catégorie U15 concerne les 12,13 et 14 ans',
+      'MMM La catégorie U18 concerne les 15, 16 et 17 ans.',
+      '[_] La catégorie U13 concerne les 10 et 11 ans',
+    ],
+  },
+  {
+    question:
+      "Afin d'éviter toute contestation, le peson utilisé pour le contrôle des arcs à poulies :",
+    answers: [
+      '[_] Est celui de l’archer',
+      '[_] Est celui du président du club organisateur',
+      "MMM Est celui désigné par l'arbitre responsable.",
+    ],
+  },
+  {
+    question:
+      'Un archer U11 (poussin) de 9 ans tire en compétition en salle dans la condition suivante :',
+    answers: [
+      '[_] Sur un blason de 60cm avec le centre à 1m du sol et à 15 mètres de distance',
+      '[_] Sur un blason de 80 cm avec le centre à 1.10 du sol et à 15 mètres de distance',
+      'MMM Sur un blason de 80 cm avec le centre à 1.10 du sol et à 18 mètres de distance',
+    ],
+  },
+  {
+    question:
+      'Un archer participera à une compétition campagne au mois d’aout 2024, 4 semaines après le championnat de France. Le score de cet archer participant sera pris en compte :',
+    answers: [
+      'MMM Au classement de la saison 2024',
+      '[_] Au classement de la saison 2025',
+      '[_] Ne sera pas pris en compte',
+    ],
+  },
+  {
+    question: 'Pour une saison donnée un surclassement annuel permet :',
+    answers: [
+      "MMM D'être classé toute la saison dans la catégorie immédiatement supérieure",
+      "[_] D'être classé dans la catégorie immédiatement supérieure seulement pour les classements de compétitions",
+      "[_] D'être classé dans la catégorie immédiatement supérieure pour les compétitions par équipes",
+    ],
+  },
+  {
+    question:
+      'Auprès de quelle structure un archer doit faire une demande de surclassement annuel ?',
+    answers: [
+      '[_] Auprès du Comité Régional dont il dépend',
+      'MMM Auprès de la FFTA',
+      '[_] Auprès de son club',
+    ],
+  },
+  {
+    question: 'Un archer licencié peut changer de club :',
+    answers: [
+      '[_] Seulement dans les trois premiers mois de sa prise de licence',
+      '[_] Ne peut pas changer de club en cours de saison sportive',
+      "MMM n'importe quel moment",
+    ],
+  },
+  {
+    question: 'Le surclassement ponctuel sans certificat médical peut :',
+    answers: [
+      'MMM Etre autorisé à partir de la catégorie U21',
+      '[_] Etre autorisé à partir de la catégorie U18',
+      '[_] Etre autorisé à partir de la catégorie U15',
+    ],
+  },
+  {
+    question:
+      'Un archer qui est en possession d’un surclassement annuel peut tirer dans la catégorie immédiatement supérieure :',
+    answers: [
+      'MMM Dans toutes les disciplines pour toute la saison',
+      '[_] Dans une discipline choisie en début de saison',
+      '[_] Seulement en tir en salle',
+    ],
+  },
+  {
+    question: 'Pour être reconnu comme para-archer un athlète doit posséder :',
+    answers: [
+      'MMM Une carte de classification spécifiquement établie par un classificateur de la FFTA',
+      "[_] Une carte d'invalidité civile",
+      '[_] Un simple certificat médical établi par un médecin de son choix',
+    ],
+  },
+  {
+    question: 'Les distances de tir pour un para-archer sont :',
+    answers: [
+      "[_] Fonction de sa catégorie d'âge uniquement et seront les mêmes que pour les archers valides",
+      "MMM Fonction de sa situation de handicap et de sa catégorie d'âge",
+      '[_] Uniques quelle que soit la situation de handicap',
+    ],
+  },
+  {
+    question: "Un para-archer (licencié FFTA et sous réserve d'accessibilité)",
+    answers: [
+      "MMM Peut participer à n'importe quelle compétition FFTA",
+      '[_] Ne peut participer qu’à des compétitions en salle à 18m',
+      "[_] Ne peut participer qu'à des compétitions spécifiques para-tir à l'arc",
+    ],
+  },
+  {
+    question:
+      'Laquelle des situations de handicap ci-dessous, n’est pas incluse dans la délégation reçue par la FFTA',
+    answers: [
+      '[_] Handicap visuel',
+      '[_] Handicap auditif',
+      'MMM Handicap psychique',
+    ],
+  },
+  {
+    question: 'Laquelle des affirmations suivantes est vraie',
+    answers: [
+      '[_] Un archer en fauteuil dispose de 20s (au lieu de 10s) pour se préparer',
+      'MMM Un archer en fauteuil peut rester sur le pas de tir durant toute la compétition',
+      "[_] Un archer en fauteuil dispose de 2 fois plus de temps qu'un archer valide pour se soigner en cas d'incident médical",
+    ],
+  },
+  {
+    question:
+      "En Parcours Nature pour des raisons de sécurité, l'accès au terrain d'entraînement n’est autorisé que :",
+    answers: [
+      "MMM Par l'arbitre",
+      "[_] Par l'organisateur",
+      "[_] S'il n'y a pas plus de 10 archers présents sur le terrain d'entraînement en même temps",
+    ],
+  },
+  {
+    question:
+      'En Tir 3D, la sécurité est considérée comme assurée derrière la cible si :',
+    answers: [
+      '[_] Un gros rocher derrière la cible la dépasse en largeur et en hauteur',
+      '[_] La flèche ratant la cible passera plus de 5m au-dessus de la route passant derrière la cible',
+      'MMM Un filet arrêtant les flèches été placé derrière la cible si le tir n’est pas fichant',
+    ],
+  },
+  {
+    question:
+      'En Tir Beursault, la sécurité latérale est assurée par des protections appelées :',
+    answers: ['MMM Gardes', '[_] Sentinelles', '[_] Surveillants'],
+  },
+  {
+    question:
+      'En Tir en Campagne, le cheminement des archers le plus sûr pour rejoindre la cible suivante après le marquage des scores est de :',
+    answers: [
+      "[_] Poursuivre dans l'axe de tir si le chemin est caché par la cible",
+      'MMM De poursuivre à environ 90 degrés de l’axe de tir',
+      "[_] De longer l'axe de tir à environ trente degrés",
+    ],
+  },
+  {
+    question:
+      'Lors des épreuves qualificatives de Tir Beursault (parties), le classement est établi après :',
+    answers: ['[_] 10 haltes', 'MMM 20 haltes', '[_] 40 haltes'],
+  },
+  {
+    question:
+      "En Tir en campagne, à la fin d'une compétition sélective, si un peloton n’a pas complété le nombre total de 5 et de 6:",
+    answers: [
+      "[_] L'organisateur peut ne pas accepter d'enregistrer les résultats des compétiteurs concernés",
+      "[_] L'organisateur doit obligatoirement calculer les totaux manquants et les enregistrer",
+      "MMM L'organisateur peut n'enregistrer que les scores sans compléter le nombre de 5 et de 6 pour ces compétiteurs",
+    ],
+  },
+  {
+    question:
+      "À la fin d'une compétition sélective de Tir en Campagne, si des archers ont une égalité parfaite (score, nombre de 5 et de 6), pour l'établissement du classement de la compétition :",
+    answers: [
+      'MMM Ces archers sont déclarés ex-aequo y compris pour les médailles',
+      '[_] Ces archers doivent être départagés par un tir de barrage, en particulier pour les médailles',
+      '[_] Ces archers seront départagés par un tirage au sort',
+    ],
+  },
+  {
+    question:
+      'En Tir Beursault, une flèche qui atteint la cible après avoir ricoché',
+    answers: [
+      '[_] Est comptée en fonction de son impact sur la carte',
+      'MMM Ne marque aucun honneur ni aucun point',
+      '[_] Ne marque aucun point mais marque un honneur si la flèche est en zone marquante',
+    ],
+  },
+  {
+    question:
+      'En Tir 3D, une flèche qui a rebondi et se plante dans la zone 8 de la cible :',
+    answers: [
+      '[_] Doit être marquée M',
+      'MMM Doit être marquée comme valant 8 points',
+      '[_] Doit être tirée à nouveau',
+    ],
+  },
+  {
+    question:
+      "En Parcours Nature, une flèche qui s'encastre dans une autre fichée en zone marquante :",
+    answers: [
+      "MMM Prend la valeur de la flèche dans laquelle elle s'est encastrée même si elle retombe au sol",
+      "[_] Prend la valeur de la flèche dans laquelle elle s'est encastrée mais uniquement si elle y reste encastrée",
+      '[_] Est comptée comme un manqué et marquée M',
+    ],
+  },
+  {
+    question:
+      'En Tir en Campagne, la valeur maximale que peut atteindre une flèche est :',
+    answers: ['[_] 4 points', 'MMM 6 points', '[_] 8 points'],
+  },
+  {
+    question:
+      'En compétition par équipe de Parcours Nature, à quel moment doit-on déclencher le chronomètre ? :',
+    answers: [
+      "[_] Lorsque le premier archer de l’équipe quitte le pas d'attente",
+      'MMM Lorsque le premier archer de l’équipe arrive à son premier pas de tir',
+      "[_] Lors de la décoche de la première flèche du premier archer de l'équipe",
+    ],
+  },
+  {
+    question:
+      'En compétition par individuelle de Tir 3D, à quel moment doit-on déclencher le chronomètre ? :',
+    answers: [
+      "[_] Lorsque l'archer quitte le pas d'attente",
+      "MMM Lorsque l'archer arrive à son pas de tir",
+      '[_] Lors de la décoche de la première flèche de l’archer',
+    ],
+  },
+  {
+    question:
+      'En tir en salle, quel est le temps alloué à un archer pour tirer une flèche dans un duel en tir alterné :',
+    answers: ['MMM 20 secondes', '[_] 30 secondes', '[_] 40 secondes'],
+  },
+  {
+    question:
+      'En tir en salle, quel est le temps alloué à un para-archer pour tirer une flèche dans un duel en tir simultané :',
+    answers: ['[_] 20 secondes', '[_] 30 secondes', 'MMM 40 secondes'],
+  },
 ];
