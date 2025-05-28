@@ -11,10 +11,16 @@ import { ShowTableComponent } from './show-table/show-table.component';
 import { NgToggleModule } from 'ng-toggle-button';
 import { CommonModule } from '@angular/common';
 import { QuizComponent } from './quizz/quizz.component';
+import { ChangelogComponent } from './changelog/changelog.component';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ChangelogComponent,
     HomeComponent,
     QuizComponent,
     TableCheckerComponent,
@@ -29,7 +35,7 @@ import { QuizComponent } from './quizz/quizz.component';
     NgToggleModule.forRoot(),
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

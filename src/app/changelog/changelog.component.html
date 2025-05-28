@@ -1,0 +1,16 @@
+<div class="changelog-container">
+  <h2>Changelog</h2>
+  <div *ngIf="loading" class="text-center text-muted">Chargement...</div>
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  <ul *ngIf="!loading && !error">
+    <li *ngFor="let commit of commits">
+      <div class="commit-message">
+        <a [href]="commit.html_url" target="_blank">{{ commit.commit.message }}</a>
+      </div>
+      <div class="commit-meta">
+        <span>Auteur : {{ commit.commit.author.name }}</span> |
+        <span>Date : {{ getRelativeDate(commit.commit.author.date) }}</span>
+      </div>
+    </li>
+  </ul>
+</div>
