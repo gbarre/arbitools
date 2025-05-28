@@ -2,3 +2,23 @@ th, td {
   text-align: center;
   vertical-align: middle;
 }
+
+.red {
+  background-color: #ffcccc;
+}
+
+.blue {
+  background-color: #cceeff;
+}
+
+.white-orange {
+  background: linear-gradient(to right, #ffffff 50%, #ffcc99 50%);
+}
+
+.blue-white {
+  background: linear-gradient(to right, #cceeff 50%, #ffffff 50%);
+}
+
+.red-blue {
+  background: linear-gradient(to right, #ffcccc 50%, #cceeff 50%);
+}

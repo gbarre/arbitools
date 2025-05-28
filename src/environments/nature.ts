@@ -36,42 +36,42 @@ const natureTables: TablesConfig = {
       ],
     },
     data: [
-      ['45 - blanc', '45 - blanc', 'disabled', 'disabled', 'disabled'], // U13
-      ['45 - blanc', '45 - blanc', 'disabled', 'disabled', 'disabled'], // U15
+      ['45 - Blanc', '45 - Blanc', 'disabled', 'disabled', 'disabled'], // U13
+      ['45 - Blanc', '45 - Blanc', 'disabled', 'disabled', 'disabled'], // U15
       [
-        '45 - bleu - blanc',
-        '45 - bleu - blanc',
+        '45 - Bleu - Blanc',
+        '45 - Bleu - Blanc',
         'disabled',
         'disabled',
         'disabled',
       ], // U18
       [
-        '30 - rouge - bleu',
-        '45 - rouge - bleu',
-        '30 - rouge - bleu',
-        '30 - rouge - bleu',
-        '30 - rouge - bleu',
+        '30 - Rouge - Bleu',
+        '45 - Rouge - Bleu',
+        '30 - Rouge - Bleu',
+        '30 - Rouge - Bleu',
+        '30 - Rouge - Bleu',
       ], // U21
       [
-        '30 - rouge - bleu',
-        '45 - rouge - bleu',
-        '30 - rouge - bleu',
-        '30 - rouge - bleu',
-        '30 - rouge - bleu',
+        '30 - Rouge - Bleu',
+        '45 - Rouge - Bleu',
+        '30 - Rouge - Bleu',
+        '30 - Rouge - Bleu',
+        '30 - Rouge - Bleu',
       ], // S1
       [
-        '45 - rouge - bleu',
-        '45 - rouge - bleu',
-        '45 - rouge - bleu',
-        '45 - rouge - bleu',
-        '45 - rouge - bleu',
+        '45 - Rouge - Bleu',
+        '45 - Rouge - Bleu',
+        '45 - Rouge - Bleu',
+        '45 - Rouge - Bleu',
+        '45 - Rouge - Bleu',
       ], // S2
       [
-        '45 - rouge - bleu',
-        '45 - rouge - bleu',
-        '45 - rouge - bleu',
-        '45 - rouge - bleu',
-        '45 - rouge - bleu',
+        '45 - Rouge - Bleu',
+        '45 - Rouge - Bleu',
+        '45 - Rouge - Bleu',
+        '45 - Rouge - Bleu',
+        '45 - Rouge - Bleu',
       ], // S3
     ],
     mergedCells: [

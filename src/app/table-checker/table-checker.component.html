@@ -24,7 +24,12 @@
               *ngIf="isFirstMergedCell(i, j) === hideMergedCell(i, j)"
               class="table-cell"
               [ngClass]="{
-                'bg-secondary': correctAnswers[i][j] === 'disabled'
+                'bg-secondary': correctAnswers[i][j] === 'disabled',
+                'red': correctAnswers[i][j] !== 'disabled' && !quizzMode && (correctAnswers[i][j]?.toString().toLowerCase().includes('rouge')),
+                'blue': correctAnswers[i][j] !== 'disabled' && !quizzMode && (correctAnswers[i][j]?.toString().toLowerCase().includes('bleu')),
+                'red-blue': correctAnswers[i][j] !== 'disabled' && !quizzMode && (correctAnswers[i][j]?.toString().toLowerCase().includes('rouge - bleu')),
+                'blue-white': correctAnswers[i][j] !== 'disabled' && !quizzMode && (correctAnswers[i][j]?.toString().toLowerCase().includes('bleu - blanc')),
+                'white-orange': correctAnswers[i][j] !== 'disabled' && !quizzMode && (correctAnswers[i][j]?.toString().toLowerCase().includes('blanc - orange')),
               }"
               [attr.rowspan]="getMergedCell(i, j)?.rowspan"
               [attr.colspan]="getMergedCell(i, j)?.colspan">
