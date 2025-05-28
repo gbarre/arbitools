@@ -102,7 +102,10 @@ export class TableCheckerComponent implements OnChanges {
       row.map((cell, j) => {
         const correctCell = this.correctAnswers[i][j];
         if (typeof correctCell === 'string') {
-          const trimmedCell = cell.toLowerCase().replace(/\s+/g, '');
+          const trimmedCell = cell
+            .toLowerCase()
+            .replace(/\s+/g, '')
+            .replace(/-+/g, '');
           const trimmedCorrectAnswer = this.correctAnswers[i][j]
             .toLowerCase()
             .replace(/\s+/g, '')
