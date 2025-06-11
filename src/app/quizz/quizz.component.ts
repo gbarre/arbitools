@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { questions } from 'src/environments/questions';
-import { ParsedQuestion, Question } from '../models/question';
+import { ParsedQuestion, Question } from '../models/question.model';
 
 @Component({
   selector: 'app-quizz',
