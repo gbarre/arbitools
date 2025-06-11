@@ -75,3 +75,11 @@ const campagneTables: TablesConfig = {
 
 export const campagne: Discipline = new Discipline('Tir en campagne');
 campagne.setTables(campagneTables);
+
+export const scores_campagne = {
+  trispot: {
+    min: 0,
+    max: 6,
+    arrows: 3,
+  },
+};

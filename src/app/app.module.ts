@@ -16,6 +16,7 @@ import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
+import { ScoreTrainerComponent } from './score-trainer/score-trainer.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {
     QuizComponent,
     TableCheckerComponent,
     TableDisciplineComponent,
+    ScoreTrainerComponent,
     ShowTableComponent,
   ],
   imports: [

@@ -47,3 +47,11 @@ const salleTables: TablesConfig = {
 
 export const salle: Discipline = new Discipline('Tir en salle');
 salle.setTables(salleTables);
+
+export const scores_salle = {
+  trispot: {
+    min: 0,
+    max: 10,
+    arrows: 3,
+  },
+};
