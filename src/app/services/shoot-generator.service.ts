@@ -9,6 +9,7 @@ import {
 export class ShootGeneratorService {
   generateSituation(
     minArrows: number = 3,
+    minScore: number = 6,
     maxScore: number = 10
   ): ShootSituation & { errorSpot?: number } {
     const arrows: Arrow[] = [];
@@ -34,9 +35,26 @@ export class ShootGeneratorService {
     spotsForArrows = this.shuffle(spotsForArrows);
 
     for (const spot of spotsForArrows) {
-      const value = this.randomInt(0, maxScore);
+      const value =
+        Math.random() < 0.1 ? 0 : this.randomInt(minScore, maxScore);
       const isLate = Math.random() < 0.1;
       arrows.push({ value, spot, isLate });
+    }
+
+    // Règle : si un spot a 2 flèches dont une manquée, on retire la flèche manquée
+    const arrowsBySpot = new Map<number, Arrow[]>();
+    for (const arrow of arrows) {
+      if (!arrowsBySpot.has(arrow.spot)) arrowsBySpot.set(arrow.spot, []);
+      arrowsBySpot.get(arrow.spot)!.push(arrow);
+    }
+    for (const [spot, arrs] of arrowsBySpot.entries()) {
+      if (arrs.length === 2) {
+        const missed = arrs.find((a) => a.value === 0);
+        if (missed) {
+          const idx = arrows.indexOf(missed);
+          if (idx !== -1) arrows.splice(idx, 1);
+        }
+      }
     }
 
     const spotCounts = arrows.reduce<Record<number, number>>((acc, arrow) => {

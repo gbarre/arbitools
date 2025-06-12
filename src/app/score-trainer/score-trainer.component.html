@@ -6,7 +6,7 @@
       id="disciplineSelect"
       class="form-select w-auto d-inline-block ms-2"
       [(ngModel)]="selectedDiscipline"
-      (ngModelChange)="generate()">
+      (ngModelChange)="generateAndFocusArrow1()">
       <option *ngFor="let d of disciplines" [value]="d">{{ d.replace('scores_', '') }}</option>
     </select>
     <div class="float-end bg-info p-2 rounded-3">
@@ -21,7 +21,7 @@
         <button
           type="button"
           class="btn btn-warning float-end"
-          (click)="generate()">
+          (click)="generateAndFocusArrow1()">
           Nouvelle situation
         </button>
       </h5>
@@ -79,8 +79,10 @@
                   class="form-control"
                   id="arrow1"
                   formControlName="arrow1"
-                  min="0"
+                  min="minArrowValue"
                   [max]="maxArrowValue"
+                  autofocus
+                  #arrow1Input
                 />
               </td>
               <td>
@@ -89,7 +91,7 @@
                   class="form-control"
                   id="arrow2"
                   formControlName="arrow2"
-                  min="0"
+                  min="minArrowValue"
                   [max]="maxArrowValue"
                 />
               </td>
@@ -99,7 +101,7 @@
                   class="form-control"
                   id="arrow3"
                   formControlName="arrow3"
-                  min="0"
+                  min="minArrowValue"
                   [max]="maxArrowValue"
                 />
               </td>

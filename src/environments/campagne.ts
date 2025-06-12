@@ -78,7 +78,7 @@ campagne.setTables(campagneTables);
 
 export const scores_campagne = {
   trispot: {
-    min: 0,
+    min: 1,
     max: 6,
     arrows: 3,
   },

@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+} from '@angular/core';
 import {
   Arrow,
   ScoreResult,
@@ -14,7 +20,7 @@ import { environment } from 'src/environments/environments';
   styleUrl: './score-trainer.component.scss',
   standalone: false,
 })
-export class ScoreTrainerComponent implements OnInit {
+export class ScoreTrainerComponent implements OnInit, AfterViewInit {
   situation!: ShootSituation & { errorSpot?: number };
   scoreResult!: ScoreResult;
   scoreForm!: FormGroup;
@@ -22,6 +28,8 @@ export class ScoreTrainerComponent implements OnInit {
   groupedArrows: Record<number, Arrow[]> = { 1: [], 2: [], 3: [] };
   disciplines = Object.keys(environment.scores);
   selectedDiscipline = this.disciplines[0];
+
+  @ViewChild('arrow1Input') arrow1Input!: ElementRef<HTMLInputElement>;
 
   constructor(
     private generator: ShootGeneratorService,
@@ -32,10 +40,15 @@ export class ScoreTrainerComponent implements OnInit {
     this.generate();
   }
 
+  ngAfterViewInit() {
+    // Optionnel : focus initial si besoin
+  }
+
   generate(): void {
     this.submitted = false;
     this.situation = this.generator.generateSituation(
       this.numArrows,
+      this.minArrowValue,
       this.maxArrowValue
     );
     this.scoreResult = this.generator.calculateScore(
@@ -64,6 +77,15 @@ export class ScoreTrainerComponent implements OnInit {
     });
   }
 
+  generateAndFocusArrow1() {
+    this.generate();
+    setTimeout(() => {
+      if (this.arrow1Input) {
+        this.arrow1Input.nativeElement.focus();
+      }
+    });
+  }
+
   groupArrowsBySpot(): void {
     this.groupedArrows = { 1: [], 2: [], 3: [] };
     this.situation.arrows.forEach((arrow) => {
@@ -85,6 +107,10 @@ export class ScoreTrainerComponent implements OnInit {
     }
 
     return values;
+  }
+
+  get minArrowValue(): number {
+    return (environment.scores as any)[this.selectedDiscipline].trispot.min;
   }
 
   get maxArrowValue(): number {

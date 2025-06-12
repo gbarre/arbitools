@@ -50,7 +50,7 @@ salle.setTables(salleTables);
 
 export const scores_salle = {
   trispot: {
-    min: 0,
+    min: 6,
     max: 10,
     arrows: 3,
   },
