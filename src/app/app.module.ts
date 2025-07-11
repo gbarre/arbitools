@@ -17,13 +17,17 @@ import {
   withInterceptorsFromDi,
 } from '@angular/common/http';
 import { ScoreTrainerComponent } from './score-trainer/score-trainer.component';
+import { NewsComponent } from './news/news.component';
+import { RulesComponent } from './rules/rules.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChangelogComponent,
     HomeComponent,
+    NewsComponent,
     QuizComponent,
+    RulesComponent,
     TableCheckerComponent,
     TableDisciplineComponent,
     ScoreTrainerComponent,

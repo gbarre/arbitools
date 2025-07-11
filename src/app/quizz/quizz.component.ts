@@ -11,7 +11,6 @@ import { ParsedQuestion, Question } from '../models/question.model';
 @Component({
   selector: 'app-quizz',
   templateUrl: './quizz.component.html',
-  styleUrls: ['./quizz.component.scss'],
   standalone: false,
 })
 export class QuizComponent implements OnInit {

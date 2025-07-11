@@ -5,12 +5,14 @@ import { TableDisciplineComponent } from './table-discipline/table-discipline.co
 import { QuizComponent } from './quizz/quizz.component';
 import { ChangelogComponent } from './changelog/changelog.component';
 import { ScoreTrainerComponent } from './score-trainer/score-trainer.component';
+import { NewsComponent } from './news/news.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'table-discipline', component: TableDisciplineComponent },
   { path: 'quizz', component: QuizComponent },
   { path: 'score-trainer', component: ScoreTrainerComponent },
+  { path: 'news', component: NewsComponent },
   { path: 'changelog', component: ChangelogComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

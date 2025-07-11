@@ -1,0 +1,61 @@
+<div class="container">
+  <h2>Résumé rapide des nouveautés du règlement</h2>
+  <div class="alert alert-warning" role="alert">
+    <strong>Disclaimer :</strong> Cette page tente d'afficher les différences
+    avec le règlement précédent à titre informatif. Elle n'est pas affiliée à
+    la <strong>FFTA</strong> et n'a aucun lien officiel avec celle-ci.
+    <app-rules />
+
+  </div>
+
+  <div *ngFor="let versionKey of rulesKeys" class="mb-5">
+    <h3 class="text-primary mb-3">
+      {{ rules[versionKey].name }}
+    </h3>
+
+    <div class="row g-4">
+      <div
+        class="col-md-10 offset-md-1"
+        *ngFor="let topic of rules[versionKey].topics; let i = index">
+
+      <!-- Règlements généraux -->
+      <h5 *ngIf="isFirstGeneral(rules[versionKey].topics, i)">
+        Règlements généraux
+      </h5>
+
+      <!-- Règlements sportifs -->
+      <h5 *ngIf="isFirstSportif(rules[versionKey].topics, i)">
+        Règlements sportifs
+      </h5>
+
+        <div
+          class="card shadow-sm"
+          [ngClass]="{
+            'bg-warning': topic.deleted,
+            'bg-success': topic.added,
+          }">
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ topic.title }}
+              <a
+                *ngIf="topic.link"
+                [href]="topic.link"
+                target="_blank"
+                class="ms-2"
+                title="Voir le règlement">
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </a>
+              <span
+                *ngIf="topic.discipline"
+                class="float-end text-muted"
+                style="font-size: 0.95em;">
+                {{ topic.discipline }}
+              </span>
+            </h5>
+            <p class="card-text" [innerHTML]="topic.content"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

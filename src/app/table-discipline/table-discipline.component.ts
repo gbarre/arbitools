@@ -7,7 +7,6 @@ import { Table, TablesConfig } from '../models/table.models';
 @Component({
   selector: 'app-table-discipline',
   templateUrl: './table-discipline.component.html',
-  styleUrls: ['./table-discipline.component.scss'],
   standalone: false,
 })
 export class TableDisciplineComponent implements OnInit {
