@@ -36,7 +36,7 @@ export const questions: Question[] = [
   },
   {
     question:
-      'Lors d’un concours à 18 mètres en senior 3 (S3) participe à deux départs :',
+      'Lors d’un concours à 18 mètres, un senior 3 (S3) participe à deux départs :',
     answers: [
       'MMM Ses deux scores seront pris en compte pour le classement national',
       '[_] Ses deux scores seront pris en compte pour le classement officiel de la compétition',
@@ -106,8 +106,8 @@ export const questions: Question[] = [
   {
     question: 'Un jeune arbitre peut :',
     answers: [
-      'MMM Arbitrer un concours adulte jusqu’au niveau du championnat départemental',
-      '[_] Arbitrer un concours adulte jusqu’au niveau du championnat régional',
+      '[_] Arbitrer un concours adulte jusqu’au niveau du championnat départemental',
+      'MMM Arbitrer un concours adulte jusqu’au niveau du championnat régional',
       '[_] Etre responsable d’un concours adulte',
     ],
   },
@@ -123,7 +123,7 @@ export const questions: Question[] = [
   {
     question:
       'Pour une compétition sélective, quel est le nombre minimum de cibles par départ pour que la compétition soit prise en compte ?',
-    answers: ['[_] 6 cibles', 'MMM 8 cibles', '[_] 10 cibles'],
+    answers: ['MMM 6 cibles', '[_] 8 cibles', '[_] 10 cibles'],
   },
   {
     question:
@@ -373,7 +373,7 @@ export const questions: Question[] = [
   },
   {
     question:
-      "Lors d'une compétition sélective de TAE (70m), sur combien de flèches est établi le classement 7 :",
+      "Lors d'une compétition sélective de TAE (70m), sur combien de flèches est établi le classement :",
     answers: ['[_] 40', '[_] 60', 'MMM 72'],
   },
   {
@@ -509,7 +509,7 @@ export const questions: Question[] = [
     answers: [
       '[_] Doit obligatoirement porter la tenue de son club',
       'MMM Peut porter un jean',
-      '[_]Ne peut jamais porter de jean.',
+      '[_] Ne peut jamais porter de jean.',
     ],
   },
   {
