@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import {
-  Arrow,
-  ShootSituation,
+  SpottedArrow,
+  SpottedShootSituation,
   ScoreResult,
 } from '../models/shoot-situation.model';
 
 @Injectable({ providedIn: 'root' })
-export class ShootGeneratorService {
+export class TrispotGeneratorService {
   generateSituation(
     minArrows: number = 3,
     minScore: number = 6,
     maxScore: number = 10
-  ): ShootSituation & { errorSpot?: number } {
-    const arrows: Arrow[] = [];
+  ): SpottedShootSituation & { errorSpot?: number } {
+    const arrows: SpottedArrow[] = [];
     const numArrows = this.randomInt(minArrows, minArrows + 1);
     const spots = [1, 2, 3];
     let spotsForArrows: number[] = [];
@@ -42,7 +42,7 @@ export class ShootGeneratorService {
     }
 
     // Règle : si un spot a 2 flèches dont une manquée, on retire la flèche manquée
-    const arrowsBySpot = new Map<number, Arrow[]>();
+    const arrowsBySpot = new Map<number, SpottedArrow[]>();
     for (const arrow of arrows) {
       if (!arrowsBySpot.has(arrow.spot)) arrowsBySpot.set(arrow.spot, []);
       arrowsBySpot.get(arrow.spot)!.push(arrow);
@@ -88,13 +88,13 @@ export class ShootGeneratorService {
   }
 
   calculateScore(
-    situation: ShootSituation,
+    situation: SpottedShootSituation,
     forceLateErrors: boolean = true
   ): ScoreResult {
     const maxArrows = 3;
     let arrows = [...situation.arrows];
 
-    const spotGroups = new Map<number, Arrow[]>();
+    const spotGroups = new Map<number, SpottedArrow[]>();
     arrows.forEach((a) => {
       if (!spotGroups.has(a.spot)) spotGroups.set(a.spot, []);
       spotGroups.get(a.spot)!.push(a);
@@ -121,7 +121,7 @@ export class ShootGeneratorService {
 
     const totalErrors = tooManyArrowsErrors + duplicateErrors + lateErrors;
 
-    const toRemove = new Set<Arrow>();
+    const toRemove = new Set<SpottedArrow>();
 
     duplicateErrorsPerSpot.forEach((errorsInSpot, spot) => {
       const arrowsAtSpot = arrows

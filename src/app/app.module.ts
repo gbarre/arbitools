@@ -19,19 +19,23 @@ import {
 import { ScoreTrainerComponent } from './score-trainer/score-trainer.component';
 import { NewsComponent } from './news/news.component';
 import { RulesComponent } from './rules/rules.component';
+import { TrispotComponent } from './score-trainer/trispot/trispot.component';
+import { MonospotComponent } from './score-trainer/monospot/monospot.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChangelogComponent,
     HomeComponent,
+    MonospotComponent,
     NewsComponent,
     QuizComponent,
     RulesComponent,
-    TableCheckerComponent,
-    TableDisciplineComponent,
     ScoreTrainerComponent,
     ShowTableComponent,
+    TableCheckerComponent,
+    TableDisciplineComponent,
+    TrispotComponent,
   ],
   imports: [
     AppRoutingModule,

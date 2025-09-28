@@ -82,4 +82,9 @@ export const scores_campagne = {
     max: 6,
     arrows: 3,
   },
+  monospot: {
+    min: 1,
+    max: 6,
+    arrows: 3,
+  },
 };

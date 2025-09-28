@@ -54,4 +54,9 @@ export const scores_salle = {
     max: 10,
     arrows: 3,
   },
+  monospot: {
+    min: 1,
+    max: 10,
+    arrows: 3,
+  },
 };

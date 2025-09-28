@@ -22,4 +22,5 @@ export const environment = {
     scores_salle,
     scores_campagne,
   },
+  spotTypes: ['monospot', 'trispot'],
 };
