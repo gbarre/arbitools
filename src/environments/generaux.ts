@@ -12,8 +12,7 @@ const optionsList = {
   oui_non: [
     'Non', // 0
     "Oui, jusqu'au championnat de Région inclus", // 1
-    "Oui, dans les divisions d'arcs ouvertes aux U13", // 2
-    'Oui', // 3
+    'Oui', // 2
   ],
 };
 
@@ -27,20 +26,20 @@ const generalTables: TablesConfig = {
       rows: [
         "U11<br />jusqu'à <strong>7 ans</strong>",
         'U11<br />de <strong>8, 9<br />et 10 ans</strong>',
-        'U11<br />10 ans<br /><strong><u>surclassés U13</u></strong>',
         'U11<br />10 ans, CL',
-        'U11<br />10 ans, CO',
+        'U11<br />10 ans, CO / Libre',
         'U11<br />10 ans, BB',
         'U11<br />10 ans, APN',
         'U11<br />10 ans, AD',
-        'U11<br />10 ans, Arc libre',
         'U11<br />10 ans, Arc Chasse',
       ],
       columns: [
         'Certificats médicaux',
         '18m',
         '25m',
-        'TAE',
+        'TAEI',
+        'TAEN',
+        'Beursault',
         'Campagne',
         'Nature',
         '3D',
@@ -52,6 +51,14 @@ const generalTables: TablesConfig = {
         {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[0],
+        },
+        {
+          options: optionsList.oui_non,
+          correct: optionsList.oui_non[0],
+        },
+        {
+          options: optionsList.oui_non,
+          correct: optionsList.oui_non[0],
         },
         {
           options: optionsList.oui_non,
@@ -94,6 +101,10 @@ const generalTables: TablesConfig = {
         },
         {
           options: optionsList.oui_non,
+          correct: optionsList.oui_non[0],
+        },
+        {
+          options: optionsList.oui_non,
           correct: optionsList.oui_non[1],
         },
         {
@@ -108,36 +119,9 @@ const generalTables: TablesConfig = {
           options: optionsList.oui_non,
           correct: optionsList.oui_non[0],
         },
-      ],
-      [
-        // U11 10 ans surclassés U13
-        {
-          options: optionsList.certificats_medicaux,
-          correct: optionsList.certificats_medicaux[4],
-        },
         {
           options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
+          correct: optionsList.oui_non[0],
         },
       ],
       [
@@ -148,46 +132,68 @@ const generalTables: TablesConfig = {
         },
         {
           options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
+          correct: optionsList.oui_non[2],
         },
         {
           options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
+          correct: optionsList.oui_non[2],
         },
         {
           options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
+          correct: optionsList.oui_non[2],
         },
         {
           options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
+          correct: optionsList.oui_non[2],
+        },
+        {
+          options: optionsList.oui_non,
+          correct: optionsList.oui_non[2],
+        },
+        {
+          options: optionsList.oui_non,
+          correct: optionsList.oui_non[2],
         },
         'disabled',
         'disabled',
       ],
       [
-        // U11 10 ans, CO
+        // U11 10 ans, CO / Libre
         {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[4],
         },
-        'disabled',
-        'disabled',
         {
           options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
+          correct: optionsList.oui_non[2],
         },
         {
           options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
+          correct: optionsList.oui_non[2],
         },
         {
           options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
+          correct: optionsList.oui_non[0],
         },
         {
           options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
+          correct: optionsList.oui_non[2],
+        },
+        {
+          options: optionsList.oui_non,
+          correct: optionsList.oui_non[2],
+        },
+        {
+          options: optionsList.oui_non,
+          correct: optionsList.oui_non[2],
+        },
+        {
+          options: optionsList.oui_non,
+          correct: optionsList.oui_non[2],
+        },
+        {
+          options: optionsList.oui_non,
+          correct: optionsList.oui_non[2],
         },
       ],
       [
@@ -199,14 +205,22 @@ const generalTables: TablesConfig = {
         'disabled',
         'disabled',
         'disabled',
-        'disabled',
         {
           options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
+          correct: optionsList.oui_non[2],
         },
         {
           options: optionsList.oui_non,
-          correct: optionsList.oui_non[3],
+          correct: optionsList.oui_non[2],
+        },
+        'disabled',
+        {
+          options: optionsList.oui_non,
+          correct: optionsList.oui_non[2],
+        },
+        {
+          options: optionsList.oui_non,
+          correct: optionsList.oui_non[2],
         },
       ],
       [
@@ -215,6 +229,8 @@ const generalTables: TablesConfig = {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[4],
         },
+        'disabled',
+        'disabled',
         'disabled',
         'disabled',
         'disabled',
@@ -232,19 +248,14 @@ const generalTables: TablesConfig = {
         'disabled',
         'disabled',
         'disabled',
-        'disabled',
-        'disabled',
-      ],
-      [
-        // U11 10 ans, Arc libre
         {
-          options: optionsList.certificats_medicaux,
-          correct: optionsList.certificats_medicaux[4],
+          options: optionsList.oui_non,
+          correct: optionsList.oui_non[2],
         },
-        'disabled',
-        'disabled',
-        'disabled',
-        'disabled',
+        {
+          options: optionsList.oui_non,
+          correct: optionsList.oui_non[2],
+        },
         'disabled',
         'disabled',
       ],
@@ -254,6 +265,8 @@ const generalTables: TablesConfig = {
           options: optionsList.certificats_medicaux,
           correct: optionsList.certificats_medicaux[4],
         },
+        'disabled',
+        'disabled',
         'disabled',
         'disabled',
         'disabled',
