@@ -521,8 +521,8 @@ export const questions: Question[] = [
     question:
       'Lors d’un surclassement ponctuel, avec changement de distance, blason ou piquet, un archer U18 doit :',
     answers: [
-      'MMM Avoir un certificat médical de surclassement établi par un médecin de son choix',
-      '[_] Avoir un certificat médical de surclassement établi par un médecin agréé par la FFTA',
+      '[_] Avoir un certificat médical de surclassement établi par un médecin de son choix',
+      'MMM Avoir un certificat médical de surclassement établi par un médecin agréé par la FFTA',
       "[_] N'a pas de certificat médical de surclassement à produire",
     ],
   },
@@ -569,7 +569,7 @@ export const questions: Question[] = [
   },
   {
     question: 'La distance maximale pour une compétiteur para est de :',
-    answers: ['MMM 70 m', '[_] 60m', '[_] 50m'],
+    answers: ['MMM 70m', '[_] 60m', '[_] 50m'],
   },
   {
     question: "Le para-tir à l'arc :",
@@ -840,7 +840,7 @@ export const questions: Question[] = [
     answers: [
       '[_] Est celui de l’archer',
       '[_] Est celui du président du club organisateur',
-      "MMM Est celui désigné par l'arbitre responsable.",
+      "MMM Est celui désigné par l'arbitre responsable",
     ],
   },
   {
@@ -848,8 +848,8 @@ export const questions: Question[] = [
       'Un archer U11 (poussin) de 9 ans tire en compétition en salle dans la condition suivante :',
     answers: [
       '[_] Sur un blason de 60cm avec le centre à 1m du sol et à 15 mètres de distance',
-      '[_] Sur un blason de 80 cm avec le centre à 1.10 du sol et à 15 mètres de distance',
-      'MMM Sur un blason de 80 cm avec le centre à 1.10 du sol et à 18 mètres de distance',
+      '[_] Sur un blason de 80 cm avec le centre à 1m10 du sol et à 15 mètres de distance',
+      'MMM Sur un blason de 80 cm avec le centre à 1m10 du sol et à 18 mètres de distance',
     ],
   },
   {
@@ -883,7 +883,7 @@ export const questions: Question[] = [
     answers: [
       '[_] Seulement dans les trois premiers mois de sa prise de licence',
       '[_] Ne peut pas changer de club en cours de saison sportive',
-      "MMM n'importe quel moment",
+      "MMM N'importe quel moment",
     ],
   },
   {
@@ -983,7 +983,7 @@ export const questions: Question[] = [
   },
   {
     question:
-      "En Tir en campagne, à la fin d'une compétition sélective, si un peloton n’a pas complété le nombre total de 5 et de 6:",
+      "En Tir en campagne, à la fin d'une compétition sélective, si un peloton n’a pas complété le nombre total de 5 et de 6 :",
     answers: [
       "[_] L'organisateur peut ne pas accepter d'enregistrer les résultats des compétiteurs concernés",
       "[_] L'organisateur doit obligatoirement calculer les totaux manquants et les enregistrer",
@@ -1042,7 +1042,7 @@ export const questions: Question[] = [
   },
   {
     question:
-      'En compétition par individuelle de Tir 3D, à quel moment doit-on déclencher le chronomètre ? :',
+      'En compétition individuelle de Tir 3D, à quel moment doit-on déclencher le chronomètre ? :',
     answers: [
       "[_] Lorsque l'archer quitte le pas d'attente",
       "MMM Lorsque l'archer arrive à son pas de tir",
