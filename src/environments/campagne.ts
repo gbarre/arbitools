@@ -57,7 +57,7 @@ const campagneTables: TablesConfig = {
       ['Blanc', 'Blanc', 'Blanc', 'Blanc', 'disabled', 'disabled'], // U15
       ['Blanc', 'Bleu', 'Bleu', 'Blanc', 'disabled', 'disabled'], // U18
       ['Bleu', 'Rouge', 'Rouge', 'Blanc', 'disabled', 'disabled'], // U21
-      ['Bleu', 'Rouge', 'Rouge', 'Blanc', 'Rouge', 'Rouge'], // S1
+      ['Bleu', 'Rouge', 'Rouge', 'Blanc', 'Rouge', 'Bleu'], // S1
       ['Bleu', 'Rouge', 'Rouge', 'Blanc', 'disabled', 'disabled'], // S2
       ['Bleu', 'Rouge', 'Rouge', 'Blanc', 'disabled', 'disabled'], // S3
     ],
