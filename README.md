@@ -1,27 +1,47 @@
-# Arbitools
+# ArbiTools
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+ArbiTools is a lightweight Angular web application designed to help users
+review and practice parts of the French Archery Federation (FFTA) regulations.
+It is an educational tool only — it is not an official FFTA product and has no
+legal value.
 
-## Development server
+## Key information
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Framework: Angular 19
+- Project version: 1.5.0
+- License: GNU General Public License v3 (see [LICENSE](./LICENSE) file)
 
-## Code scaffolding
+## Main dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The project uses the following notable dependencies (see [package.json](./package.json) for full
+list and versions):
 
-## Build
+- @angular/* (core Angular packages, v19.2.x)
+- bootstrap (UI styles)
+- @fortawesome/fontawesome-free (icons)
+- ng-toggle-button (UI toggle component)
+- rxjs, zone.js, tslib
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Dev dependencies include the Angular CLI and TypeScript compiler:
 
-## Running unit tests
+- @angular/cli
+- @angular-devkit/build-angular
+- typescript
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Prerequisites
 
-## Running end-to-end tests
+- Node.js (recommend Node 18 or newer)
+- npm (or yarn) _Ensure you have a compatible Node.js and npm installed._
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Local setup and development
 
-## Further help
+1. Clone the repository: `git clone https://github.com/gbarre/arbitools`
+2. Install dependencies: `npm install`
+3. Run the development server: `npm start` \
+   Then open <http://localhost:4200/> in your browser. The app will reload when
+   you change files.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Building for production
+
+Build the app for production: `npm run build`. The build artifacts will be
+stored in the `dist/` directory.
