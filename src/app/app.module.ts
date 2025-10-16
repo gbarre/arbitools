@@ -21,6 +21,9 @@ import { NewsComponent } from './news/news.component';
 import { RulesComponent } from './rules/rules.component';
 import { TrispotComponent } from './score-trainer/trispot/trispot.component';
 import { MonospotComponent } from './score-trainer/monospot/monospot.component';
+import { TargetComponent } from 'src/app/components/target/target.component';
+import { ScoreFormComponent } from './components/score-form/score-form.component';
+import { ScoreResultComponent } from './components/score-result/score-result.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,8 @@ import { MonospotComponent } from './score-trainer/monospot/monospot.component';
     TableCheckerComponent,
     TableDisciplineComponent,
     TrispotComponent,
+    ScoreFormComponent,
+    ScoreResultComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -44,6 +49,7 @@ import { MonospotComponent } from './score-trainer/monospot/monospot.component';
     FormsModule,
     NgToggleModule.forRoot(),
     ReactiveFormsModule,
+    TargetComponent,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent],

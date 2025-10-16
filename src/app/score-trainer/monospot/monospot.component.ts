@@ -45,7 +45,6 @@ export class MonospotComponent implements OnInit {
       this.situation,
       this.selectedDiscipline !== 'scores_campagne'
     );
-    // this.groupArrowsBySpot();
 
     this.scoreForm = this.fb.group({
       arrow1: [
@@ -67,17 +66,8 @@ export class MonospotComponent implements OnInit {
     });
   }
 
-  generateAndFocusArrow1() {
-    this.generate();
-    setTimeout(() => {
-      if (this.arrow1Input) {
-        this.arrow1Input.nativeElement.focus();
-      }
-    });
-  }
-
-  onSubmit(): void {
-    this.submitted = true;
+  showAnswer(submitted: boolean): void {
+    this.submitted = submitted;
   }
 
   get retainedArrows(): number[] {
@@ -93,15 +83,15 @@ export class MonospotComponent implements OnInit {
   }
 
   get minArrowValue(): number {
-    return (environment.scores as any)[this.selectedDiscipline].trispot.min;
+    return (environment.scores as any)[this.selectedDiscipline].monospot.min;
   }
 
   get maxArrowValue(): number {
-    return (environment.scores as any)[this.selectedDiscipline].trispot.max;
+    return (environment.scores as any)[this.selectedDiscipline].monospot.max;
   }
 
   get numArrows(): number {
-    return (environment.scores as any)[this.selectedDiscipline].trispot.arrows;
+    return (environment.scores as any)[this.selectedDiscipline].monospot.arrows;
   }
   get hasLateArrow(): boolean {
     return this.situation.arrows.some((arrow) => arrow.isLate === true);

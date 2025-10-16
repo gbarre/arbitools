@@ -1,0 +1,79 @@
+
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Correction
+      <div class="float-end" *ngIf="scoreResult.penaltyCount > 0">
+        <span class="me-2">
+          {{ scoreResult.penaltyCount }}
+          erreur{{ scoreResult.penaltyCount > 1 ? 's' : '' }} de type :
+        </span>
+        <span
+          *ngIf="situation.errors.tooManyArrows"
+          class="badge bg-danger me-2 float-end">
+          Trop de flèches tirées
+        </span>
+        <span
+          *ngIf="
+            hasLateArrow
+            && (
+              (
+                selectedDiscipline === 'scores_campagne'
+                && situation.lateWarningGiven
+              )
+              || selectedDiscipline !== 'scores_campagne'
+            )
+            "
+          class="badge bg-danger me-2 float-end">
+          Hors temps
+        </span>
+      </div>
+      <span
+        class="badge bg-danger me-2 float-end"
+        *ngIf="
+          hasLateArrow
+          && !situation.lateWarningGiven
+          && selectedDiscipline === 'scores_campagne'
+        ">
+        Mettre un avertissement pour dépassement de temps
+      </span>
+    </h5>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered text-center mb-4">
+      <thead>
+        <tr>
+          <th>Flèche 1</th>
+          <th>Flèche 2</th>
+          <th>Flèche 3</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            [ngClass]="{
+            'green': scoreForm.value.arrow1 == retainedArrows[0],
+            'red': scoreForm.value.arrow1 != retainedArrows[0]
+            }">{{ retainedArrows[0] }}</td>
+          <td
+            [ngClass]="{
+            'green': scoreForm.value.arrow2 == retainedArrows[1],
+            'red': scoreForm.value.arrow2 != retainedArrows[1]
+            }">{{ retainedArrows[1] }}</td>
+          <td
+            [ngClass]="{
+            'green': scoreForm.value.arrow3 == retainedArrows[2],
+            'red': scoreForm.value.arrow3 != retainedArrows[2]
+            }">{{ retainedArrows[2] }}</td>
+          <td
+            [ngClass]="{
+            'green':
+              scoreForm.value.retainedScore == scoreResult.retainedScore,
+            'red':
+              scoreForm.value.retainedScore != scoreResult.retainedScore
+            }">{{ scoreResult.retainedScore }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

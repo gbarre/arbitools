@@ -67,15 +67,6 @@ export class TrispotComponent implements OnInit {
     });
   }
 
-  generateAndFocusArrow1() {
-    this.generate();
-    setTimeout(() => {
-      if (this.arrow1Input) {
-        this.arrow1Input.nativeElement.focus();
-      }
-    });
-  }
-
   groupArrowsBySpot(): void {
     this.groupedArrows = { 1: [], 2: [], 3: [] };
     this.situation.arrows.forEach((arrow) => {
@@ -83,8 +74,8 @@ export class TrispotComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {
-    this.submitted = true;
+  showAnswer(submitted: boolean): void {
+    this.submitted = submitted;
   }
 
   get retainedArrows(): number[] {

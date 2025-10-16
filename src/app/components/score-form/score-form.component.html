@@ -1,0 +1,73 @@
+
+<form [formGroup]="scoreForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="card mb-4 mt-3">
+    <div class="card-header">
+      <h5 class="card-title">Réponse</h5>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered text-center mb-4">
+        <thead>
+          <tr>
+            <th>Flèche 1</th>
+            <th>Flèche 2</th>
+            <th>Flèche 3</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input
+                type="number"
+                class="form-control"
+                id="arrow1"
+                formControlName="arrow1"
+                min="0"
+                [max]="maxArrowValue"
+                autofocus
+                #arrow1Input
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                class="form-control"
+                id="arrow2"
+                formControlName="arrow2"
+                min="0"
+                [max]="maxArrowValue"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                class="form-control"
+                id="arrow3"
+                formControlName="arrow3"
+                min="0"
+                [max]="maxArrowValue"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                class="form-control"
+                id="retainedScore"
+                formControlName="retainedScore"
+                min="0"
+                [max]="maxArrowValue * numArrows"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-end">
+        <button
+          type="submit"
+          class="btn btn-primary">
+          Valider
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

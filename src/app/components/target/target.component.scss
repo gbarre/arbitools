@@ -1,0 +1,31 @@
+.archery-target-container {
+  display: inline-block;
+  margin: 20px;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.arrow-point {
+  cursor: pointer;
+  transition: r 0.2s ease;
+}
+
+.arrow-point:hover {
+  r: 6;
+}
+
+.late-arrow {
+  opacity: 0.7;
+  stroke-dasharray: 2, 2;
+}
+
+circle {
+  transition: all 0.3s ease;
+}
+
+line {
+  transition: all 0.3s ease;
+}
