@@ -1,11 +1,15 @@
-<div class="mb-3">
+<div class="mb-3 text-end">
   <label for="disciplineSelect" class="form-label">Discipline :</label>
   <select
     id="disciplineSelect"
     class="form-select w-auto d-inline-block ms-2"
     [(ngModel)]="selectedDiscipline"
     (ngModelChange)="generate()">
-    <option *ngFor="let d of disciplines" [value]="d">{{ d.replace('scores_', '') }}</option>
+    <option
+      *ngFor="let d of disciplines"
+      [value]="d">
+      {{ d.replace('scores_', '') }}
+    </option>
   </select>
 </div>
 <div class="card mb-4">
@@ -14,7 +18,7 @@
       Situation générée
       <button
         type="button"
-        class="btn btn-warning float-end"
+        class="btn btn-warning float-end mobile-hidden"
         (click)="generate()">
         Nouvelle situation
       </button>
@@ -22,7 +26,7 @@
   </div>
   <div class="card-body">
     <div class="row">
-      <div class="col-4">
+      <div class="col-lg-4">
         <app-target
           [discipline]="
             selectedDiscipline === 'scores_campagne' ? 'campagne' : 'standard'
@@ -31,10 +35,10 @@
           [size]="10"
         ></app-target>
       </div>
-      <div class="col-8">
+      <div class="col-lg-8">
         <h6>Valeurs des flèches :</h6>
         <div *ngFor="let arrow of situation.arrows; let i = index" class="row">
-          <div class="col-4 offset-2 text-end">
+          <div class="col-4 offset-lg-2 text-end">
             <span class="badge bg-secondary me-2">Flèche {{ i + 1 }}</span>
           </div>
           <div class="col-1 text-center">
@@ -72,3 +76,11 @@
   [hasLateArrow]="hasLateArrow"
   [retainedArrows]="retainedArrows"
 ></app-score-result>
+
+<button
+  type="button"
+  class="btn btn-warning float-end mobile-only"
+  [ngClass]="{'mt-3': submitted, 'mt-0': !submitted}"
+  (click)="generate()">
+  Nouvelle situation
+</button>

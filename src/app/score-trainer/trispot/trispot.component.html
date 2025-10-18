@@ -1,12 +1,15 @@
-
-<div class="mb-3">
+<div class="mb-3 text-end">
   <label for="disciplineSelect" class="form-label">Discipline :</label>
   <select
     id="disciplineSelect"
     class="form-select w-auto d-inline-block ms-2"
     [(ngModel)]="selectedDiscipline"
     (ngModelChange)="generate()">
-    <option *ngFor="let d of disciplines" [value]="d">{{ d.replace('scores_', '') }}</option>
+    <option
+      *ngFor="let d of disciplines"
+      [value]="d">
+      {{ d.replace('scores_', '') }}
+    </option>
   </select>
 </div>
 <div class="card mb-4">
@@ -15,22 +18,20 @@
       Situation générée
       <button
         type="button"
-        class="btn btn-warning float-end"
+        class="btn btn-warning float-end mobile-hidden"
         (click)="generate()">
         Nouvelle situation
       </button>
     </h5>
   </div>
   <div class="card-body">
-    <table class="table table-bordered text-center">
-      <thead>
-        <tr>
-          <th *ngFor="let spot of [1, 2, 3]">Spot {{ spot }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td *ngFor="let spot of [1, 2, 3]">
+    <div class="row text-center">
+      <div class="col-lg-4" *ngFor="let spot of [1, 2, 3]; let i = index">
+        <div class="card" [ngClass]="{'top-spot': i > 0}">
+          <div class="card-header">
+            <h6 class="card-title">Spot {{ spot }}</h6>
+          </div>
+          <div class="card-body">
             <app-target
               [discipline]="
                 selectedDiscipline === 'scores_campagne' ? 'campagne' : 'standard'
@@ -39,23 +40,27 @@
               [size]="5"
               [targetSize]="150"
             ></app-target>
-            <div *ngFor="let arrow of groupedArrows[spot]">
-              <span class="badge bg-primary me-1">{{ arrow.value }}</span>
-              <span
-                *ngIf="arrow.isLate"
-                class="badge bg-danger ms-2">
-                Hors temps
-                <ng-container
-                  *ngIf="selectedDiscipline === 'scores_campagne'">
-                  ({{ situation.lateWarningGiven ? 'déjà' : 'pas' }}
-                  avertis)
-                </ng-container>
-              </span>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            <div class="row">
+              <div class="col" *ngIf="groupedArrows[spot]?.length === 0">
+                Aucune flèche dans ce spot.
+              </div>
+              <div *ngFor="let arrow of groupedArrows[spot]" class="col">
+                <span class="badge bg-primary me-1">{{ arrow.value }}</span>
+                <span
+                  *ngIf="arrow.isLate"
+                  class="badge bg-danger ms-2">
+                  Hors temps
+                  <ng-container
+                    *ngIf="selectedDiscipline === 'scores_campagne'">
+                    ({{ situation.lateWarningGiven ? 'déjà' : 'pas' }}
+                    avertis)
+                  </ng-container>
+                </span>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -76,3 +81,11 @@
   [hasLateArrow]="hasLateArrow"
   [retainedArrows]="retainedArrows"
 ></app-score-result>
+
+<button
+  type="button"
+  class="btn btn-warning float-end mobile-only"
+  [ngClass]="{'mt-3': submitted, 'mt-0': !submitted}"
+  (click)="generate()">
+  Nouvelle situation
+</button>

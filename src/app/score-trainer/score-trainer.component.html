@@ -1,17 +1,19 @@
 <div class="container mt-4">
-  <h3 class="mb-4">Score Trainer</h3>
-  <div class="mb-3">
-    <label for="spotTypeSelect" class="form-label">Type de cible :</label>
-    <select
-      id="spotTypeSelect"
-      class="form-select w-auto d-inline-block ms-2"
-      [(ngModel)]="selectedSpotType"
-      (ngModelChange)="onSpotTypeChange()">
-      <option *ngFor="let st of spotTypes" [value]="st">{{ st }}</option>
-    </select>
-    <div class="float-end bg-info p-2 rounded-3">
+  <h3 class="mb-0">Score Trainer</h3>
+  <div class="mb-3 row">
+    <div class="col-xl-8 bg-info p-2 rounded-3 mt-3">
       Pour des raisons de simplicité de calcul,
       le "manqué" est affiché "0" au lieu de "M".
+    </div>
+    <div class="col-xl-4 text-end mt-3">
+      <label for="spotTypeSelect" class="form-label">Type de cible :</label>
+      <select
+        id="spotTypeSelect"
+        class="form-select w-auto d-inline-block ms-2"
+        [(ngModel)]="selectedSpotType"
+        (ngModelChange)="onSpotTypeChange()">
+        <option *ngFor="let st of spotTypes" [value]="st">{{ st }}</option>
+      </select>
     </div>
   </div>
   <app-trispot *ngIf="selectedSpotType === 'trispot'"></app-trispot>

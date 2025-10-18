@@ -16,5 +16,11 @@ export class ScoreFormComponent {
 
   onSubmit(): void {
     this.submitted.emit(true);
+    setTimeout(() => {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth',
+      });
+    }, 100);
   }
 }

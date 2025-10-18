@@ -13,12 +13,12 @@ export class MonospotGeneratorService {
     maxScore: number = 10
   ): ShootSituation & { errorSpot?: number } {
     const arrows: Arrow[] = [];
-    const numArrows = this.randomInt(minArrows, minArrows + 1);
+    const numArrows = this.randomInt(minArrows, minArrows + 2);
 
     for (let i = 0; i < numArrows; i++) {
       const value =
         Math.random() < 0.1 ? 0 : this.randomInt(minScore, maxScore);
-      const isLate = Math.random() < 0.1;
+      const isLate = Math.random() < 0.3;
       arrows.push({ value, isLate });
     }
 
@@ -55,7 +55,9 @@ export class MonospotGeneratorService {
     const toRemove = new Set<Arrow>();
 
     for (let i = 0; i < tooManyArrowsErrors; i++) {
-      const bestArrow = arrows.reduce((max, a) =>
+      const remaining = arrows.filter((a) => !toRemove.has(a));
+      if (remaining.length === 0) break;
+      const bestArrow = remaining.reduce((max, a) =>
         a.value > max.value ? a : max
       );
       toRemove.add(bestArrow);

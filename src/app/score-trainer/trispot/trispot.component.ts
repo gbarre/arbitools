@@ -65,6 +65,12 @@ export class TrispotComponent implements OnInit {
         [Validators.required, Validators.min(0), Validators.max(18)],
       ],
     });
+    setTimeout(() => {
+      window.scrollTo({
+        top: 100,
+        behavior: 'smooth',
+      });
+    }, 200);
   }
 
   groupArrowsBySpot(): void {

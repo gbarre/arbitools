@@ -64,6 +64,12 @@ export class MonospotComponent implements OnInit {
         [Validators.required, Validators.min(0), Validators.max(18)],
       ],
     });
+    setTimeout(() => {
+      window.scrollTo({
+        top: 200,
+        behavior: 'smooth',
+      });
+    }, 100);
   }
 
   showAnswer(submitted: boolean): void {

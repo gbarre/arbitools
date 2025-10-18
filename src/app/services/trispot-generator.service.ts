@@ -13,7 +13,7 @@ export class TrispotGeneratorService {
     maxScore: number = 10
   ): SpottedShootSituation & { errorSpot?: number } {
     const arrows: SpottedArrow[] = [];
-    const numArrows = this.randomInt(minArrows, minArrows + 1);
+    const numArrows = this.randomInt(minArrows, minArrows + 2);
     const spots = [1, 2, 3];
     let spotsForArrows: number[] = [];
     let errorSpot: number | undefined;
@@ -37,7 +37,7 @@ export class TrispotGeneratorService {
     for (const spot of spotsForArrows) {
       const value =
         Math.random() < 0.1 ? 0 : this.randomInt(minScore, maxScore);
-      const isLate = Math.random() < 0.1;
+      const isLate = Math.random() < 0.3;
       arrows.push({ value, spot, isLate });
     }
 

@@ -27,25 +27,29 @@
           Hors temps
         </span>
       </div>
-      <span
+      <div
         class="badge bg-danger me-2 float-end"
         *ngIf="
           hasLateArrow
           && !situation.lateWarningGiven
           && selectedDiscipline === 'scores_campagne'
         ">
-        Mettre un avertissement pour dépassement de temps
-      </span>
+        Mettre un avertissement
+        <br class="mobile-only" /> pour dépassement de temps
+      </div>
     </h5>
   </div>
   <div class="card-body">
     <table class="table table-bordered text-center mb-4">
       <thead>
         <tr>
-          <th>Flèche 1</th>
-          <th>Flèche 2</th>
-          <th>Flèche 3</th>
-          <th>Total</th>
+            <th><span class="mobile-hidden">Flèche </span>1</th>
+            <th><span class="mobile-hidden">Flèche </span>2</th>
+            <th><span class="mobile-hidden">Flèche </span>3</th>
+            <th>
+              <span class="mobile-hidden">Total</span>
+              <span class="mobile-only">Σ</span>
+            </th>
         </tr>
       </thead>
       <tbody>
