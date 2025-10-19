@@ -5,7 +5,7 @@ import {
   ScoreResult,
   ShootSituation,
 } from 'src/app/models/shoot-situation.model';
-import { MonospotGeneratorService } from 'src/app/services/monospot-generatorservice';
+import { MonospotGeneratorService } from 'src/app/services/monospot-generator.service';
 import { environment } from 'src/environments/environments';
 
 @Component({
