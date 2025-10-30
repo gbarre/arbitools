@@ -8,7 +8,7 @@ legal value.
 ## Key information
 
 - Framework: Angular 19
-- Project version: 1.6.2
+- Project version: 1.7.0
 - License: GNU General Public License v3 (see [LICENSE](./LICENSE) file)
 
 ## Main dependencies

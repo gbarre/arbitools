@@ -20,36 +20,28 @@
         <tbody>
           <tr>
             <td>
-              <input
-                type="number"
-                class="form-control"
-                id="arrow1"
-                formControlName="arrow1"
-                min="0"
-                [max]="maxArrowValue"
-                autofocus
-                #arrow1Input
-              />
+              <select formControlName="arrow1" class="form-control">
+                <option [value]="0">0</option>
+                <option *ngFor="let val of arrowValues" [value]="val">
+                  {{ val }}
+                </option>
+              </select>
             </td>
             <td>
-              <input
-                type="number"
-                class="form-control"
-                id="arrow2"
-                formControlName="arrow2"
-                min="0"
-                [max]="maxArrowValue"
-              />
+              <select formControlName="arrow2" class="form-control">
+                <option [value]="0">0</option>
+                <option *ngFor="let val of arrowValues" [value]="val">
+                  {{ val }}
+                </option>
+              </select>
             </td>
             <td>
-              <input
-                type="number"
-                class="form-control"
-                id="arrow3"
-                formControlName="arrow3"
-                min="0"
-                [max]="maxArrowValue"
-              />
+              <select formControlName="arrow3" class="form-control">
+                <option [value]="0">0</option>
+                <option *ngFor="let val of arrowValues" [value]="val">
+                  {{ val }}
+                </option>
+              </select>
             </td>
             <td>
               <input

@@ -23,4 +23,12 @@ export class ScoreFormComponent {
       });
     }, 100);
   }
+
+  get arrowValues(): number[] {
+    const values: number[] = [];
+    for (let i = this.minArrowValue; i <= this.maxArrowValue; i++) {
+      values.push(i);
+    }
+    return values;
+  }
 }

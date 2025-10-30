@@ -1,0 +1,38 @@
+// Styles personnalisés supplémentaires si nécessaire
+
+.card-title {
+  color: #2c3e50;
+}
+
+.display-6 {
+  font-weight: bold;
+}
+
+// Style pour les explications HTML
+.explanation {
+  p {
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  strong {
+    color: #2c3e50;
+  }
+}
+
+// Amélioration visuelle des inputs
+.form-control,
+.form-select {
+  &:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+}
+
+// Espacement pour les icônes Bootstrap Icons (si utilisées)
+.bi {
+  margin-right: 0.25rem;
+}
