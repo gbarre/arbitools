@@ -1,6 +1,18 @@
 import { Rules } from 'src/app/models/rules.model';
 
 export const reglements: Rules = {
+  '2025-07-v2': {
+    name: 'Juillet 2025 v2 (saison sportive 2026)',
+    topics: [
+      {
+        title: 'I.G.2 : Matériel commun',
+        content:
+          'Ajout du paragraphe concernant le repérage des flèches pour le Parcours Nature.',
+        discipline: 'Tir Nature',
+        added: true,
+      },
+    ],
+  },
   '2025-07-v1': {
     name: 'Juillet 2025 v1 (saison sportive 2026)',
     topics: [
