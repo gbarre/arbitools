@@ -14,48 +14,77 @@
     </h3>
 
     <div class="row g-4">
-      <div
-        class="col-md-10 offset-md-1"
-        *ngFor="let topic of rules[versionKey].topics; let i = index">
+      <div class="col-md-10 offset-md-1">
+        <div class="accordion" [id]="'accordion-' + versionKey">
+          <ng-container
+            *ngFor="let topic of rules[versionKey].topics; let i = index">
 
-      <!-- Règlements généraux -->
-      <h5 *ngIf="isFirstGeneral(rules[versionKey].topics, i)">
-        Règlements généraux
-      </h5>
-
-      <!-- Règlements sportifs -->
-      <h5 *ngIf="isFirstSportif(rules[versionKey].topics, i)">
-        Règlements sportifs
-      </h5>
-
-        <div
-          class="card shadow-sm"
-          [ngClass]="{
-            'bg-warning': topic.deleted,
-            'bg-success': topic.added,
-          }">
-          <div class="card-body">
-            <h5 class="card-title">
-              {{ topic.title }}
-              <a
-                *ngIf="topic.link"
-                [href]="topic.link"
-                target="_blank"
-                class="ms-2"
-                title="Voir le règlement">
-                <i class="fa-solid fa-up-right-from-square"></i>
-              </a>
-              <span
-                *ngIf="topic.discipline"
-                class="float-end text-muted"
-                style="font-size: 0.95em;">
-                {{ topic.discipline }}
-              </span>
+            <!-- Règlements généraux -->
+            <h5 *ngIf="isFirstGeneral(rules[versionKey].topics, i)">
+              Règlements généraux
             </h5>
-            <p class="card-text" [innerHTML]="topic.content"></p>
-          </div>
+
+            <!-- Règlements sportifs -->
+            <h5 *ngIf="isFirstSportif(rules[versionKey].topics, i)" class="mt-3">
+              Règlements sportifs
+            </h5>
+
+            <div
+              class="accordion-item shadow-sm"
+              [ngClass]="{
+                'bg-warning': topic.deleted,
+                'bg-success': topic.added
+              }">
+              <h2
+                class="accordion-header"
+                [id]="'heading-' + versionKey + '-' + i">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#collapse-' + versionKey + '-' + i"
+                  aria-expanded="false"
+                  [attr.aria-controls]="'collapse-' + versionKey + '-' + i">
+                  <div class="d-flex w-100 align-items-center">
+                    <div class="d-flex align-items-center">
+                      <span class="me-2">{{ topic.title }}</span>
+                      <a
+                        *ngIf="topic.link"
+                        [href]="topic.link"
+                        target="_blank"
+                        class="ms-2"
+                        title="Voir le règlement"
+                        (click)="$event.stopPropagation()">
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                      </a>
+                    </div>
+                    <span
+                      *ngIf="topic.discipline"
+                      class="ms-auto text-muted"
+                      style="font-size: 0.95em; margin-right: 10px;">
+                      {{ topic.discipline }}
+                    </span>
+                  </div>
+                </button>
+              </h2>
+              <div
+                [id]="'collapse-' + versionKey + '-' + i"
+                class="accordion-collapse collapse"
+                [attr.aria-labelledby]="'heading-' + versionKey + '-' + i"
+                [attr.data-bs-parent]="'#accordion-' + versionKey">
+                <div class="accordion-body">
+                  <p class="card-text" [innerHTML]="topic.content"></p>
+                </div>
+              </div>
+            </div>
+          </ng-container>
         </div>
       </div>
     </div>
   </div>
+  <small class="d-block mt-2 text-muted">
+    Certaines parties de cette page peuvent avoir été générées par une
+    intelligence artificielle. Veuillez en vérifier l'exactitude avant toute
+    utilisation.
+  </small>
 </div>
