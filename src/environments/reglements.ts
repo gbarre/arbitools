@@ -1,6 +1,58 @@
 import { Rules } from 'src/app/models/rules.model';
 
 export const reglements: Rules = {
+  '2026-05-v20260502': {
+    name: 'Mai 2026 v20260502 (saison sportive 2026)',
+    topics: [
+      {
+        title: 'Refonte du document',
+        content:
+          '<ul><li>Document entièrement recomposé : nouvelle mise en page, nouvelle pagination (438 pages) et nouveau sommaire.</li><li>Intègre les modifications votées par le Conseil d’Administration de la FFTA en mars 2026.</li><li><i>La page des changements référence les championnats 3D sous « II.3.C.3 » et « II.3.C.4 » : il s’agit en réalité du chapitre II.6 (Tir sur cibles 3D).</i></li></ul>',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrage_saison_2026_version_20260502.pdf',
+      },
+      {
+        title: 'I.C.3.1.1 – Les U11 : puissance d’arc',
+        content:
+          'La puissance marquée par le fabricant sur les branches passe de <strong>18 à 20 livres</strong> maximum. Au-delà de 20 livres, certificat médical obligatoire délivré par un médecin agréé FFTA (puissance contrôlée par l’arbitre).',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrage_saison_2026_version_20260502.pdf#page=43',
+      },
+      {
+        title: 'II.3.B.2.1.1 – Blasons : zones bleues autorisées',
+        content:
+          '<ul><li>Les zones "1-4" des blasons de tir en campagne peuvent être <strong>noires ou bleues</strong>.</li><li>Tous les blasons d’une compétition doivent être de la même couleur.</li><li>En cas de retransmission télévisuelle ou de captation audiovisuelle, les blasons à zones bleues sont à privilégier.</li></ul>',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrage_saison_2026_version_20260502.pdf#page=294',
+        discipline: 'Tir en campagne',
+      },
+      {
+        title: 'II.3.D – Championnat de France par équipes de clubs',
+        content:
+          '<ul><li>Nouveau format : suppression des matchs de poule, remplacés par un <strong>tir de qualification sur 12 cibles à distances inconnues</strong> (9 flèches par cible, 3 par archer), puis ¼, ½ et finales sur boucles de 4 cibles à distances connues.</li><li>Contrôle du temps : 360 s par cible en qualification, 180 s en match.</li><li>Arrêté sélectif au plus tard 10 jours avant le championnat ou le 31 août.</li><li>La composition de l’équipe peut être modifiée <strong>le jour</strong> du championnat.</li><li>Disparition des quotas explicites (12 équipes femmes / 24 équipes hommes).</li></ul>',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrage_saison_2026_version_20260502.pdf#page=314',
+        discipline: 'Tir en campagne',
+      },
+      {
+        title: 'II.3.E – Championnat de France double-mixte',
+        content:
+          '<ul><li>Nouveau format : suppression des 3 poules de 4, remplacées par un <strong>tir de qualification sur 12 cibles à distances inconnues</strong> (4 flèches par cible, 2 par archer), puis ¼, ½ et finales sur boucles de 4 cibles à distances connues.</li><li>Contrôle du temps : 160 s par cible en qualification, 120 s en match.</li><li>Arrêté sélectif au plus tard 10 jours avant le championnat ou le 31 août.</li></ul>',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrage_saison_2026_version_20260502.pdf#page=322',
+        discipline: 'Tir en campagne',
+      },
+      {
+        title: 'II.6.C.3 – Championnat de France 3D par équipe de club',
+        content:
+          '<ul><li>L’épreuve de qualification passe de <strong>24 à 18 cibles</strong>, avec répartition imposée par groupes (G1 : 3, G2 : 5, G3 : 6, G4 : 4) et cumuls de distances par piquet (rouge 470–500 m, bleu 345–375 m, blanc 260–280 m).</li><li>Suppression des quotas de sélection (30 équipes femmes / 40 équipes hommes retenues).</li><li>Phases finales inchangées : 16 équipes, 1/8 à finale sur 4 cibles.</li></ul>',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrage_saison_2026_version_20260502.pdf#page=382',
+        discipline: 'Tir 3D',
+      },
+      {
+        title: 'II.6.C.4 – Championnat de France 3D Double-Mixte',
+        content:
+          '<ul><li>L’épreuve de qualification passe de <strong>24 à 18 cibles</strong>, avec la même répartition par groupes et les mêmes cumuls de distances que pour les équipes de clubs.</li><li>En phases finales, le Double-Mixte tire désormais <strong>4 flèches (2 par archer)</strong> en 90 s par cible, au lieu de 2 flèches (1 par archer).</li></ul>',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrage_saison_2026_version_20260502.pdf#page=385',
+        discipline: 'Tir 3D',
+      },
+    ],
+  },
   '2025-11-v20251126': {
     name: 'Novembre 2025 v20251126 (saison sportive 2026)',
     topics: [

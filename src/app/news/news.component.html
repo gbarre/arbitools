@@ -3,7 +3,11 @@
   <div class="alert alert-warning" role="alert">
     <strong>Disclaimer :</strong> Cette page tente d'afficher les différences
     avec le règlement précédent à titre informatif. Elle n'est pas affiliée à
-    la <strong>FFTA</strong> et n'a aucun lien officiel avec celle-ci.
+    la <strong>FFTA</strong> et n'a aucun lien officiel avec celle-ci. Le
+    contenue de cette page est fourni "tel quel", généré par une
+    intelligence artificielle et peut contenir des erreurs.
+    Pour toute question ou clarification, veuillez vous référer au règlement
+    officiel publié par la <strong>FFTA</strong>.
     <app-rules />
 
   </div>
@@ -20,7 +24,7 @@
             *ngFor="let topic of rules[versionKey].topics; let i = index">
 
             <!-- Règlements généraux -->
-            <h5 *ngIf="isFirstGeneral(rules[versionKey].topics, i)">
+            <h5 *ngIf="isFirstGeneral(rules[versionKey].topics, i)" class="mt-3">
               Règlements généraux
             </h5>
 
