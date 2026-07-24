@@ -2,13 +2,6 @@ import { Discipline } from 'src/app/models/discipline.model';
 import { TablesConfig } from 'src/app/models/table.models';
 
 const optionsList = {
-  certificats_medicaux: [
-    'Pas de certificat', // 0
-    'Avec certificat du médecin traitant', // 1
-    'Avec certificat du médecin agréé FFTA, si plus de 18# marquées', // 2
-    'Avec certificat du médecin agréé FFTA', // 3
-    'Avec certificat de surclassement du médecin agréé FFTA', // 4
-  ],
   oui_non: [
     'Non', // 0
     "Oui, jusqu'au championnat de Région inclus", // 1
@@ -17,24 +10,18 @@ const optionsList = {
 };
 
 const generalTables: TablesConfig = {
-  u11: {
-    name: 'U11',
+  u11_pratique: {
+    name: 'U11 - Pratique',
     description:
-      "Tableau de synthèse de la pratique du tir à l'arc pour les jeunes de moins de 11 ans (U11).",
+      "Tableau de synthèse de la pratique du tir à l'arc chez les U11.",
+    hint: '"Oui" pour les U11 de 8, 9 et 10 ans signifie : jusqu\'au championnat de Région inclus.',
     headers: {
       firstCell: '',
       rows: [
         "U11<br />jusqu'à <strong>7 ans</strong>",
         'U11<br />de <strong>8, 9<br />et 10 ans</strong>',
-        'U11<br />10 ans, CL',
-        'U11<br />10 ans, CO / Libre',
-        'U11<br />10 ans, BB',
-        'U11<br />10 ans, APN',
-        'U11<br />10 ans, AD',
-        'U11<br />10 ans, Arc Chasse',
       ],
       columns: [
-        'Certificats médicaux',
         '18m',
         '25m',
         'TAEI',
@@ -48,231 +35,120 @@ const generalTables: TablesConfig = {
     data: [
       [
         // U11 jusqu'à 7 ans
-        {
-          options: optionsList.certificats_medicaux,
-          correct: optionsList.certificats_medicaux[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
       ],
       [
         // U11 de 8, 9 et 10 ans
-        {
-          options: optionsList.certificats_medicaux,
-          correct: optionsList.certificats_medicaux[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[1],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[1],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[1] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[1] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[1] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[1] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[1] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[1] },
+      ],
+    ],
+  },
+  u11_surclasse: {
+    name: 'U11 surclassés en U13',
+    description:
+      "Tableau de synthèse de la pratique du tir à l'arc chez les U11 en dernière année (10 ans) surclassés en U13.",
+    hint: 'Certificat médical de surclassement établi par un médecin du sport nécessaire pour toutes ces pratiques.',
+    headers: {
+      firstCell: '',
+      rows: [
+        'Arc Classique',
+        'Arc à Poulies / Arc Libre',
+        'Arc Nu',
+        'Arc à Poulies Nu',
+        'Arc Droit',
+        'Arc Chasse',
+      ],
+      columns: [
+        '18m',
+        '25m',
+        'TAEI',
+        'TAEN',
+        'Beursault',
+        'Campagne',
+        'Nature',
+        '3D',
+      ],
+    },
+    data: [
+      [
+        // Arc Classique
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
       ],
       [
-        // U11 10 ans, CL
-        {
-          options: optionsList.certificats_medicaux,
-          correct: optionsList.certificats_medicaux[4],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        'disabled',
-        'disabled',
+        // Arc à Poulies / Arc Libre
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
       ],
       [
-        // U11 10 ans, CO / Libre
-        {
-          options: optionsList.certificats_medicaux,
-          correct: optionsList.certificats_medicaux[4],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[0],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
+        // Arc Nu
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
       ],
       [
-        // U11 10 ans, BB
-        {
-          options: optionsList.certificats_medicaux,
-          correct: optionsList.certificats_medicaux[4],
-        },
-        'disabled',
-        'disabled',
-        'disabled',
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        'disabled',
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
+        // Arc à Poulies Nu
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
       ],
       [
-        // U11 10 ans, APN
-        {
-          options: optionsList.certificats_medicaux,
-          correct: optionsList.certificats_medicaux[4],
-        },
-        'disabled',
-        'disabled',
-        'disabled',
-        'disabled',
-        'disabled',
-        'disabled',
-        'disabled',
-        'disabled',
+        // Arc Droit
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[2] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
       ],
       [
-        // U11 10 ans, AD
-        {
-          options: optionsList.certificats_medicaux,
-          correct: optionsList.certificats_medicaux[4],
-        },
-        'disabled',
-        'disabled',
-        'disabled',
-        'disabled',
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        {
-          options: optionsList.oui_non,
-          correct: optionsList.oui_non[2],
-        },
-        'disabled',
-        'disabled',
-      ],
-      [
-        // U11 10 ans, Arc Chasse
-        {
-          options: optionsList.certificats_medicaux,
-          correct: optionsList.certificats_medicaux[4],
-        },
-        'disabled',
-        'disabled',
-        'disabled',
-        'disabled',
-        'disabled',
-        'disabled',
-        'disabled',
-        'disabled',
+        // Arc Chasse
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
+        { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
       ],
     ],
   },
@@ -286,11 +162,11 @@ const generalTables: TablesConfig = {
       columns: ['Distance', 'Blason', 'Nombre de flèches', 'Score à réaliser'],
     },
     data: [
-      ['10', '80', '36', '280'],
-      ['15', '80', '36', '280'],
-      ['20', '80', '36', '280'],
-      ['25', '80', '36', '280'],
-      ['30', '80', '36', '280'],
+      ['10', '80', '6 x 6 flèches', '280'],
+      ['15', '80', '6 x 6 flèches', '280'],
+      ['20', '80', '6 x 6 flèches', '280'],
+      ['25', '80', '6 x 6 flèches', '280'],
+      ['30', '80', '6 x 6 flèches', '280'],
     ],
     mergedCells: [
       { rowIndex: 0, colIndex: 2, rowspan: 5, colspan: 1 }, // Fusion des flèches
@@ -307,9 +183,9 @@ const generalTables: TablesConfig = {
       columns: ['Distance', 'Blason', 'Nombre de flèches', 'Score à réaliser'],
     },
     data: [
-      ['40', '80', '36', '280'],
-      ['60', '122', '36', '280'],
-      ['70', '122', '36', '280'],
+      ['40', '80', '6 x 6 flèches', '280'],
+      ['60', '122', '6 x 6 flèches', '280'],
+      ['70', '122', '6 x 6 flèches', '280'],
     ],
     mergedCells: [
       { rowIndex: 0, colIndex: 2, rowspan: 5, colspan: 1 }, // Fusion des flèches
@@ -336,6 +212,6 @@ const generalTables: TablesConfig = {
 };
 
 export const reglements_generaux: Discipline = new Discipline(
-  'Règlements généraux'
+  'Règlements généraux',
 );
 reglements_generaux.setTables(generalTables);

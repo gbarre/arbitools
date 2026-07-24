@@ -6,69 +6,68 @@ const campagneTables: TablesConfig = {
     name: 'Distances inconnues',
     description:
       'Tableau des distances <strong>inconnues</strong> en tir campagne.',
-    hint: 'Les distances sont données en mètres, sous la forme "<strong>min - max</strong>". Par exemple : 12 - 18.',
+    hint: 'Les distances sont données en mètres, sous la forme "<strong>min - max</strong>". Par exemple : 12 - 18.<br />Piquet Rose : U11. Piquet Blanc : également utilisé par le piquet Orange pour les U13 (20 - 30 sur blason de 80cm).',
     headers: {
       firstCell: 'Blasons / Piquets',
       rows: ['20', '40', '60', '80'],
-      columns: ['Orange', 'Blanc', 'Bleu', 'Rouge'],
+      columns: ['Rose', 'Blanc', 'Bleu', 'Rouge'],
     },
     data: [
-      ['disabled', '5 - 10', '5 - 10', '10 - 15'],
-      ['disabled', '10 - 15', '10 - 20', '15 - 25'],
-      ['15 - 25', '15 - 25', '15 - 30', '20 - 35'],
-      ['20 - 30', '20 - 35', '30 - 45', '35 - 55'],
+      ['5 - 10', '5 - 10', '5 - 10', '10 - 15'],
+      ['5 - 15', '10 - 15', '10 - 20', '15 - 25'],
+      ['10 - 15', '15 - 25', '15 - 30', '20 - 35'],
+      ['15 - 20', '20 - 35', '30 - 45', '35 - 55'],
     ],
   },
   distances_connues: {
     name: 'Distances connues',
     description:
       'Tableau des distances <strong>connues</strong> en tir campagne.',
-    hint: 'Les distances sont données en mètres, sous la forme "<strong>d1 - d2 - d3</strong>". Par exemple : 12 - 18 - 24.',
+    hint: 'Les distances sont données en mètres, sous la forme "<strong>d1 - d2 - d3</strong>". Par exemple : 12 - 18 - 24.<br />Piquet Rose : U11. Piquet Blanc : également utilisé par le piquet Orange pour les U13 (30 - 30 - 30 sur blason de 80cm).',
     headers: {
       firstCell: 'Blasons / Piquets',
       rows: ['20', '40', '60', '80'],
-      columns: ['Orange', 'Blanc', 'Bleu', 'Rouge'],
+      columns: ['Rose', 'Blanc', 'Bleu', 'Rouge'],
     },
     data: [
-      ['disabled', '5 - 10 - 15', '5 - 10 - 15', '10 - 15 - 20'],
-      ['disabled', '10 - 15 - 20', '15 - 20 - 25', '20 - 25 - 30'],
-      ['20 - 25 - 30', '20 - 25 - 30', '30 - 35 - 40', '35 - 40 - 45'],
-      ['30 - 30 - 30', '30 - 35 - 40', '40 - 45 - 50', '50 - 55 - 60'],
+      ['5 - 5 - 10', '5 - 10 - 15', '5 - 10 - 15', '10 - 15 - 20'],
+      ['10 - 10 - 15', '10 - 15 - 20', '15 - 20 - 25', '20 - 25 - 30'],
+      ['15 - 15 - 20', '20 - 25 - 30', '30 - 35 - 40', '35 - 40 - 45'],
+      ['20 - 20 - 20', '30 - 35 - 40', '40 - 45 - 50', '50 - 55 - 60'],
     ],
   },
   piquets: {
     name: 'Attribution des piquets',
     description: "Tableau d'attribution des piquets en tir campagne.",
-    hint: 'Une ou plusieurs couleurs. Par exemple : "rose" ou "vert - gris".',
+    hint: 'Une ou plusieurs couleurs. Par exemple : "rose" ou "vert - gris".<br />Arc Classique U11, Arc à Poulies et Arc Droit U13/U15, Arc Droit U18/U21 : jusqu\'au niveau régional.',
     headers: {
       firstCell: 'Catégories / Piquets',
-      rows: ['U13', 'U15', 'U18', 'U21', 'S1', 'S2', 'S3'],
+      rows: ['U11', 'U13', 'U15', 'U18', 'U21', 'S1', 'S2', 'S3'],
       columns: [
-        'Arc Nu (BB)',
         'Arc Classique (CL)',
+        'Arc Nu (BB)',
         'Arc à Poulies (CO)',
         'Arc Droit (AD)',
-        'Poulies Nu (APN)',
-        'Arc Chasse (AC)',
       ],
     },
     data: [
-      ['disabled', 'Blanc - Orange', 'Blanc', 'Blanc', 'disabled', 'disabled'], // U13
-      ['Blanc', 'Blanc', 'Blanc', 'Blanc', 'disabled', 'disabled'], // U15
-      ['Blanc', 'Bleu', 'Bleu', 'Blanc', 'disabled', 'disabled'], // U18
-      ['Bleu', 'Rouge', 'Rouge', 'Blanc', 'disabled', 'disabled'], // U21
-      ['Bleu', 'Rouge', 'Rouge', 'Blanc', 'Rouge', 'Bleu'], // S1
-      ['Bleu', 'Rouge', 'Rouge', 'Blanc', 'disabled', 'disabled'], // S2
-      ['Bleu', 'Rouge', 'Rouge', 'Blanc', 'disabled', 'disabled'], // S3
+      ['Rose', 'disabled', 'disabled', 'disabled'], // U11
+      ['Blanc - Orange', 'Blanc - Orange', 'Blanc', 'Blanc - Orange'], // U13
+      ['Blanc', 'Blanc - Orange', 'Blanc', 'Blanc - Orange'], // U15
+      ['Bleu', 'Bleu', 'Rouge', 'Blanc'], // U18
+      ['Rouge', 'Bleu', 'Rouge', 'Blanc'], // U21
+      ['Rouge', 'Rouge', 'Rouge', 'Blanc'], // S1
+      ['Rouge', 'Rouge', 'Rouge', 'Blanc'], // S2
+      ['Rouge', 'Rouge', 'Rouge', 'Blanc'], // S3
     ],
     mergedCells: [
-      { rowIndex: 1, colIndex: 0, rowspan: 2, colspan: 1 }, // Fusion BB U15/18
-      { rowIndex: 0, colIndex: 2, rowspan: 2, colspan: 1 }, // Fusion CO U13/15
-      { rowIndex: 0, colIndex: 3, rowspan: 7, colspan: 1 }, // Fusion AD
-      { rowIndex: 0, colIndex: 4, rowspan: 4, colspan: 1 }, // Fusion APN U13/15/18/21
-      { rowIndex: 5, colIndex: 4, rowspan: 2, colspan: 1 }, // Fusion APN S2/3
-      { rowIndex: 0, colIndex: 5, rowspan: 4, colspan: 1 }, // Fusion AC U13/15/18/21
-      { rowIndex: 5, colIndex: 5, rowspan: 2, colspan: 1 }, // Fusion AC S2/3
+      { rowIndex: 1, colIndex: 1, rowspan: 2, colspan: 1 }, // Fusion Arc Nu U13/15
+      { rowIndex: 1, colIndex: 2, rowspan: 2, colspan: 1 }, // Fusion Poulies U13/15
+      { rowIndex: 1, colIndex: 3, rowspan: 2, colspan: 1 }, // Fusion Droit U13/15
+      { rowIndex: 3, colIndex: 1, rowspan: 2, colspan: 1 }, // Fusion Arc Nu U18/21
+      { rowIndex: 3, colIndex: 2, rowspan: 2, colspan: 1 }, // Fusion Poulies U18/21
+      { rowIndex: 3, colIndex: 3, rowspan: 2, colspan: 1 }, // Fusion Droit U18/21
+      { rowIndex: 5, colIndex: 3, rowspan: 3, colspan: 1 }, // Fusion Droit S1/S2/S3
     ],
   },
 };

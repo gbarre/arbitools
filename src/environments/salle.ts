@@ -5,7 +5,7 @@ const salleTables: TablesConfig = {
   blasons: {
     name: 'Blasons',
     description: 'Tableau des blasons pour le tir à 18m et à 25m.',
-    hint: 'Les tailles des blasons sont donnés en centimètres. On précisera le type de blason : <ul><li><em>unique</em> (U)</li><li><em>trispot (incluant Vegas)</em> (T)</li><li>voire les deux (U/T)</li></ul>',
+    hint: 'Les tailles des blasons sont donnés en centimètres. On précisera le type de blason : <ul><li><em>unique</em> (U)</li><li><em>trispot (incluant Vegas)</em> (T)</li><li>voire les deux (U/T)</li></ul>Pour les U11, le tir "18m" en Arc Classique se tire en réalité à 10m.',
     headers: {
       firstCell: 'Catégories',
       rows: ['U11', 'U13', 'U15', 'U18', 'U21', 'S1', 'S2', 'S3'],
@@ -19,28 +19,26 @@ const salleTables: TablesConfig = {
       ],
     },
     data: [
-      ['80 (U)', 'disabled', 'disabled', 'disabled', 'disabled', 'disabled'], // U11
-      ['60 (U/T)', '80 (U/T)', '40 (T)', '60 (T)', 'disabled', 'disabled'], // U13
-      ['60 (U/T)', '80 (U/T)', '40 (T)', '60 (T)', '60 (U/T)', '80 (U/T)'], // U15
-      ['40 (U/T)', '60 (U/T)', '40 (T)', '60 (T)', '60 (U/T)', '80 (U/T)'], // U18
+      ['60 (U)', 'disabled', 'disabled', 'disabled', 'disabled', 'disabled'], // U11
+      ['60 (U)', '80 (U)', 'disabled', 'disabled', '60 (U)', '80 (U)'], // U13
+      ['60 (U/T)', '80 (U/T)', '40 (T)', '60 (T)', '60 (U)', '80 (U)'], // U15
+      ['40 (U/T)', '60 (U/T)', '40 (T)', '60 (T)', '40 (U/T)', '60 (U/T)'], // U18
       ['40 (U/T)', '60 (U/T)', '40 (T)', '60 (T)', '40 (U/T)', '60 (U/T)'], // U21
       ['40 (U/T)', '60 (U/T)', '40 (T)', '60 (T)', '40 (U/T)', '60 (U/T)'], // S1
       ['40 (U/T)', '60 (U/T)', '40 (T)', '60 (T)', '40 (U/T)', '60 (U/T)'], // S2
       ['40 (U/T)', '60 (U/T)', '40 (T)', '60 (T)', '40 (U/T)', '60 (U/T)'], // S3
     ],
     mergedCells: [
-      { rowIndex: 1, colIndex: 0, rowspan: 2, colspan: 1 }, // Fusion CL U13/15 18m
-      { rowIndex: 1, colIndex: 1, rowspan: 2, colspan: 1 }, // Fusion CL U13/15 25m
-      { rowIndex: 1, colIndex: 2, rowspan: 2, colspan: 1 }, // Fusion CO U13/15 18m
-      { rowIndex: 1, colIndex: 3, rowspan: 2, colspan: 1 }, // Fusion CO U13/15 25m
-      { rowIndex: 2, colIndex: 4, rowspan: 2, colspan: 1 }, // Fusion CO U15/18 18m
-      { rowIndex: 2, colIndex: 5, rowspan: 2, colspan: 1 }, // Fusion CO U15/18 25m
-      { rowIndex: 3, colIndex: 0, rowspan: 5, colspan: 1 }, // Fusion CL U18-S3 18m
-      { rowIndex: 3, colIndex: 1, rowspan: 5, colspan: 1 }, // Fusion CL U18-S3 25m
-      { rowIndex: 3, colIndex: 2, rowspan: 5, colspan: 1 }, // Fusion CO U18-S3 18m
-      { rowIndex: 3, colIndex: 3, rowspan: 5, colspan: 1 }, // Fusion CO U18-S3 25m
-      { rowIndex: 4, colIndex: 4, rowspan: 4, colspan: 1 }, // Fusion CO U21-S3 18m
-      { rowIndex: 4, colIndex: 5, rowspan: 4, colspan: 1 }, // Fusion CO U21-S3 25m
+      { rowIndex: 1, colIndex: 4, rowspan: 2, colspan: 1 }, // Fusion Arc Nu U13/15 18m
+      { rowIndex: 1, colIndex: 5, rowspan: 2, colspan: 1 }, // Fusion Arc Nu U13/15 25m
+      { rowIndex: 2, colIndex: 2, rowspan: 6, colspan: 1 }, // Fusion Arc à Poulies U15-S3 18m
+      { rowIndex: 2, colIndex: 3, rowspan: 6, colspan: 1 }, // Fusion Arc à Poulies U15-S3 25m
+      { rowIndex: 3, colIndex: 0, rowspan: 5, colspan: 1 }, // Fusion Arc Classique U18-S3 18m
+      { rowIndex: 3, colIndex: 1, rowspan: 5, colspan: 1 }, // Fusion Arc Classique U18-S3 25m
+      { rowIndex: 3, colIndex: 4, rowspan: 2, colspan: 1 }, // Fusion Arc Nu U18/21 18m
+      { rowIndex: 3, colIndex: 5, rowspan: 2, colspan: 1 }, // Fusion Arc Nu U18/21 25m
+      { rowIndex: 5, colIndex: 4, rowspan: 3, colspan: 1 }, // Fusion Arc Nu S1-S3 18m
+      { rowIndex: 5, colIndex: 5, rowspan: 3, colspan: 1 }, // Fusion Arc Nu S1-S3 25m
     ],
   },
 };

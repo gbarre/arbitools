@@ -30,6 +30,7 @@
                 'red-blue': correctAnswers[i][j] !== 'disabled' && !quizzMode && (correctAnswers[i][j]?.toString().toLowerCase().includes('rouge - bleu')),
                 'blue-white': correctAnswers[i][j] !== 'disabled' && !quizzMode && (correctAnswers[i][j]?.toString().toLowerCase().includes('bleu - blanc')),
                 'white-orange': correctAnswers[i][j] !== 'disabled' && !quizzMode && (correctAnswers[i][j]?.toString().toLowerCase().includes('blanc - orange')),
+                'pink': correctAnswers[i][j] !== 'disabled' && !quizzMode && (correctAnswers[i][j]?.toString().toLowerCase().includes('rose')),
               }"
               [attr.rowspan]="getMergedCell(i, j)?.rowspan"
               [attr.colspan]="getMergedCell(i, j)?.colspan">

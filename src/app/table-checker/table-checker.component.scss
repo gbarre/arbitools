@@ -4,7 +4,7 @@ th, td {
 }
 
 .red {
-  background-color: #ffcccc;
+  background-color: #ff9999;
 }
 
 .blue {
@@ -20,5 +20,9 @@ th, td {
 }
 
 .red-blue {
-  background: linear-gradient(to right, #ffcccc 50%, #cceeff 50%);
+  background: linear-gradient(to right, #ff9999 50%, #cceeff 50%);
+}
+
+.pink {
+  background-color: #ffc0cb;
 }
