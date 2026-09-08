@@ -64,7 +64,7 @@ export const questions: Question[] = [
       'Pour les U11 en dernière année, qui doit établir le certificat médical de surclassement ?',
     answers: [
       '[_] Tout docteur en médecine',
-      'MMM Un médecin agréé par la FFTA',
+      "MMM Un médecin du sport inscrit à l'ordre des médecins",
       '[_] Il ne peut pas être surclassé',
     ],
   },
@@ -170,7 +170,7 @@ export const questions: Question[] = [
     answers: [
       '[_] Ne peut pas participer à une compétition, il doit attendre 10 ans.',
       '[_] Peut participer à une compétition sans restriction',
-      'MMM Peut participer à une compétition à condition que les branches de son arc soient marquées à une puissance inférieure à 18 livres.',
+      'MMM Peut participer à une compétition à condition que les branches de son arc soient marquées à une puissance inférieure à 20 livres.',
     ],
   },
   {
@@ -442,15 +442,6 @@ export const questions: Question[] = [
     ],
   },
   {
-    question:
-      'Pour les U11, qui doit établir le certificat médical de surclassement en dernière année ?',
-    answers: [
-      '[_] Tout docteur en médecine',
-      'MMM Un médecin agréé FFTA',
-      '[_] Ne peut pas être surclassé',
-    ],
-  },
-  {
     question: "La validité de la licence s'étend sur la période :",
     answers: [
       'MMM Du 1er septembre au 31 août de l’année suivante',
@@ -516,23 +507,6 @@ export const questions: Question[] = [
     question:
       'Un arbitre prévu pour la compétition est absent au démarrage d’un concours. Un archer, également arbitre, se propose de le remplacer tout en tirant la compétition. Cette situation est-elle possible ?',
     answers: ['MMM Non', '[_] Oui sous certaines conditions', '[_] Oui'],
-  },
-  {
-    question:
-      'Lors d’un surclassement ponctuel, avec changement de distance, blason ou piquet, un archer U18 doit :',
-    answers: [
-      '[_] Avoir un certificat médical de surclassement établi par un médecin de son choix',
-      'MMM Avoir un certificat médical de surclassement établi par un médecin agréé par la FFTA',
-      "[_] N'a pas de certificat médical de surclassement à produire",
-    ],
-  },
-  {
-    question: 'Un archer U11 agé de 9 ans :',
-    answers: [
-      '[_] Ne peut pas participer à une compétition, il doit attendre 10 ans.',
-      '[_] Peut participer à une compétition sans restriction avec un arc dont les branches marquées par le fabricant sont de 20 livres.',
-      'MMM Peut participer à une compétition à condition que les branches de son arc soient marquées par le fabricant à une puissance inférieure à 18 livres.',
-    ],
   },
   {
     question:
@@ -847,9 +821,9 @@ export const questions: Question[] = [
     question:
       'Un archer U11 (poussin) de 9 ans tire en compétition en salle dans la condition suivante :',
     answers: [
-      '[_] Sur un blason de 60cm avec le centre à 1m du sol et à 15 mètres de distance',
+      'MMM Sur un blason de 60 cm avec le centre à 1m10 du sol et à 10 mètres de distance',
       '[_] Sur un blason de 80 cm avec le centre à 1m10 du sol et à 15 mètres de distance',
-      'MMM Sur un blason de 80 cm avec le centre à 1m10 du sol et à 18 mètres de distance',
+      '[_] Sur un blason de 80 cm avec le centre à 1m10 du sol et à 18 mètres de distance',
     ],
   },
   {
@@ -889,8 +863,8 @@ export const questions: Question[] = [
   {
     question: 'Le surclassement ponctuel sans certificat médical peut :',
     answers: [
-      'MMM Etre autorisé à partir de la catégorie U21',
-      '[_] Etre autorisé à partir de la catégorie U18',
+      '[_] Etre autorisé à partir de la catégorie U21',
+      'MMM Etre autorisé à partir de la catégorie U18',
       '[_] Etre autorisé à partir de la catégorie U15',
     ],
   },
