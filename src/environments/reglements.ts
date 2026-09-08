@@ -1,6 +1,24 @@
 import { Rules } from 'src/app/models/rules.model';
 
 export const reglements: Rules = {
+  '2026-08-v20260831': {
+    name: 'Août 2026 v20260831 (saison sportive 2027)',
+    topics: [
+      {
+        title: 'Refonte du document',
+        content:
+          "Cette version n'apporte pas de changement particulier par rapport à la version de juillet 2026. Elle corrige simplement quelques contradictions et clarifie la définition de l'arc chasse et les changements prévus pour 2029 pour cette arme.",
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrage_saison_2027_version_20260831.pdf',
+      },
+      {
+        title: 'I.G.3.5 – Le carquois en Arc chasse',
+        content:
+          'Les carquois de hanche, de dos, de ceinture ou posés au sol sont désormais autorisés <strong>sans condition</strong> pour l’Arc chasse (suppression de la condition « à condition qu’ils ne procurent aucune aide à la visée »).',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrage_saison_2027_version_20260831.pdf#page=93',
+        added: true,
+      },
+    ],
+  },
   '2026-07-v20260721': {
     name: 'Juillet 2026 v20260721 (saison sportive 2027)',
     topics: [
