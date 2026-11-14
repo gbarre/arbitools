@@ -509,15 +509,6 @@ export const questions: Question[] = [
     answers: ['MMM Non', '[_] Oui sous certaines conditions', '[_] Oui'],
   },
   {
-    question:
-      'Un archer qui veut tirer ponctuellement dans une catégorie supérieure à la sienne pour laquelle la distance et la taille des blasons sont identiques :',
-    answers: [
-      "MMM N'a pas besoin d'un certificat médical de sur-classement",
-      '[_] Doit présenter un certificat médical de sur-classement s’il est mineur',
-      '[_] Doit présenter un certificat médical de sur-classement quel que soit son âge',
-    ],
-  },
-  {
     question: 'La carte de classification d’un para archer :',
     answers: [
       "MMM Peut-être vérifiée par l'arbitre pour connaitre les équipements autorisés",

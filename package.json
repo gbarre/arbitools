@@ -1,6 +1,6 @@
 {
   "name": "arbitools",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -27,6 +27,8 @@
     "@angular/build": "^22.2.7",
     "@angular/cli": "~22.2.7",
     "@angular/compiler-cli": "^22.2.6",
-    "typescript": "~6.0.3"
+    "jsdom": "^31.0.1",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.0"
   }
 }

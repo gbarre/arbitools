@@ -188,7 +188,7 @@ const generalTables: TablesConfig = {
       ['70', '122', '6 x 6 flèches', '280'],
     ],
     mergedCells: [
-      { rowIndex: 0, colIndex: 2, rowspan: 5, colspan: 1 }, // Fusion des flèches
+      { rowIndex: 0, colIndex: 2, rowspan: 3, colspan: 1 }, // Fusion des flèches
     ],
   },
   fleches_progression_2_poulies: {
@@ -206,7 +206,7 @@ const generalTables: TablesConfig = {
       ['50', '80', '36', '330'],
     ],
     mergedCells: [
-      { rowIndex: 0, colIndex: 2, rowspan: 5, colspan: 1 }, // Fusion des flèches
+      { rowIndex: 0, colIndex: 2, rowspan: 3, colspan: 1 }, // Fusion des flèches
     ],
   },
 };
