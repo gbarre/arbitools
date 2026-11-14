@@ -20,7 +20,7 @@ const salleTables: TablesConfig = {
     },
     data: [
       ['60 (U)', 'disabled', 'disabled', 'disabled', 'disabled', 'disabled'], // U11
-      ['60 (U)', '80 (U)', 'disabled', 'disabled', '60 (U)', '80 (U)'], // U13
+      ['60 (U)', '80 (U)', '40 (T)', '60 (T)', '60 (U)', '80 (U)'], // U13
       ['60 (U/T)', '80 (U/T)', '40 (T)', '60 (T)', '60 (U)', '80 (U)'], // U15
       ['40 (U/T)', '60 (U/T)', '40 (T)', '60 (T)', '40 (U/T)', '60 (U/T)'], // U18
       ['40 (U/T)', '60 (U/T)', '40 (T)', '60 (T)', '40 (U/T)', '60 (U/T)'], // U21
@@ -31,10 +31,8 @@ const salleTables: TablesConfig = {
     mergedCells: [
       { rowIndex: 1, colIndex: 4, rowspan: 2, colspan: 1 }, // Fusion Arc Nu U13/15 18m
       { rowIndex: 1, colIndex: 5, rowspan: 2, colspan: 1 }, // Fusion Arc Nu U13/15 25m
-      { rowIndex: 2, colIndex: 2, rowspan: 6, colspan: 1 }, // Fusion Arc à Poulies U15-S3 18m
-      { rowIndex: 2, colIndex: 3, rowspan: 6, colspan: 1 }, // Fusion Arc à Poulies U15-S3 25m
-      { rowIndex: 3, colIndex: 0, rowspan: 5, colspan: 1 }, // Fusion Arc Classique U18-S3 18m
-      { rowIndex: 3, colIndex: 1, rowspan: 5, colspan: 1 }, // Fusion Arc Classique U18-S3 25m
+      { rowIndex: 1, colIndex: 2, rowspan: 2, colspan: 1 }, // Fusion Arc à Poulies U13-U15 18m
+      { rowIndex: 1, colIndex: 3, rowspan: 2, colspan: 1 }, // Fusion Arc à Poulies U13-U15 25m
       { rowIndex: 3, colIndex: 4, rowspan: 2, colspan: 1 }, // Fusion Arc Nu U18/21 18m
       { rowIndex: 3, colIndex: 5, rowspan: 2, colspan: 1 }, // Fusion Arc Nu U18/21 25m
       { rowIndex: 5, colIndex: 4, rowspan: 3, colspan: 1 }, // Fusion Arc Nu S1-S3 18m
