@@ -5,11 +5,12 @@
     class="form-select w-auto d-inline-block ms-2"
     [(ngModel)]="selectedDiscipline"
     (ngModelChange)="generate()">
-    <option
-      *ngFor="let d of disciplines"
-      [value]="d">
-      {{ d.replace('scores_', '') }}
-    </option>
+    @for (d of disciplines; track d) {
+      <option
+        [value]="d">
+        {{ d.replace('scores_', '') }}
+      </option>
+    }
   </select>
 </div>
 <div class="card mb-4">
@@ -37,24 +38,27 @@
       </div>
       <div class="col-lg-8">
         <h6>Valeurs des flèches :</h6>
-        <div *ngFor="let arrow of situation.arrows; let i = index" class="row">
-          <div class="col-4 offset-lg-2 text-end">
-            <span class="badge bg-secondary me-2">Flèche {{ i + 1 }}</span>
+        @for (arrow of situation.arrows; track arrow; let i = $index) {
+          <div class="row">
+            <div class="col-4 offset-lg-2 text-end">
+              <span class="badge bg-secondary me-2">Flèche {{ i + 1 }}</span>
+            </div>
+            <div class="col-1 text-center">
+              <span class="badge bg-primary me-1">{{ arrow.value }}</span>
+            </div>
+            <div class="col-5">
+              @if (arrow.isLate) {
+                <span
+                  class="badge bg-danger ms-2">
+                  Hors temps
+                  @if (selectedDiscipline === 'scores_campagne') {
+                    ({{ situation.lateWarningGiven ? 'déjà' : 'pas' }} avertis)
+                  }
+                </span>
+              }
+            </div>
           </div>
-          <div class="col-1 text-center">
-            <span class="badge bg-primary me-1">{{ arrow.value }}</span>
-          </div>
-          <div class="col-5">
-            <span
-              *ngIf="arrow.isLate"
-              class="badge bg-danger ms-2">
-              Hors temps
-              <ng-container *ngIf="selectedDiscipline === 'scores_campagne'">
-                ({{ situation.lateWarningGiven ? 'déjà' : 'pas' }} avertis)
-              </ng-container>
-            </span>
-          </div>
-        </div>
+        }
         <app-score-form
           [scoreForm]="scoreForm"
           [minArrowValue]="minArrowValue"
@@ -67,15 +71,16 @@
   </div>
 </div>
 
-<app-score-result
-  *ngIf="submitted"
-  [situation]="situation"
-  [scoreResult]="scoreResult"
-  [scoreForm]="scoreForm"
-  [selectedDiscipline]="selectedDiscipline"
-  [hasLateArrow]="hasLateArrow"
-  [retainedArrows]="retainedArrows"
-></app-score-result>
+@if (submitted) {
+  <app-score-result
+    [situation]="situation"
+    [scoreResult]="scoreResult"
+    [scoreForm]="scoreForm"
+    [selectedDiscipline]="selectedDiscipline"
+    [hasLateArrow]="hasLateArrow"
+    [retainedArrows]="retainedArrows"
+  ></app-score-result>
+}
 
 <button
   type="button"

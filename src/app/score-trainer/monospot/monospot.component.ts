@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {
   Arrow,
@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environments';
   selector: 'app-monospot',
   templateUrl: './monospot.component.html',
   styleUrl: './monospot.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class MonospotComponent implements OnInit {

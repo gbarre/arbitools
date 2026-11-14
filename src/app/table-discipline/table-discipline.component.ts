@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DisciplinesConfig } from '../models/discipline.model';
 import { environment } from 'src/environments/environments';
@@ -7,6 +7,7 @@ import { Table, TablesConfig } from '../models/table.models';
 @Component({
   selector: 'app-table-discipline',
   templateUrl: './table-discipline.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class TableDisciplineComponent implements OnInit {

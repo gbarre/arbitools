@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { reglements } from 'src/environments/reglements';
 import { Topic } from '../models/rules.model';
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class NewsComponent {

@@ -12,10 +12,16 @@
         class="form-select w-auto d-inline-block ms-2"
         [(ngModel)]="selectedSpotType"
         (ngModelChange)="onSpotTypeChange()">
-        <option *ngFor="let st of spotTypes" [value]="st">{{ st }}</option>
+        @for (st of spotTypes; track st) {
+          <option [value]="st">{{ st }}</option>
+        }
       </select>
     </div>
   </div>
-  <app-trispot *ngIf="selectedSpotType === 'trispot'"></app-trispot>
-  <app-monospot *ngIf="selectedSpotType === 'monospot'"></app-monospot>
+  @if (selectedSpotType === 'trispot') {
+    <app-trispot></app-trispot>
+  }
+  @if (selectedSpotType === 'monospot') {
+    <app-monospot></app-monospot>
+  }
 </div>

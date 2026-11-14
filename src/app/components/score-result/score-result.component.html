@@ -2,54 +2,60 @@
 <div class="card">
   <div class="card-header">
     <h5 class="card-title">Correction
-      <div class="float-end" *ngIf="scoreResult.penaltyCount > 0">
-        <span class="me-2">
-          {{ scoreResult.penaltyCount }}
-          erreur{{ scoreResult.penaltyCount > 1 ? 's' : '' }} de type :
-        </span>
-        <span
-          *ngIf="situation.errors.tooManyArrows"
-          class="badge bg-danger me-2 float-end">
-          Trop de flèches tirées
-        </span>
-        <span
-          *ngIf="
+      @if (scoreResult.penaltyCount > 0) {
+        <div class="float-end">
+          <span class="me-2">
+            {{ scoreResult.penaltyCount }}
+            erreur{{ scoreResult.penaltyCount > 1 ? 's' : '' }} de type :
+          </span>
+          @if (situation.errors.tooManyArrows) {
+            <span
+              class="badge bg-danger me-2 float-end">
+              Trop de flèches tirées
+            </span>
+          }
+          @if (
             hasLateArrow
             && (
-              (
-                selectedDiscipline === 'scores_campagne'
-                && situation.lateWarningGiven
-              )
-              || selectedDiscipline !== 'scores_campagne'
+            (
+            selectedDiscipline === 'scores_campagne'
+            && situation.lateWarningGiven
             )
-            "
-          class="badge bg-danger me-2 float-end">
-          Hors temps
-        </span>
-      </div>
-      <div
-        class="badge bg-danger me-2 float-end"
-        *ngIf="
-          hasLateArrow
-          && !situation.lateWarningGiven
-          && selectedDiscipline === 'scores_campagne'
-        ">
-        Mettre un avertissement
-        <br class="mobile-only" /> pour dépassement de temps
-      </div>
+            || selectedDiscipline !== 'scores_campagne'
+            )
+            ) {
+            <span
+              class="badge bg-danger me-2 float-end">
+              Hors temps
+            </span>
+          }
+        </div>
+      }
+      @if (
+        hasLateArrow
+        && !situation.lateWarningGiven
+        && selectedDiscipline === 'scores_campagne'
+        ) {
+        <div
+          class="badge bg-danger me-2 float-end"
+          >
+          Mettre un avertissement
+          <br class="mobile-only" /> pour dépassement de temps
+        </div>
+      }
     </h5>
   </div>
   <div class="card-body">
     <table class="table table-bordered text-center mb-4">
       <thead>
         <tr>
-            <th><span class="mobile-hidden">Flèche </span>1</th>
-            <th><span class="mobile-hidden">Flèche </span>2</th>
-            <th><span class="mobile-hidden">Flèche </span>3</th>
-            <th>
-              <span class="mobile-hidden">Total</span>
-              <span class="mobile-only">Σ</span>
-            </th>
+          <th><span class="mobile-hidden">Flèche </span>1</th>
+          <th><span class="mobile-hidden">Flèche </span>2</th>
+          <th><span class="mobile-hidden">Flèche </span>3</th>
+          <th>
+            <span class="mobile-hidden">Total</span>
+            <span class="mobile-only">Σ</span>
+          </th>
         </tr>
       </thead>
       <tbody>

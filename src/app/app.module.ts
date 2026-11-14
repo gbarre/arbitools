@@ -15,6 +15,7 @@ import { ChangelogComponent } from './changelog/changelog.component';
 import {
   provideHttpClient,
   withInterceptorsFromDi,
+  withXhr
 } from '@angular/common/http';
 import { ScoreTrainerComponent } from './score-trainer/score-trainer.component';
 import { NewsComponent } from './news/news.component';
@@ -51,7 +52,7 @@ import { ScoreResultComponent } from './components/score-result/score-result.com
     ReactiveFormsModule,
     TargetComponent,
   ],
-  providers: [provideHttpClient(withInterceptorsFromDi())],
+  providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

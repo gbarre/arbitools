@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, OnChanges } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input, OnInit, OnChanges, ChangeDetectionStrategy } from '@angular/core';
+
 import { Arrow, SpottedArrow } from 'src/app/models/shoot-situation.model';
 
 interface ProcessedArrow {
@@ -14,8 +14,9 @@ interface ProcessedArrow {
 @Component({
   selector: 'app-target',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './target.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./target.component.scss'],
 })
 export class TargetComponent implements OnInit, OnChanges {

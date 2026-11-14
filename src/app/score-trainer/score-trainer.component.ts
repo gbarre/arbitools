@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { environment } from 'src/environments/environments';
 @Component({
   selector: 'app-score-trainer',
   templateUrl: './score-trainer.component.html',
   styleUrl: './score-trainer.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ScoreTrainerComponent {

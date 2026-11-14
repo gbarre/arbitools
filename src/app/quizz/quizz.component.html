@@ -11,7 +11,7 @@
         min="1"
         [max]="allQuestions.length"
         [(ngModel)]="numberOfQuestions"
-      />
+        />
     </div>
     <div class="col-sm-4">
       <button class="btn btn-primary" (click)="startQuiz()">
@@ -25,56 +25,60 @@
     </div>
   </div>
 
-  <form
-    [formGroup]="quizForm"
-    (ngSubmit)="onSubmit()"
-    *ngIf="selectedQuestions.length"
-  >
-    <div
-      *ngFor="let question of selectedQuestions; let i = index"
-      class="mb-4 p-3 border rounded shadow-sm bg-light"
-    >
-      <p><strong>Question {{ i + 1 }} / {{ selectedQuestions.length }} : {{ question.question }}</strong></p>
-      <div
-        *ngFor="let answer of question.answers; let j = index"
-        class="form-check"
+  @if (selectedQuestions.length) {
+    <form
+      [formGroup]="quizForm"
+      (ngSubmit)="onSubmit()"
       >
-        <input
-          type="radio"
-          class="form-check-input"
-          [formControlName]="'q' + i"
-          [value]="j"
-          [disabled]="submitted"
-          [id]="'q' + i + '_answer' + j"
-        />
-        <label
-          class="form-check-label"
-          [for]="'q' + i + '_answer' + j"
+      @for (question of selectedQuestions; track question; let i = $index) {
+        <div
+          class="mb-4 p-3 border rounded shadow-sm bg-light"
+          >
+          <p><strong>Question {{ i + 1 }} / {{ selectedQuestions.length }} : {{ question.question }}</strong></p>
+          @for (answer of question.answers; track answer; let j = $index) {
+            <div
+              class="form-check"
+              >
+              <input
+                type="radio"
+                class="form-check-input"
+                [formControlName]="'q' + i"
+                [value]="j"
+                [disabled]="submitted"
+                [id]="'q' + i + '_answer' + j"
+                />
+              <label
+                class="form-check-label"
+                [for]="'q' + i + '_answer' + j"
           [ngClass]="{
             'text-success fw-bold': getAnswerClass(i, j) === 'correct',
             'text-danger fw-bold': getAnswerClass(i, j) === 'incorrect'
           }"
-        >
-          {{ answer }}
-        </label>
+                >
+                {{ answer }}
+              </label>
+            </div>
+          }
+        </div>
+      }
+      <div class="text-center">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="submitted"
+          >
+          Vérifier mes réponses
+        </button>
+      </div>
+    </form>
+  }
+
+  @if (submitted) {
+    <div class="mt-4 text-center">
+      <div class="alert alert-info">
+        <strong>Score final :</strong> {{ score }} /
+        {{ selectedQuestions.length }}
       </div>
     </div>
-
-    <div class="text-center">
-      <button
-        type="submit"
-        class="btn btn-success"
-        [disabled]="submitted"
-      >
-        Vérifier mes réponses
-      </button>
-    </div>
-  </form>
-
-  <div *ngIf="submitted" class="mt-4 text-center">
-    <div class="alert alert-info">
-      <strong>Score final :</strong> {{ score }} /
-      {{ selectedQuestions.length }}
-    </div>
-  </div>
+  }
 </div>

@@ -1,10 +1,11 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, ChangeDetectionStrategy } from '@angular/core';
 import { Table } from '../models/table.models';
 
 @Component({
   selector: 'app-table-checker',
   templateUrl: './table-checker.component.html',
   styleUrls: ['./table-checker.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class TableCheckerComponent implements OnChanges {

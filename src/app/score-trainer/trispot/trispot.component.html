@@ -5,11 +5,12 @@
     class="form-select w-auto d-inline-block ms-2"
     [(ngModel)]="selectedDiscipline"
     (ngModelChange)="generate()">
-    <option
-      *ngFor="let d of disciplines"
-      [value]="d">
-      {{ d.replace('scores_', '') }}
-    </option>
+    @for (d of disciplines; track d) {
+      <option
+        [value]="d">
+        {{ d.replace('scores_', '') }}
+      </option>
+    }
   </select>
 </div>
 <div class="card mb-4">
@@ -26,66 +27,73 @@
   </div>
   <div class="card-body">
     <div class="row text-center">
-      <div class="col-lg-4" *ngFor="let spot of [1, 2, 3]; let i = index">
-        <div class="card" [ngClass]="{'top-spot': i > 0}">
-          <div class="card-header">
-            <h6 class="card-title">Spot {{ spot }}</h6>
-          </div>
-          <div class="card-body">
-            <app-target
+      @for (spot of [1, 2, 3]; track spot; let i = $index) {
+        <div class="col-lg-4">
+          <div class="card" [ngClass]="{'top-spot': i > 0}">
+            <div class="card-header">
+              <h6 class="card-title">Spot {{ spot }}</h6>
+            </div>
+            <div class="card-body">
+              <app-target
               [discipline]="
                 selectedDiscipline === 'scores_campagne' ? 'campagne' : 'standard'
               "
-              [arrows]="groupedArrows[spot]"
-              [size]="5"
-              [targetSize]="150"
-            ></app-target>
-            <div class="row">
-              <div class="col" *ngIf="groupedArrows[spot]?.length === 0">
-                Aucune flèche dans ce spot.
+                [arrows]="groupedArrows[spot]"
+                [size]="5"
+                [targetSize]="150"
+              ></app-target>
+              <div class="row">
+                @if (groupedArrows[spot]?.length === 0) {
+                  <div class="col">
+                    Aucune flèche dans ce spot.
+                  </div>
+                }
+                @for (arrow of groupedArrows[spot]; track arrow) {
+                  <div class="col">
+                    <span class="badge bg-primary me-1">{{ arrow.value }}</span>
+                    @if (arrow.isLate) {
+                      <span
+                        class="badge bg-danger ms-2">
+                        Hors temps
+                        @if (selectedDiscipline === 'scores_campagne') {
+                          ({{ situation.lateWarningGiven ? 'déjà' : 'pas' }}
+                          avertis)
+                        }
+                      </span>
+                    }
+                  </div>
+                }
               </div>
-              <div *ngFor="let arrow of groupedArrows[spot]" class="col">
-                <span class="badge bg-primary me-1">{{ arrow.value }}</span>
-                <span
-                  *ngIf="arrow.isLate"
-                  class="badge bg-danger ms-2">
-                  Hors temps
-                  <ng-container
-                    *ngIf="selectedDiscipline === 'scores_campagne'">
-                    ({{ situation.lateWarningGiven ? 'déjà' : 'pas' }}
-                    avertis)
-                  </ng-container>
-                </span>
-              </div>
+            </div>
           </div>
         </div>
-      </div>
+      }
     </div>
   </div>
-</div>
 
-<app-score-form
-  [scoreForm]="scoreForm"
-  [minArrowValue]="minArrowValue"
-  [maxArrowValue]="maxArrowValue"
-  [numArrows]="numArrows"
-  (submitted)="showAnswer($event)"
-></app-score-form>
+  <app-score-form
+    [scoreForm]="scoreForm"
+    [minArrowValue]="minArrowValue"
+    [maxArrowValue]="maxArrowValue"
+    [numArrows]="numArrows"
+    (submitted)="showAnswer($event)"
+  ></app-score-form>
 
-<app-score-result
-  *ngIf="submitted"
-  [situation]="situation"
-  [scoreResult]="scoreResult"
-  [scoreForm]="scoreForm"
-  [selectedDiscipline]="selectedDiscipline"
-  [hasLateArrow]="hasLateArrow"
-  [retainedArrows]="retainedArrows"
-></app-score-result>
+  @if (submitted) {
+    <app-score-result
+      [situation]="situation"
+      [scoreResult]="scoreResult"
+      [scoreForm]="scoreForm"
+      [selectedDiscipline]="selectedDiscipline"
+      [hasLateArrow]="hasLateArrow"
+      [retainedArrows]="retainedArrows"
+    ></app-score-result>
+  }
 
-<button
-  type="button"
-  class="btn btn-warning float-end mobile-only"
-  [ngClass]="{'mt-3': submitted, 'mt-0': !submitted}"
-  (click)="generate()">
-  Nouvelle situation
-</button>
+  <button
+    type="button"
+    class="btn btn-warning float-end mobile-only"
+    [ngClass]="{'mt-3': submitted, 'mt-0': !submitted}"
+    (click)="generate()">
+    Nouvelle situation
+  </button>

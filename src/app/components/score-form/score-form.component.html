@@ -22,25 +22,31 @@
             <td>
               <select formControlName="arrow1" class="form-control">
                 <option [value]="0">0</option>
-                <option *ngFor="let val of arrowValues" [value]="val">
-                  {{ val }}
-                </option>
+                @for (val of arrowValues; track val) {
+                  <option [value]="val">
+                    {{ val }}
+                  </option>
+                }
               </select>
             </td>
             <td>
               <select formControlName="arrow2" class="form-control">
                 <option [value]="0">0</option>
-                <option *ngFor="let val of arrowValues" [value]="val">
-                  {{ val }}
-                </option>
+                @for (val of arrowValues; track val) {
+                  <option [value]="val">
+                    {{ val }}
+                  </option>
+                }
               </select>
             </td>
             <td>
               <select formControlName="arrow3" class="form-control">
                 <option [value]="0">0</option>
-                <option *ngFor="let val of arrowValues" [value]="val">
-                  {{ val }}
-                </option>
+                @for (val of arrowValues; track val) {
+                  <option [value]="val">
+                    {{ val }}
+                  </option>
+                }
               </select>
             </td>
             <td>
@@ -51,7 +57,7 @@
                 formControlName="retainedScore"
                 min="0"
                 [max]="maxArrowValue * numArrows"
-              />
+                />
             </td>
           </tr>
         </tbody>

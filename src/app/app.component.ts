@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { environment } from 'src/environments/environments';
 import { DisciplinesConfig } from './models/discipline.model';
 import packageInfo from '../../package.json';
@@ -7,6 +7,7 @@ import packageInfo from '../../package.json';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class AppComponent {

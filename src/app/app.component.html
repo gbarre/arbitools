@@ -79,19 +79,23 @@
           <ul
             class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
             aria-labelledby="navbarDropdown">
-            <li *ngFor="let disciplineKey of disciplineKeys">
-              <a
-                class="dropdown-item"
-                *ngFor="
-                  let tableKey of disciplines[disciplineKey].tables | keyvalue
-                "
+            @for (disciplineKey of disciplineKeys; track disciplineKey) {
+              <li>
+                @for (
+                  tableKey of disciplines[disciplineKey].tables | keyvalue
+                  ; track
+                  tableKey) {
+                  <a
+                    class="dropdown-item"
                 [href]="
                   './table-discipline?d=' + disciplineKey +
                   '&t=' + tableKey.key
                 ">
-                {{ disciplines[disciplineKey].getName() }} - {{ tableKey.value.name }}
-              </a>
-            </li>
+                    {{ disciplines[disciplineKey].getName() }} - {{ tableKey.value.name }}
+                  </a>
+                }
+              </li>
+            }
           </ul>
         </li>
       </ul>
@@ -113,6 +117,5 @@
   href="https://github.com/gbarre/arbitools"
   target="_blank"
   class="github-fork-banner">
-  Fork me &#64;
   <i class="fab fa-github" aria-hidden="true"></i>
 </a>

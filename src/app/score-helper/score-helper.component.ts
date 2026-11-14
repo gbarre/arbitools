@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+
 import { FormsModule } from '@angular/forms';
 import { MonospotGeneratorService } from '../services/monospot-generator.service';
 import { TrispotGeneratorService } from '../services/trispot-generator.service';
@@ -20,8 +20,9 @@ interface ArrowInput {
 @Component({
   selector: 'app-score-helper',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   templateUrl: './score-helper.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './score-helper.component.scss',
 })
 export class ScoreHelperComponent {

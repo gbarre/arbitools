@@ -2,7 +2,7 @@
   <label class="pr-3">Quizz &nbsp;</label>
   <ng-toggle
     [ngModel]="quizzMode"
-    (ngModelChange)="toggleMode()"></ng-toggle>
+  (ngModelChange)="toggleMode()"></ng-toggle>
 </div>
 <dl class="row">
   <dt class="col-md-4 d-flex align-items-center">Discipline</dt>
@@ -14,33 +14,39 @@
       <option value="" disabled>
         Sélectionner une discipline...
       </option>
-      <option *ngFor="let key of disciplineKeys" [value]="key">
-        {{ disciplines[key].getName() }}
-      </option>
+      @for (key of disciplineKeys; track key) {
+        <option [value]="key">
+          {{ disciplines[key].getName() }}
+        </option>
+      }
     </select>
   </dd>
-  <ng-container *ngIf="selectedDiscipline !== ''">
+  @if (selectedDiscipline !== '') {
     <dt class="col-md-4 d-flex align-items-center">Tableau</dt>
-    <dd class="col-md-6 form-group" *ngIf="selectedDiscipline !== ''">
-      <select
-        class="form-control"
-        [(ngModel)]="selectedTableKey"
-        (change)="selectTable($event.target)">
-        <option value="" disabled>
-          Sélectionner un tableau...
-        </option>
-        <option
-          *ngFor="let tableKey of tables | keyvalue"
-          [value]="tableKey.key">
-          {{ tableKey.value.name }}
-        </option>
-      </select>
-    </dd>
-  </ng-container>
+    @if (selectedDiscipline !== '') {
+      <dd class="col-md-6 form-group">
+        <select
+          class="form-control"
+          [(ngModel)]="selectedTableKey"
+          (change)="selectTable($event.target)">
+          <option value="" disabled>
+            Sélectionner un tableau...
+          </option>
+          @for (tableKey of tables | keyvalue; track tableKey) {
+            <option
+              [value]="tableKey.key">
+              {{ tableKey.value.name }}
+            </option>
+          }
+        </select>
+      </dd>
+    }
+  }
 </dl>
 
-<app-table-checker
-  *ngIf="selectedTableKey !== ''"
-  [selectedTable]="tables[selectedTableKey]"
-  [quizzMode]="quizzMode">
-</app-table-checker>
+@if (selectedTableKey !== '') {
+  <app-table-checker
+    [selectedTable]="tables[selectedTableKey]"
+    [quizzMode]="quizzMode">
+  </app-table-checker>
+}

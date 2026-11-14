@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 import {
   SpottedArrow,
   ScoreResult,
@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environments';
   selector: 'app-trispot',
   templateUrl: './trispot.component.html',
   styleUrl: './trispot.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class TrispotComponent implements OnInit {
