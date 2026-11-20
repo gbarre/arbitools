@@ -71,7 +71,7 @@ const expectedGroups: Record<string, { source: string; groups: Groups }> = {
       'Arc à Poulies Nu (Co)': [U13_U15, U18_U21, S1_S3],
       'Arc Droit (AD)': [U13_U15, U18_U21],
       'Arc Libre (TL)': [U13_U15, U18_U21],
-      'Arc Chasse (AC)': [U13_U15, U18_U21],
+      'Arc Traditionnel (AC)': [U13_U15, U18_U21],
     },
   },
   // Tir 3D – classement national (p. 52)
@@ -82,7 +82,7 @@ const expectedGroups: Record<string, { source: string; groups: Groups }> = {
       'Poulies Nu (CO)': [U13_U15, U18_U21, S1_S3],
       'Arc Droit (AD)': [U13_U15, U18_U21],
       'Tir Libre (TL)': [U13_U15, U18_U21],
-      'Arc Chasse (AC)': [U13_U15, U18_U21],
+      'Arc Traditionnel (AC)': [U13_U15, U18_U21],
     },
   },
 };

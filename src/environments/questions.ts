@@ -425,15 +425,6 @@ export const questions: Question[] = [
     answers: ['[_] 13 ans', 'MMM 14 ans', '[_] 15 ans'],
   },
   {
-    question:
-      'Qui est habilité à signer les qualifications et récolter les demandes de distinctions internationales ?',
-    answers: [
-      '[_] Tout arbitre de la compétition',
-      "MMM L'arbitre responsable de la compétition",
-      '[_] Uniquement le PCRA du lieu de la compétition',
-    ],
-  },
-  {
     question: 'Dans un championnat de France par équipe de club :',
     answers: [
       'MMM Il peut y avoir un archer étranger dans l’équipe',
@@ -701,7 +692,7 @@ export const questions: Question[] = [
     question:
       'Lors d’un concours sélectif dominical, le directeur des tirs (DOS) peut être :',
     answers: [
-      "MMM Un arbitre fédéral ou un jeune arbitre ou un membre du club validé par l'arbitre responsable",
+      "MMM Un arbitre fédéral, un jeune arbitre, un assistant arbitre ou un membre du club validé par l'arbitre responsable",
       '[_] Uniquement un arbitre fédéral ou jeune arbitre',
       '[_] Uniquement un arbitre fédéral',
     ],
@@ -770,9 +761,9 @@ export const questions: Question[] = [
   {
     question: 'Un jeune arbitre qui a réussi son examen peut :',
     answers: [
-      "MMM Etre arbitre responsable d'un concours jeune",
-      '[_] Etre arbitre responsable d’un concours adulte',
-      '[_] Arbitrer lors d’un championnat régional adulte',
+      "MMM Être arbitre responsable d'une compétition réservée aux jeunes dans son option, hors championnats de France",
+      '[_] Être arbitre responsable d’une compétition adulte',
+      '[_] Être arbitre responsable d’un championnat de France jeunes',
     ],
   },
   {
@@ -1023,5 +1014,64 @@ export const questions: Question[] = [
     question:
       'En tir en salle, quel est le temps alloué à un para-archer pour tirer une flèche dans un duel en tir simultané :',
     answers: ['[_] 20 secondes', '[_] 30 secondes', 'MMM 40 secondes'],
+  },
+  {
+    question: 'Un assistant arbitre peut officier :',
+    answers: [
+      'MMM Uniquement sur des compétitions sélectives de Tir à 18m et de Tir à l’Arc Extérieur',
+      '[_] Sur toutes les compétitions sélectives, toutes disciplines confondues',
+      '[_] Sur les compétitions sélectives et les championnats départementaux',
+    ],
+  },
+  {
+    question: 'Parmi ces missions, laquelle ne peut pas être confiée à un assistant arbitre ?',
+    answers: [
+      '[_] Juger les cordons',
+      '[_] Être directeur des tirs',
+      'MMM Être membre du jury d’appel',
+    ],
+  },
+  {
+    question: 'Comment reconnaît-on un assistant arbitre sur le terrain ?',
+    answers: [
+      '[_] Il porte la tenue standardisée des arbitres',
+      'MMM Il porte un brassard bleu avec la mention « Assistant Arbitre »',
+      '[_] Il porte un polo bleu marine uni sans distinction',
+    ],
+  },
+  {
+    question:
+      'En Tir à 18m, un archer U21 en arc nu tire lors d’une compétition sélective :',
+    answers: [
+      '[_] Sur blason unique ou triple, au choix de l’organisateur',
+      '[_] Sur blason unique ou triple, au choix de l’archer lors de son inscription',
+      'MMM Uniquement sur blason unique',
+    ],
+  },
+  {
+    question:
+      'Un archer en arc droit n’a pas de plancher sur son arc. Il peut :',
+    answers: [
+      '[_] Utiliser un repose-flèche réglable',
+      'MMM Utiliser sa main d’arc comme repose-flèche',
+      '[_] Ne peut pas participer à la compétition avec cet arc',
+    ],
+  },
+  {
+    question: 'En arc traditionnel, l’archer peut utiliser :',
+    answers: [
+      '[_] Un seul point d’ancrage fixe',
+      'MMM Plusieurs points d’ancrage',
+      '[_] Un décocheur sans partie électronique',
+    ],
+  },
+  {
+    question:
+      'En Tir sur Cibles 3D, pour figurer au classement national par équipe de club :',
+    answers: [
+      '[_] Les 3 archers doivent tirer le même jour sur la même compétition',
+      'MMM Le classement est établi à partir des classements individuels des archers du club',
+      '[_] Le club doit réaliser 2 scores d’équipe sur 2 compétitions différentes',
+    ],
   },
 ];

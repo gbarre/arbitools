@@ -70,7 +70,7 @@ const generalTables: TablesConfig = {
         'Arc Nu',
         'Arc à Poulies Nu',
         'Arc Droit',
-        'Arc Chasse',
+        'Arc Traditionnel',
       ],
       columns: [
         '18m',
@@ -140,7 +140,7 @@ const generalTables: TablesConfig = {
         { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
       ],
       [
-        // Arc Chasse
+        // Arc Traditionnel
         { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
         { options: optionsList.oui_non, correct: optionsList.oui_non[0] },
         { options: optionsList.oui_non, correct: optionsList.oui_non[0] },

@@ -28,7 +28,7 @@ const natureTables: TablesConfig = {
     name: 'Piquets',
     description:
       "Tableau d'attribution des piquets en tir nature (piquet de la 1ère flèche / piquet de la 2ème flèche).",
-    hint: 'Une ou plusieurs couleurs, séparées par un tiret. Par exemple : "rose - rose" ou "rouge - bleu".<br />Temps de tir : 45 secondes pour toutes les catégories.<br />Arc Nu U11, Arc à Poulies Nu et Arc Droit et Arc Libre et Arc Chasse U13/U15, Arc à Poulies Nu U18/U21 : jusqu\'au niveau régional.',
+    hint: 'Une ou plusieurs couleurs, séparées par un tiret. Par exemple : "rose - rose" ou "rouge - bleu".<br />Temps de tir : 45 secondes pour toutes les catégories.<br />Arc Nu U11, Arc à Poulies Nu et Arc Droit et Arc Libre et Arc Traditionnel U13/U15, Arc à Poulies Nu U18/U21 : jusqu\'au niveau régional.',
     headers: {
       firstCell: 'Catégories / Piquets',
       rows: ['U11', 'U13', 'U15', 'U18', 'U21', 'S1', 'S2', 'S3'],
@@ -37,7 +37,7 @@ const natureTables: TablesConfig = {
         'Arc à Poulies Nu (Co)',
         'Arc Droit (AD)',
         'Arc Libre (TL)',
-        'Arc Chasse (AC)',
+        'Arc Traditionnel (AC)',
       ],
     },
     data: [

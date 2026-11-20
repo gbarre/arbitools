@@ -1,6 +1,72 @@
 import { Rules } from 'src/app/models/rules.model';
 
 export const reglements: Rules = {
+  '2026-11-v20261117': {
+    name: 'Novembre 2026 v20261117 (saison sportive 2027)',
+    topics: [
+      {
+        title: 'Introduction – Hiérarchie des textes',
+        content:
+          'Suppression des <strong>décrets</strong> et des <strong>instructions fédérales</strong>. Les interprétations servent désormais à préciser des points de règlement : ce sont des compléments qui <strong>ne prévalent plus</strong> sur le livre des règlements.',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrages_saison_2027_version20261117.pdf#page=8',
+      },
+      {
+        title: 'I.A – Le corps arbitral et l’assistant arbitre',
+        content:
+          '<ul><li>Création de l’<strong>assistant arbitre</strong>, voie d’entrée obligatoire dans le corps arbitral. Il intervient uniquement sur les compétitions sélectives de Tir à 18m et de TAE (jamais sur les championnats), toujours sous la responsabilité d’un arbitre : contrôle du terrain et du matériel, jugement des cordons, direction des tirs.</li><li>Le jeune arbitre peut arbitrer jusqu’au championnat régional et être responsable d’une compétition réservée aux jeunes dans son option, <strong>sauf les championnats de France</strong>.</li><li>Hors de son option, l’arbitre fédéral peut aussi assurer le <strong>contrôle du matériel</strong> (en plus du chronométrage, des cordons et de la direction des tirs).</li><li>Nouvelle fonction « Arbitre Duels » (en construction) ; suppression des paragraphes sur les arbitres continentaux/internationaux.</li></ul>',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrages_saison_2027_version20261117.pdf#page=10',
+        added: true,
+      },
+      {
+        title: 'I.A.4 – Obligations, tenue et sanctions',
+        content:
+          '<ul><li>Tenue de l’assistant arbitre : pantalon noir, haut sombre et <strong>brassard bleu</strong> « Assistant Arbitre ». Les candidats portent un bas noir et un haut sombre.</li><li>Équipement de l’assistant arbitre : loupe, sifflet, mètre de 2 m, stylo rouge, bloc-notes. L’arbitre y ajoute chronomètre, règlement, cartons, compas et matériel de mesure ; les <strong>jumelles</strong> ne figurent plus dans la liste.</li><li>Un assistant arbitre ne peut pas faire partie du jury d’appel ; il peut être directeur des tirs sur une compétition sélective.</li><li>L’assistant arbitre doit avoir sa licence prise avant le <strong>15 octobre</strong>.</li><li>Une sanction disciplinaire définitive n’entraîne plus la perte de la qualité d’arbitre, mais bloque pendant <strong>2 ans</strong> l’accès à un niveau supérieur, à une nouvelle option ou à une fonction nationale.</li></ul>',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrages_saison_2027_version20261117.pdf#page=15',
+        added: true,
+      },
+      {
+        title: 'I.C.5.2 – Classements par équipe et Double Mixte',
+        content:
+          '<ul><li>Le classement national par équipe et Double Mixte est désormais établi à partir du <strong>classement individuel</strong> des archers (moyenne des 3 meilleurs scores) : il n’est plus nécessaire de tirer le même jour sur la même compétition.</li><li>Double Mixte en Campagne : 3 classements (Arc Classique U21 à S3, Arc à Poulies et Arc Nu <strong>U18 à S3</strong>) ; suppression du Double Mixte Arc Droit. En 3D, les 4 classements Double Mixte regroupent désormais les catégories de <strong>U18 à S3</strong>.</li><li>Nouvel article I.C.5.2.4 : pré-inscription (1 score par archer) puis validation de la sélection (3 scores par archer) pour les championnats de France par équipe et Double Mixte, hors D1/D2 et Para-tir.</li></ul>',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrages_saison_2027_version20261117.pdf#page=55',
+        added: true,
+      },
+      {
+        title: 'I.G.3.1 / I.G.3.2 – Amortisseurs de branches',
+        content:
+          'Les amortisseurs de branches sont autorisés <strong>sans restriction d’emplacement</strong> (fin de la limitation à la face interne des branches) pour l’arc classique et l’arc à poulies.',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrages_saison_2027_version20261117.pdf#page=88',
+      },
+      {
+        title: 'I.G.3.3 / I.G.3.5 – La main comme repose-flèche',
+        content:
+          'En Arc Droit et en Arc Traditionnel, en l’absence de plancher d’arc, l’archer peut utiliser <strong>sa main d’arc</strong> comme repose-flèche. En Arc Traditionnel, le repose-flèche en <strong>plume</strong> est également autorisé.',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrages_saison_2027_version20261117.pdf#page=91',
+        added: true,
+      },
+      {
+        title: 'I.G.3.5 – L’arc chasse devient l’arc traditionnel',
+        content:
+          '<ul><li>L’<strong>Arc Chasse devient l’Arc Traditionnel</strong> (le code AC est conservé).</li><li>Règle 2029 alignée sur World Archery : poignée intégralement en bois, ou stratifiée avec des lamelles de bois sur toute la longueur ; sinon l’arc est classé en arc nu.</li><li>Les poids internes doivent être totalement invisibles (pas de trous bouchés, caches ou capuchons).</li><li>Le point d’ancrage n’est plus unique : <strong>plusieurs points d’ancrage</strong> sont autorisés.</li></ul>',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrages_saison_2027_version20261117.pdf#page=95',
+        added: true,
+      },
+      {
+        title: 'II.2.A.7 – Blasons des arcs nus en Tir à 18m',
+        content:
+          '<ul><li>Harmonisation avec le règlement international : les arcs nus tirent <strong>uniquement sur blason unique</strong>, à 18m comme à 25m, dans toutes les catégories et toutes les phases.</li><li>Suppression du choix du type de blason laissé au tireur lors de l’inscription.</li><li>Phases finales : blason triple (vertical ou triangulaire) obligatoire pour les catégories autorisées ; au championnat de France, les blasons triples sont verticaux sur toutes les phases.</li></ul>',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrages_saison_2027_version20261117.pdf#page=239',
+        discipline: 'Tir à 18m',
+      },
+      {
+        title: 'II.4.B – Para-tir à l’arc',
+        content:
+          '<ul><li>Visée tactile : contact autorisé sur le dos de la main, entre le poignet et la base des doigts (au plus entre les articulations des doigts).</li><li>Le repère pour les pieds ne doit pas dépasser 6 cm du sol.</li><li>Pas de tir par équipe pour les handicaps visuels ; les archers HV et W1 tirent les duels en sets, les W1 tirent aussi les matchs par équipe en sets.</li></ul>',
+        link: 'https://www.fftiralarc.org/DOCUMENTS/ARBITRES/R%C3%A8glements_sportifs_et_arbitrages_saison_2027_version20261117.pdf#page=336',
+        discipline: 'Para-tir à l’arc',
+      },
+    ],
+  },
   '2026-08-v20260831': {
     name: 'Août 2026 v20260831 (saison sportive 2027)',
     topics: [

@@ -6,7 +6,7 @@ const tir3DTables: TablesConfig = {
     name: 'Piquets',
     description:
       "Tableau d'attribution des piquets en tir 3D (piquet de la 1ère flèche / piquet de la 2ème flèche pour l'Arc Nu).",
-    hint: "Arc Nu U11, Arc à Poulies Nu, Arc Droit, Arc Libre et Arc Chasse U13/U15 et Arc à Poulies Nu U18/U21 : jusqu'au niveau régional.",
+    hint: "Arc Nu U11, Arc à Poulies Nu, Arc Droit, Arc Libre et Arc Traditionnel U13/U15 et Arc à Poulies Nu U18/U21 : jusqu'au niveau régional.",
     headers: {
       firstCell: 'Catégories / Piquets',
       rows: ['U11', 'U13', 'U15', 'U18', 'U21', 'S1', 'S2', 'S3'],
@@ -15,7 +15,7 @@ const tir3DTables: TablesConfig = {
         'Poulies Nu (CO)',
         'Arc Droit (AD)',
         'Tir Libre (TL)',
-        'Arc Chasse (AC)',
+        'Arc Traditionnel (AC)',
       ],
     },
     data: [
