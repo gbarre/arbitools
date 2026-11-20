@@ -1,16 +1,27 @@
+// Corner ribbon: a fixed-size band whose center sits on the bottom-right
+// diagonal (same distance from the right and bottom edges), so that once
+// rotated by -45deg it crosses the corner symmetrically.
+$ribbon-width: 180px;
+$ribbon-height: 36px;
+$ribbon-center: 42px; // distance from the right and bottom edges
+
 .github-fork-banner {
   position: fixed;
-  right: -60px;
-  bottom: 30px;
+  right: $ribbon-center - $ribbon-width * 0.5;
+  bottom: $ribbon-center - $ribbon-height * 0.5;
   z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: $ribbon-width;
+  height: $ribbon-height;
   background: #24292f;
   color: #fff;
-  padding: 10px 60px;
-  font-size: 14px;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
+  font-size: 18px;
+  line-height: 1;
   text-decoration: none;
   transform: rotate(-45deg);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   opacity: 0.85;
 }
